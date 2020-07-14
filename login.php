@@ -65,7 +65,6 @@
         .input > div > h5{
 	        position: absolute;
 	        left: 20px;
-            top: -30px;
 	        transform: translateY(-50%);
 	        color: #999;
 	        font-size: 20px;
@@ -105,6 +104,73 @@
             cursor: pointer;
             transition: .5s;
         }
+        .input:before, .input:after{
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            width: 0%;
+            height: 2px;
+            background-color: #00beff;
+            transition: .4s;
+        }
+        .input:before{
+	        right: 50%;
+        }
+        .input:after{
+	        left: 50%;
+        }
+        .input.focus:before, .input.focus:after{
+	        width: 50%;
+        }
+        .input.focus > div > h5{
+            top: -15px;
+            font-size: 15px;
+        }
+        .input.focus > .i > i{
+            color: #00beff;
+        }
+        .input > div > input{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0.5rem 0.7rem;
+            font-size: 1.2rem;
+            color: #555;
+            font-family: 'poppins', sans-serif;
+        }
+        .input.pass{
+            margin-bottom: 4px;
+        }
+        @media screen and (max-width: 1050px){
+            .container{
+                grid-gap: 5rem;
+            }
+        }
+        @media screen and (max-width: 1000px){
+            form{
+                width: 290px;
+            }
+            .login h2{
+                font-size: 2.4rem;
+                margin: 8px 0;
+            }
+        }
+        @media screen and (max-width: 900px){
+            .container{
+                grid-template-columns: 1fr;
+            }
+            .webpage{
+                display: none;
+            }
+            .login{
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -112,7 +178,7 @@
     <div class="container">
         <div class="login">
             <form action="Home.php">
-                <img src="avatar.png" class="avatar">
+                <img src="uavatar.png" class="avatar">
                 <h2 class="title">Login</h2>
                 <div class="input username">
                     <div class="i"> 
@@ -129,13 +195,29 @@
            		   </div>
                     <div class="in">
                         <h5>Password</h5>
-                        <input type="password" class="passs">
+                        <input type="password" class="u_input">
                     </div>
                 </div>
                 <input type="submit" class="btn" value="Login">
             </form>
         </div>
     </div>
-
+    <script>
+        const inputs = document.querySelectorAll(".u_input");
+        function addcl(){
+            let parent = this.parentNode.parentNode;
+            parent.classList.add("focus");
+        }
+        function remcl(){
+            let parent = this.parentNode.parentNode;
+            if(this.value == ""){
+                parent.classList.remove("focus");
+            }
+        }
+        inputs.forEach(input => {
+            input.addEventListener("focus", addcl);
+            input.addEventListener("blur", remcl);
+        });
+    </script>
 </body>
 </html>
