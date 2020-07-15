@@ -1,25 +1,25 @@
-		body{
-			margin: 0;
-			background: white;
-			font-family: sans-serif;
-			font-weight: 350;
-		}
-		.navigation{
-			width: 80%;
-			margin: 0 auto;
-			
-		}
-		header{
+body{
+	margin: 0;
+	background: white;
+	font-family: sans-serif;
+	font-weight: 350;
+}
+.navigation{
+	width: 80%;
+	margin: 0 auto;
+	
+}
+header{
 			background:#00BEFF;
 			}
 
-		header::after{
+header::after{
 			content: '';
 			display: table;
 			clear: both;
 		}
 
-		nav ul >li>a{
+nav ul >li>a{
 			color: white;
 			text-underline-position: none;
 			text-decoration: none;
@@ -27,19 +27,19 @@
 			font-size: 25px;
 
 		}
-		nav ul >li>a:hover{
+nav ul >li>a:hover{
 			color: white;
 			
 		}
-		nav{
+nav{
 			float: right;
 		}
-		nav ul{
+nav ul{
 			margin: 0;
 			padding: 0;
 			list-style: none;
 		}
-		nav li{
+nav li{
 			display: inline-block; 
 			margin-left: 70px;
 			padding-top: 25px;
@@ -47,7 +47,7 @@
 			position: relative;
 		}
 		
-		nav a::before{
+nav a::before{
 			content: '';
 			display: block;
 			height: 5px;
@@ -60,29 +60,56 @@
 			font-style: bold;
 
 		}
-		nav a:hover::before{
+nav a:hover::before{
 			width: 100%;
 
 		}
-		.container{
+.container{
 			position: absolute;
 			top: 100px;
 			left: 200px;
 			font-family: 'poppins',sans-serif;
 		}
-		.buttons{
+.buttons{
 			position: relative;
-		}
-		.pannel{
-			width: 1000px;
-			position: absolute;
-			top: 180px;
-			left:200px;
-			font-size: 30px;
-		}
-		#addstud_btn{
-			float: right;
-		}
-		a{
-			text-decoration: none;
-		}
+}
+.pannel{
+	width: 1000px;
+	position: absolute;
+	top: 180px;
+	left:200px;
+	font-size: 30px;
+}
+#addstud_btn{
+	float: right;
+}
+a{
+	text-decoration: none;
+}
+.table1{
+	border-collapse: collapse;
+	margin: 25px 0;
+	min-width: 1200px;
+	text-align: left;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+thead tr{
+	background-color: #009879;
+	color: white;
+	height: 60px;
+	font-weight: bold;
+}
+td{
+	padding: 12px 15px;
+}
+tbody tr{
+	border-bottom: 1px solid #dddddd;
+}
+tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;}
+
+tbody tr:last-of-type {
+	border-bottom: 2px solid #00beff;
+}
