@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="cssfile.css">
+    <link rel="stylesheet" type="text/css" href="CSS/cssfile.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
-    <img src="bg.jpg" class="webpage">
+    <img src="Images/bg.jpg" class="webpage">
     <div class="container">
         <div class="login">
-            <form action="Home.php">
-                <img src="uavatar.png" class="avatar">
+            <form action="Home.php" method="POST">
+                <img src="Images/uavatar.png" class="avatar">
                 <h2 class="title">Login</h2>
                 <div class="input username">
                     <div class="i"> 
@@ -35,6 +35,6 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="jsfile.js"></script>
+    <script type="text/javascript" src="JS/jsfile.js"></script>
 </body>
 </html>
