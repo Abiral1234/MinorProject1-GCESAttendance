@@ -9,7 +9,7 @@
 <div class="container">
 	<img src="Images/index.jpg">
 	<h1>Enter as</h1>
-	<button class="btn" id="btn1" ><a href="Home.php">Student</a></button>
+	<button class="btn" id="btn1" ><a href="BatchSel.php">Student</a></button>
 	<button class="btn" id="btn2"><a href="login.php">Teacher</a></button>
 	<button class="btn" id="btn3"><a href="login.php">  Admin  </a></button>
 </div>

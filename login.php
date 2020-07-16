@@ -10,7 +10,7 @@
     <img src="Images/bg.jpg" class="webpage">
     <div class="container">
         <div class="login">
-            <form action="Home.php" method="POST">
+            <form action="BatchSel.php" method="POST">
                 <img src="Images/uavatar.png" class="avatar">
                 <h2 class="title">Login</h2>
                 <div class="input username">
