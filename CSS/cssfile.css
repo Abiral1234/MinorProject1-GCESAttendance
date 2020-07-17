@@ -130,8 +130,8 @@ body{
     }
 }
 @media screen and (max-width: 1000px){
-    form{
-        width: 290px;
+    .container{
+        margin-left: 35em;
     }
     .login h2{
         font-size: 2.4rem;
@@ -140,10 +140,24 @@ body{
 }
 @media screen and (max-width: 900px){
     .container{
+        margin-left: 25em;
+    }
+}
+@media screen and (max-width: 700px){
+    .container{
         grid-template-columns: 1fr;
+        margin-left: 15em;
     }
     .webpage{
         display: none;
+    }
+    .login{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 600px){
+    .container{
+        margin-left: 10em;
     }
     .login{
         justify-content: center;
