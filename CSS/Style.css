@@ -61,8 +61,8 @@ button{
 		opacity: 0.5;
 		left: -55px;
 		top: -100px;
-		width: 1000px;
-		height: 1000px;
+		width: 800px;
+		height: 800px;
 	}
 	h1{
 	left:250px;
@@ -94,7 +94,7 @@ button{
 		background-repeat: no-repeat;
 		opacity: 0.5;
 		left: 300px;
-		top: -100px;
+		top: -140px;
 		width: 1000px;
 		height: 1000px;
 	}

@@ -1,3 +1,6 @@
+<?php include_once 'connection.php';
+ ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="AddStudent.php" method="POST">
+            <form action="add.php" method="POST">
                 <div class="input name">
                     <span>Name of Student:</span><br>
                     <input type="text" id="name" name="name" class="_dinput" required><br>
@@ -19,9 +22,9 @@
                         <option value="BECE" name="program">Bachelor of Computer Engineering</option>
                     </select><br>
                 </div>
-                <div class="input roll">
-                    <span>Roll No:</span><br>
-                    <input type="text" id="roll" name="roll" placeholder="eg:-BESE01" class="d_input" required><br>
+                <div class="input year">
+                    <span>Year:</span><br>
+                    <input type="text" id="year" name="year" placeholder="eg:-2018" class="d_input" required><br>
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
