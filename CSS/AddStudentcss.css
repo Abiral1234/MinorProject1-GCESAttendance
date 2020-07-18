@@ -7,7 +7,7 @@ span{
     font-family: 'Poppins', sans-serif;
 }
 .container{
-    margin-left: 30em;
+    margin-left: 27em;
     margin-top: 8rem;
 }
 input{
@@ -28,7 +28,7 @@ input{
 }
 .btn{
     display: block;
-    width: 30%;
+    width: 50%;
     height: 40px;
     border-radius: 25px;
     outline: none;
@@ -41,4 +41,14 @@ input{
     text-transform: uppercase;
     margin: 1rem 0;
     cursor: pointer;
+}
+@media screen and (max-width:1000px){
+    .container{
+        margin-left: 20em;
+    }
+}
+@media screen and (max-width: 700px){
+    .container{
+        margin-left: 7em;
+    }
 }
