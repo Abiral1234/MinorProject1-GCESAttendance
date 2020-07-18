@@ -28,7 +28,7 @@ input{
 }
 .btn{
     display: block;
-    width: 50%;
+    width: 30%;
     height: 40px;
     border-radius: 25px;
     outline: none;
@@ -45,6 +45,10 @@ input{
 @media screen and (max-width:1000px){
     .container{
         margin-left: 20em;
+    }
+    .btn{
+        width: 43%;
+        border-radius: 17px;
     }
 }
 @media screen and (max-width: 700px){
