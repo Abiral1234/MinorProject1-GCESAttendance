@@ -5,7 +5,7 @@ include_once 'connection.php';
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/Homestyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Homestyle1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -37,8 +37,8 @@ include_once 'connection.php';
 			</select>
 		</div>
 <div class="pannel">
-	<a href="#" id="viewbtn">View</a>
-	<a href="AddStudent.php" id="addstud_btn">Add student</a><br><br><br>
+	<button class="btn"><a href="#" id="viewbtn">View</a></button>
+	<button class="btn" id="addbtn"><a href="AddStudent.php" id="addstud_txt">Add Student</a></button> 
 	<table class="table1">
 		<thead>
 			<tr>
@@ -60,8 +60,8 @@ include_once 'connection.php';
 				<td><?php echo $row['subject']; ?></td>
 				<td><?php echo $row['year']; ?></td>
 				<td>
-					<input type="radio" name="attendance[<?php echo $row['Roll no']; ?> ]" value="present">Present
-					<input type="radio" name="attendance[<?php echo $row['Roll no']; ?>]" value="absent">Absent
+					<input class="radio" type="radio" name="attendance[<?php echo $row['Roll no'];?>]" value="present"><label class="attendance_label" id="present">Present</label> 
+					<input  class="radio" type="radio" name="attendance[<?php echo $row['Roll no'];?>]" value="absent"><label class="attendance_label" id="absent">Absent </label>
 				</td>
 			</tr>
 		<?php } ?>
