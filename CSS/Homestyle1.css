@@ -7,7 +7,7 @@ body{
 .navigation{
 	width: 80%;
 	margin: 0 auto;
-	
+
 }
 header{
 			background:#00BEFF;
@@ -77,7 +77,7 @@ nav a:hover::before{
 	width: 1000px;
 	position: absolute;
 	top: 180px;
-	left:200px;
+	left:65px;
 	font-size: 30px;
 }
 #addbtn{
