@@ -7,8 +7,8 @@ span{
     font-family: 'Poppins', sans-serif;
 }
 .container{
-    margin-left: 27em;
-    margin-top: 8rem;
+    margin-left: 29em;
+    margin-top: 6rem;
 }
 input{
     margin-top: 3px;
@@ -41,6 +41,9 @@ input{
     text-transform: uppercase;
     margin: 1rem 0;
     cursor: pointer;
+}
+.btn:active{
+    background-color: rgba(194, 194, 184, 0.933);
 }
 @media screen and (max-width:1000px){
     .container{

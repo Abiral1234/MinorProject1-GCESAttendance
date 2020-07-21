@@ -10,10 +10,11 @@
     </head>
     <body>
         <div class="container">
-            <form action="add.php" method="POST">
+            <p id="invalid"></p>
+            <form action="add.php" name="form1" method="POST">
                 <div class="input name">
                     <span>Name of Student:</span><br>
-                    <input type="text" id="name" name="name" class="_dinput" required><br>
+                    <input type="text" id="name" name="name" class="_dinput"><br>
                 </div>
                 <div class="input program">
                     <span>Program:</span><br>
@@ -24,10 +25,11 @@
                 </div>
                 <div class="input year">
                     <span>Year:</span><br>
-                    <input type="text" id="year" name="year" placeholder="eg:-2018" class="d_input" required><br>
+                    <input type="text" id="year" name="year" placeholder="eg:-2018"><br>
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
         </div>
+        <script src="JS/addvalidate.js" type="text/javascript"></script>
     </body>
 </html>
