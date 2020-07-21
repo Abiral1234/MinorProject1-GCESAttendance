@@ -1,13 +1,13 @@
 body{
 	margin: 0;
 	background: white;
-	font-family: sans-serif;
+	font-family:sans-serif;
 	font-weight: 350;
 }
 .navigation{
 	width: 80%;
 	margin: 0 auto;
-	
+
 }
 header{
 			background:#00BEFF;
@@ -77,14 +77,24 @@ nav a:hover::before{
 	width: 1000px;
 	position: absolute;
 	top: 180px;
-	left:200px;
+	left:65px;
 	font-size: 30px;
 }
-#addstud_btn{
-	float: right;
+#addbtn{
+	position: absolute;
+	top: 0px;
+	left: 1040px;
+	padding: 10px 80px;
+	text-align: center;
+}
+#addstud_txt{
+	position: absolute;
+	top: 6px;
+	left: 14px;
 }
 a{
 	text-decoration: none;
+	color: white;
 }
 .table1{
 	border-collapse: collapse;
@@ -132,7 +142,7 @@ tbody tr:last-of-type {
     border-radius: 5px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #32CD32, #32CD32);
+    background-image: linear-gradient(to right, #00beff, #00beff);
     background-size: 200%;
     color: white;
     font-size: 1.2rem;
@@ -145,6 +155,4 @@ tbody tr:last-of-type {
 	text-decoration: none;
 	color: #fff;
 	font-family: 'Poppins', sans-serif;
-	
-
 	}
