@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 18, 2020 at 09:38 AM
+-- Generation Time: Jul 22, 2020 at 09:07 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gces attendance1`
+-- Database: `gces attendance`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `add student` (
   `year` varchar(50) NOT NULL,
   `subject` varchar(50) NOT NULL,
   PRIMARY KEY (`Roll no`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `add student`
@@ -43,29 +43,31 @@ CREATE TABLE IF NOT EXISTS `add student` (
 
 INSERT INTO `add student` (`Roll no`, `name`, `year`, `subject`) VALUES
 (40, 'milan', '2018', 'BESE'),
-(41, 'Arun', '2018', 'BECE');
+(41, 'Arun', '2018', 'BECE'),
+(48, 'abiral', '1998', 'BECE'),
+(51, 'abcdefg', '1999', 'BECE');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attendance`
+-- Table structure for table `attendance_records`
 --
 
-DROP TABLE IF EXISTS `attendance`;
-CREATE TABLE IF NOT EXISTS `attendance` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `value` varchar(50) NOT NULL,
-  `rollno` int(11) NOT NULL,
-  `date` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `attendance_records`;
+CREATE TABLE IF NOT EXISTS `attendance_records` (
+  `id` int(11) NOT NULL,
+  `student_name` varchar(255) NOT NULL,
+  `roll_number` varchar(255) NOT NULL,
+  `attendance_status` varchar(255) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `attendance`
+-- Dumping data for table `attendance_records`
 --
 
-INSERT INTO `attendance` (`id`, `value`, `rollno`, `date`) VALUES
-(1, 'present', 5, 'july 15');
+INSERT INTO `attendance_records` (`id`, `student_name`, `roll_number`, `attendance_status`, `date`) VALUES
+(0, 'milan', '1', 'present', '2020-07-22');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
