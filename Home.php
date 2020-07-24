@@ -90,7 +90,7 @@ include_once 'connection.php';
 							<td ><?php echo $row['year']; ?></td>
 							<td>
 							<input  type="radio" name="attendance_status[<?php echo $counter;?>]" value="present">Present
-							<input   type="radio" name="attendance_status[<?php echo $counter;?>]" value="absent">Absent 
+							<input  type="radio" name="attendance_status[<?php echo $counter;?>]" value="absent">Absent 
 							</td>
 						</tr>
 					<?php 
