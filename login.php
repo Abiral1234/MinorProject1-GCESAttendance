@@ -10,7 +10,7 @@
     <img src="Images/bg.jpg" class="webpage">
     <div class="container">
         <div class="login">
-            <form action="Home.php" method="POST">
+            <form name="myform"  onsubmit="return validateform()" action="Home.php" method="POST">
                 <img src="Images/uavatar.png" class="avatar">
                 <h2 class="title">Login</h2>
                 <div class="input username">
@@ -19,7 +19,7 @@
            		   </div>
                     <div class="in">
                         <h5>Username</h5>
-                        <input type="text" class="u_input">
+                        <input type="text" name="name" class="u_input">
                     </div>
                 </div>
                 <div class="input password">
@@ -28,13 +28,26 @@
            		   </div>
                     <div class="in">
                         <h5>Password</h5>
-                        <input type="password" class="u_input">
+                        <input type="password" name="password" class="u_input">
                     </div>
                 </div>
                 <input type="submit" class="btn" value="Login">
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="JS/jsfile.js"></script>
+    <script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+}  
+</script>
 </body>
 </html>
