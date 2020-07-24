@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Calender</title>
-	<link rel="stylesheet" type="text/css" href="CSSc/al.css">
+	<link rel="stylesheet" type="text/css" href="CSS/cal.css">
 </head>
 <body>
 

@@ -55,7 +55,7 @@ include_once 'connection.php';
 
 		</div>
 		<div class="pannel">
-			<button class="btn"><a href="#" id="viewbtn">View</a></button>
+			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
 			<div class="time">Date:<?php echo date("Y-m-d"); ?></div>
 			<button class="btn" id="addbtn"><a href="AddStudent.php" id="addstud_txt">Add Student</a></button> 
 			<?php if($flag==1){ ?>
