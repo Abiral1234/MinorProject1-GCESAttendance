@@ -3,23 +3,24 @@ include_once 'connection.php';
 	$flag=0;
 	if (isset($_POST['submit'])) {
 		foreach($_POST['attendance_status'] as $id=>$attendance_status){
+		
+		if($_POST['attendance_status'][$id]=="absent"){
 		$student_name=$_POST['student_name'][$id];
 		$roll_no=$_POST['roll_no'][$id];
 		$date=date("Y-m-d H:i:s");
 		$sql="INSERT INTO `attendance_records`(id ,student_name ,roll_number ,attendance_status , date) VALUES('$id','$student_name','$roll_no','$attendance_status', '$date')";
 		$result=mysqli_query($conn,$sql);
+		
 		if($result){
 			$flag=1;
 		}
-		}	
-
-	}
+		}}}	
  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/Homestyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Homestyle1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -57,7 +58,10 @@ include_once 'connection.php';
 		<div class="pannel">
 			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
 			<div class="time">Date:<?php echo date("Y-m-d"); ?></div>
-			<button class="btn" id="addbtn"><a href="AddStudent.php" id="addstud_txt">Add Student</a></button> 
+			<button class="btn" id="addbtn0"><a href="AddBatch.php" id="add_txt">Add Batch</a></button>
+			<button class="btn" id="addbtn1"><a href="AddTeacher.php" id="add_txt">Add Teacher</a></button> 
+			<button class="btn" id="addbtn2"><a href="AddStudent.php" id="add_txt">Add Student</a></button> 
+
 			<?php if($flag==1){ ?>
 			<div class="attendance_success" style="color: green">Attendance is taken succesfully</div>
 			<?php } ?>
