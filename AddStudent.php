@@ -9,6 +9,21 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <div class="navigation">    
+            <nav>
+                <ul> 
+                <li><a href="Home.php">Home</a> </li>
+                <li><a href="view.php">View</a> </li>
+                <li><a href="Statistics.php">Statistics</a> </li>        <!-- nav bar -->
+                <li><a href="index.php">logout</a> </li>
+                </ul>
+            </nav>
+        </div>
+       </header>
+
+
+
         <div class="container">
             <p id="invalid"></p>
             <form action="add.php" name="form1" method="POST">
@@ -30,6 +45,8 @@
                 <input type="submit" value="Enter the data" class="btn">
             </form>
         </div>
-        <script src="JS/addvalidate.js" type="text/javascript"></script>
+        <script src="JS/addvalidate.js"type="text/javascript"></script> 
+       
+   
     </body>
 </html>
