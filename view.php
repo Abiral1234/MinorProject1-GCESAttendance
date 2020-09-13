@@ -1,10 +1,27 @@
+<?php
+include_once 'connection.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Calender</title>
-	<link rel="stylesheet" type="text/css" href="CSS/cal.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Viewcss.css">
 </head>
 <body>
+
+	<header>
+		<div class="navigation">	
+			<nav>
+				<ul> 
+				<li><a href="Home.php">Home</a> </li>
+				<li><a href="view.php">View</a> </li>
+				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
+				<li><a href="index.php">logout</a> </li>
+				</ul>
+			</nav>
+		</div>
+
+	</header>
 
 		<div class="calendar">
 
@@ -21,10 +38,10 @@
 						<li><a href="#" title="Jan" data-value="1">Jan</a></li>
 						<li><a href="#" title="Feb" data-value="2">Feb</a></li>
 						<li><a href="#" title="Mar" data-value="3">Mar</a></li>
-						<li><a href="#" title="Apr" data-value="4">Apr</a></li>
+						<li><a href="#" title="Apr" data-value="4">Apr</a></li>               
 						<li><a href="#" title="May" data-value="5">May</a></li>
 						<li><a href="#" title="Jun" data-value="6">Jun</a></li>
-						<li><a href="#" title="Jul" data-value="7" class="selected">Jul</a></li>
+						<li><a href="#" title="Jul" data-value="7" class="selected">Jul</a></li>  			 <!--CALENDER-->
 						<li><a href="#" title="Aug" data-value="8">Aug</a></li>
 						<li><a href="#" title="Sep" data-value="9" >Sep</a></li>
 						<li><a href="#" title="Oct" data-value="10">Oct</a></li>
@@ -68,5 +85,37 @@
 			<div class="clearfix"></div>
 
 		</div>
+
+		
+		<table class="table1">	
+			<thead>															<!--Attendance Record -->
+				<tr>
+					<th>Roll No</th>
+					<th>Name</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+		<?php 
+			$sql="SELECT * FROM `attendance_records`;";
+			$result=mysqli_query($conn ,$sql);
+			$serial_number=0;
+			$counter=0;
+			while($row= mysqli_fetch_assoc($result)){
+				$serial_number++;
+		?>
+
+
+			<tr>
+				<td><?php echo $row['roll_number']; ?></td>
+				<td><?php echo $row['student_name']; ?></td>
+				<td><?php echo $row['attendance_status']; ?></td>
+			</tr>
+
+
+		<?php $counter++;
+		}?>
+		</table>
+
+
 		</body>
 </html>
