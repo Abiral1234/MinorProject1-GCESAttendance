@@ -44,13 +44,13 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/Homestyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
 	<header>
+		
 		<div class="navigation">	
 			<nav>
 				<ul> 
@@ -95,7 +95,6 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<?php if($flag==-1){ ?>
 			<div class="attendance_success" style="color: red">All Students attendance were not taken</div><!--shows succes or fail -->
 			<?php } ?>
-
 			<form method="POST" action="Home.php" value="attendance">
 				<table class="table1">
 					<thead>

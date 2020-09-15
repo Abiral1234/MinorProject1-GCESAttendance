@@ -5,8 +5,9 @@
 <html>
     <head>
         <title>Add Student</title>
-        <link rel="stylesheet" type="text/css" href="CSS/AddStudentcss.css">
+        
         <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/AddStudentCss.css" >
     </head>
     <body>
         <header>
