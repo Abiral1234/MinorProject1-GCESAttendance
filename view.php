@@ -5,7 +5,7 @@ include_once 'connection.php';
 <html>
 <head>
 	<title>Calender</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Viewcss.css">
+	<link rel="stylesheet" type="text/css" href="CSS/ViewCss.css">
 </head>
 <body>
 
