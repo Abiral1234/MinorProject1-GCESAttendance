@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Addbatchcss.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -22,5 +22,20 @@
 		</div>
 
 	</header>
+	<div class="container">
+            <p id="invalid"></p>
+            <form action="add.php" name="form1" method="POST">
+                <div class="input program">
+                    <span>Program:</span><br>
+                    <input type="text" id="program" name="program" class="_dinput"><br>
+                </div>
+                <div class="input year">
+                    <span>Year:</span>
+                    <input type="text" id="year" name="year" class="_dinput"><br>
+                </div>
+                <input type="submit" value="Enter the data" class="btn">
+            </form>
+		</div>
+		<script src="JS/AddBatch.js" type="text/javascript"></script>
 </body>
 </html>
