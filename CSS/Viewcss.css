@@ -6,6 +6,11 @@ body{
 	font-weight: 350;
 	background-image: url("../Images/pattern.jpg");
 }
+.labeldate{
+	position: relative;
+	margin-top: 55px;
+	margin-left: 900px;
+}
 
 input{
 	font-family: Helvetica, Arial, sans-serif;
@@ -283,7 +288,7 @@ nav a:hover::before{
 	box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 thead tr{
-	background-color: #FF0000;
+	background-color: #009879;
 	color: white;
 	height: 30px;
 	font-weight: bold;
