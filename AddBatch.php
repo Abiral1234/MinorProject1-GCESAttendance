@@ -25,12 +25,12 @@
 	<div class="container">
             <p id="invalid"></p>
             <form action="add.php" name="form1" method="POST">
-                <div class="input program">
-					<span>Program:</span><br>
-					<input type="radio" name="program" id="bese" value="bese" checked>
-					<label for="BESE">BESE</label><br>
-					<input type="radio" name="program" id="bece" value="bece">
-					<label for="BECE">BECE</label><br>
+			<div class="input program">
+                    <span>Program:</span><br>
+                    <select name="program" id="program" class="d_input">
+                        <option value="BESE" name="program">Bachelor of Software Engineering</option>
+                        <option value="BECE" name="program">Bachelor of Computer Engineering</option>
+                    </select><br>
                 </div>
                 <div class="input year">
                     <span>Year:</span>
