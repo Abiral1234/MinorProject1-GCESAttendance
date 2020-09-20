@@ -26,8 +26,11 @@
             <p id="invalid"></p>
             <form action="add.php" name="form1" method="POST">
                 <div class="input program">
-                    <span>Program:</span><br>
-                    <input type="text" id="program" name="program" class="_dinput"><br>
+					<span>Program:</span><br>
+					<input type="radio" name="program" id="bese" value="bese" checked>
+					<label for="BESE">BESE</label><br>
+					<input type="radio" name="program" id="bece" value="bece">
+					<label for="BECE">BECE</label><br>
                 </div>
                 <div class="input year">
                     <span>Year:</span>

@@ -1,7 +1,6 @@
 document.form1.addEventListener( "submit", function(event){
-    var prog = document.getElementById("program").value;
     var year = document.getElementById("year").value;
-    if(year.length < 4 || prog == ""){
+    if(year.length < 4 ){
         text = "Invalid Input";
         event.preventDefault();
     }

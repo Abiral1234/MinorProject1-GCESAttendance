@@ -77,7 +77,7 @@ span, label{
 input{
     margin-top: 3px;
 }
-.input > input, select{
+.input > input{
     position: relative;
     outline: none;
     border: none;
@@ -87,18 +87,10 @@ input{
     border-bottom: 2px solid #756f6f;
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
+}
+.input > ._dinput{
     display: grid;
     grid-template-columns: 7% 93%;
-}
-.column{
-    float: left;
-    width: 25%;
-    padding: 10px;
-}
-.classes:after {
-    content: "";
-    display: table;
-    clear: both;
 }
 .btn{
     display: block;
