@@ -3,12 +3,14 @@
 <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="CSS/cssfile.css">
+    <link rel="shortcut icon" href="">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
     <img src="Images/bg.jpg" class="webpage">
     <div class="container">
+        <p id="invalid"></p>
         <div class="login">
             <form name="myform"  onsubmit="return validateform()" action="Home.php" method="POST">
                 <img src="Images/uavatar.png" class="avatar">
@@ -28,26 +30,13 @@
            		   </div>
                     <div class="in">
                         <h5>Password</h5>
-                        <input type="password" name="password" class="u_input">
+                        <input type="password" name="password" id="pass" class="u_input">
                     </div>
                 </div>
                 <input type="submit" class="btn" value="Login">
             </form>
         </div>
     </div>
-    <script>  
-function validateform(){  
-var name=document.myform.name.value;  
-var password=document.myform.password.value;  
-  
-if (name==null || name==""){  
-  alert("Name can't be blank");  
-  return false;  
-}else if(password.length<6){  
-  alert("Password must be at least 6 characters long.");  
-  return false;  
-  }  
-}  
-</script>
+    <script src="JS/jsfile.js" type="text/javascript"></script>
 </body>
 </html>
