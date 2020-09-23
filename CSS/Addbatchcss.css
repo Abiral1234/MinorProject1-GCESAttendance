@@ -90,16 +90,6 @@ input{
     display: grid;
     grid-template-columns: 7% 93%;
 }
-.column{
-    float: left;
-    width: 25%;
-    padding: 10px;
-}
-.classes:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 .btn{
     display: block;
     width: 30%;

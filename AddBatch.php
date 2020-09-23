@@ -25,13 +25,16 @@
 	<div class="container">
             <p id="invalid"></p>
             <form action="add.php" name="form1" method="POST">
-                <div class="input program">
+			<div class="input program">
                     <span>Program:</span><br>
-                    <input type="text" id="program" name="program" class="_dinput"><br>
+                    <select name="program" id="program" class="d_input">
+                        <option value="BESE" name="program">Bachelor of Software Engineering</option>
+                        <option value="BECE" name="program">Bachelor of Computer Engineering</option>
+                    </select><br>
                 </div>
                 <div class="input year">
                     <span>Year:</span>
-                    <input type="text" id="year" name="year" class="_dinput"><br>
+                    <input type="number" min="2020" max="2025" id="year" name="year" class="_dinput"><br>
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
