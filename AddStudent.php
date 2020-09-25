@@ -27,21 +27,25 @@
 
         <div class="container">
             <p id="invalid"></p>
-            <form action="add.php" name="form1" method="POST">
+            <form action="add_student_php.php" name="form1" method="POST">
                 <div class="input name">
                     <span>Name of Student:</span><br>
                     <input type="text" id="name" name="name" class="_dinput"><br>
                 </div>
+
                 <div class="input program">
-                    <span>Program:</span><br>
+                    <span>Batch:</span><br>
                     <select name="program" id="program" class="d_input">
-                        <option value="BESE" name="program">Bachelor of Software Engineering</option>
-                        <option value="BECE" name="program">Bachelor of Computer Engineering</option>
+                        <option disabled selected>Choose a batch</option>
+                        <?php 
+                            $sql_select_batch="SELECT * FROM `batch_list`;";
+                            $result_batch=mysqli_query($conn ,$sql_select_batch);
+                            while($row= mysqli_fetch_assoc($result_batch)){ 
+                            $batch_no=0;         
+                        ?>
+                        <option value="<?php echo $row['batchname']?>" name="batch"><?php echo $row['batchname']?></option>
+                    <?php }?>
                     </select><br>
-                </div>
-                <div class="input year">
-                    <span>Year:</span><br>
-                    <input type="text" id="year" name="year" placeholder="eg:-2018"><br>
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>

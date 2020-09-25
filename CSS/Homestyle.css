@@ -173,6 +173,73 @@ tbody tr:last-of-type {
     margin: 1rem 0;
     cursor: pointer;
 }
+.btn1{
+	display: block;
+	position: absolute;
+	left: 700px;
+	top: 110px;
+    width: 5%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    background-size: 200%;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+input[type="radio"]{
+	display: none;
+}
+.present_class{
+	font-family: poppins;
+	font-size: 30px;
+	position: relative;
+	color: #009879;
+	border:2px solid #009879;
+	border-radius: 5px;
+	padding: 4px 20px;
+	align-items: center;
+	
+	box-shadow: 5px 5px #aaaaaa;
+	opacity: 80%;
+
+}
+input[type="radio"]:checked + .present_class{
+	background-color: #009879;
+	color: white;
+	box-shadow: 2px 2px  #aaaaaa;
+	opacity: 100%;
+}
+.absent_class{
+	font-family: poppins;
+	font-size: 30px;
+	position: relative;
+	color: #ff2626;
+	border:2px solid #ff2626;
+	border-radius: 5px;
+	padding: 4px 20px;
+	align-items: center;
+	
+	box-shadow: 5px 5px #aaaaaa;
+	opacity: 80%;
+}
+input[type="radio"]:checked + .absent_class{
+	font-family: poppins;
+	font-size: 30px;
+	background-color: #ff2626;
+	color: white;
+	box-shadow: 2px 2px  #aaaaaa;
+	opacity: 100%;
+
+	
+}
+
 .submit{
 	text-decoration: none;
 	color: #fff;

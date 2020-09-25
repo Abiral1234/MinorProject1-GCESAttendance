@@ -24,7 +24,7 @@
 	</header>
         <div class="container">
             <p id="invalid"></p>
-            <form action="addteacher.php" name="form1" method="POST">
+            <form action="add_teacher_php.php" name="form1" method="POST">
                 <div class="input name">
                     <span>Name of Teacher:</span><br>
                     <input type="text" id="name" name="name" class="_dinput"><br>
