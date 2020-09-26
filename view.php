@@ -87,7 +87,7 @@ include_once 'connection.php';
 		</div>
 
 		<?php 
-			$sql_date="SELECT distinct date FROM `attendance_records`;";
+			$sql_date="SELECT distinct date FROM `bese2016_attendance_record`;";
 			$result_date=mysqli_query($conn ,$sql_date);
 			while($row_date= mysqli_fetch_assoc($result_date)){                 
 		?>
@@ -104,7 +104,7 @@ include_once 'connection.php';
 			</thead>
 			<?php 
 			$date=$row_date['date'];
-			$sql="SELECT * FROM `attendance_records`Where date='$date'";
+			$sql="SELECT * FROM `bese2016_attendance_record`Where date='$date'";
 			$result=mysqli_query($conn ,$sql);
 			$serial_number=0;
 			$counter=0;
