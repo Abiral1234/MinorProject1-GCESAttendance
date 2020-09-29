@@ -12,8 +12,11 @@ html {
 
 .container {
   width: 40%;
-  height: 100vh;
-  background-color: #ffffff;
+  height: 52%;
+  background-image: url("../Images/pattern.jpg");
+  position: absolute;
+  left: 300px; 
+  top: 150px;
   color: #eee;
   display: flex;
   justify-content: left;
@@ -103,7 +106,7 @@ html {
 }
 
 .days div:hover:not(.today) {
-  background-color: #018043de;
+  background-color: #00bd62;
   border: 0.2rem solid #777;
   cursor: pointer;
 }
