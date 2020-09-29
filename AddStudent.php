@@ -36,7 +36,7 @@
                 <div class="input program">
                     <span>Batch:</span><br>
                     <select name="program" id="program" class="d_input">
-                        <option disabled selected>Choose a batch</option>
+                        <option disabled selected value="1">Choose a batch</option>
                         <?php 
                             $sql_select_batch="SELECT * FROM `batch_list`;";
                             $result_batch=mysqli_query($conn ,$sql_select_batch);
@@ -46,6 +46,10 @@
                         <option value="<?php echo $row['batchname']?>" name="batch"><?php echo $row['batchname']?></option>
                     <?php }?>
                     </select><br>
+                </div>
+                <div class="input roll">
+                    <span>Roll No:</span>
+                    <input type="text" id="roll">
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
