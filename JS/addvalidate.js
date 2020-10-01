@@ -1,12 +1,17 @@
 document.form1.addEventListener( "submit", function(event){
     var name = document.getElementById("name").value;
-    var year = document.getElementById("year").value;
-    if(name == "" || year == "" || isNaN(year)){
-        text = "Invalid Name or Year";
+    var batch = document.getElementById("program").value;
+    var roll = document.getElementById("roll").value;
+    if(name == ""){
+        text = "Invalid Name";
         event.preventDefault();
     }
-    else if(year.length != 4){
-        text = "Year Invalid";
+    else if(batch == "1"){
+        text = "Please Select Batch"
+        event.preventDefault();
+    }
+    else if(isNaN(roll) || roll <= "0" || roll >= "49"){
+        text = "Roll Number Invalid"
         event.preventDefault();
     }
     var invalid = document.getElementById("invalid");
