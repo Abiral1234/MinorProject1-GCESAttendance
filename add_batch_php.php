@@ -2,7 +2,7 @@
 include_once 'connection.php';
 	$batch_program =$_POST['program'];
 	$batch_year =$_POST['year'];
-	$name =$batch_program . $batch_year;
+	$name =$batch_program ."_". $batch_year;
 
 	$sql_create1 = "CREATE TABLE IF NOT EXISTS $name (
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -30,7 +30,7 @@ include_once 'connection.php';
 
 	$sql_create3= "CREATE TABLE IF NOT EXISTS `Batch_List` (
   	`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  	`batchname` varchar(255) NOT NULL
+  	`batchname` varchar(255) NOT NULL UNIQUE
   	 )"; 
 
   	if($result3=mysqli_query($conn,$sql_create3)){ }
@@ -38,16 +38,20 @@ include_once 'connection.php';
 		echo "Error2";
 	} 
 
-	$sql_add_batch="INSERT INTO `batch_list`(batchname)
+
+	$dup=mysqli_query($conn,"select * from `Batch_list` WHERE batchname='$name'");
+	if(mysqli_num_rows($dup)>0){
+		header("Location: Home.php");
+	}
+
+	else{
+	$sql_add_batch="INSERT  INTO `batch_list`(batchname)
     VALUES('$name') ";
+
     if($result= mysqli_query($conn ,$sql_add_batch)){
     	 header("Location: Home.php");
     }
-    else{
-    	echo "Error3";
-    }
+	}
 
-
-
-
+   
 ?>

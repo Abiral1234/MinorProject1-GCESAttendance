@@ -34,7 +34,7 @@
                 </div>
                 <div class="input year">
                     <span>Year:</span>
-                    <input type="number" min="2016" max="2020" id="year" name="year" class="_dinput"><br>
+                    <input type="number" min="<?php echo date("Y")-4;?>" max="<?php echo date("Y")-1;?>" id="year" name="year" class="_dinput"><br>
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
