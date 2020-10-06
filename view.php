@@ -6,8 +6,9 @@ include_once 'connection.php';
 <head>
 	<title>Calender</title>
 	
-	<link rel="stylesheet" type="text/css" href="CSS/viewcss.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Viewcss.css">
 	<link rel="stylesheet" type="text/css" href="CSS/calender.css">
+	
 </head>
 <body>
 	<div class="main">
@@ -47,7 +48,7 @@ include_once 'connection.php';
         <div class="days"></div>
       </div>
     </div>
-	 <script src="JS/calender.js"></script>
+    <script type="text/javascript" src="JS/calenderjs.js"></script>
 	 <div class="contain">
 			<h1>View For Batch :</h1>
 			<p>

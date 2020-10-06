@@ -3,7 +3,21 @@ include_once 'connection.php';
 $flag=0;
 $score=0;
 
+
 if (isset($_POST['submit'])) { //checks if submit button is clicked
+	$subject=$_POST['subject_name'];
+	$attendance_sheet= $subject . "_attendance_record";//Creates attendance record table with name of the subject if not exists
+	$sql_create2= "CREATE TABLE IF NOT EXISTS $attendance_sheet (   
+  	`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  	`student_name` varchar(255) NOT NULL,
+  	`roll_number` varchar(255) NOT NULL,
+  	`attendance_status` varchar(255) NOT NULL,
+  	`date` date NOT NULL )"; 
+
+  	if($result2=mysqli_query($conn,$sql_create2)){ }
+	else{
+		echo "Error2";
+	}
 
 	if(isset($_POST['attendance_status'])){ //checks if any radio buttons are checked
 
@@ -14,7 +28,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				$student_name=$_POST['student_name'][$id];
 				$roll_no=$_POST['roll_no'][$id];
 				$date=date("Y-m-d H:i:s");
-				$attendance_table= strtolower ($_POST['table_name'] ."_attendance_record");
+				$attendance_table= strtolower ($attendance_sheet);
 				$sql="INSERT INTO $attendance_table (id ,student_name ,roll_number ,attendance_status , date) VALUES(0,'$student_name','$roll_no','$attendance_status', '$date')";
 				$result=mysqli_query($conn,$sql);
 		
@@ -141,15 +155,15 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<h1>Attendance For<h1>
 		</div>
 
+		
+
 		<!-- dynamic select menu to select batch and subject-->
 
 		<form action="Home.php" method="POST">
 			<div class="batchselector">
-
 			<!-- Select Menu for batch imported  from batch table database-->
-
 				<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
-					<option disabled selected value="error">Choose Your Batch</option> 
+					<option  selected value="No batch selected" >Choose Your Batch</option> 
 					<?php 
 						$sql_select_batch="SELECT * FROM `batch_list`;";
 						$result_batch=mysqli_query($conn ,$sql_select_batch);
@@ -166,15 +180,11 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<!-- Select Menu for subject shown according to selected batch-->
 
 				<select id="subject_select" class="subject_select" name="selected_subject_name">
-					<option disabled selected>Choose Your Subject</option> 
+					<option  selected value="No subject selected">Choose Your Subject</option> 
 					
 				</select>
-			
-
-			<input class="btn1" type="submit" name="batch_submit" value="Enter"  >
+				<input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
 		</form>
-
-
 
 		</div class="record_submit_message">
 	
@@ -191,8 +201,8 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<?php if($flag==1){ ?>
 			<div class="attendance_success" style="color: green">Attendance is taken succesfully</div>
 			<?php } ?>
-			<?php if($flag==-1){ ?>
-			<div class="attendance_success" style="color: red">All Students attendance were not taken</div><!--shows succes or fail -->
+			<?php if($flag==2){ ?>
+			<div class="attendance_success" style="color: red">Attendance wasn't taken</div><!--shows succes or fail -->
 			<?php } ?>
 			<br>
 			<div id="batch_name">
@@ -204,7 +214,11 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 
 			
-			<?php if (isset($_POST['batch_submit']) ){ ?>
+			<?php if (isset($_POST['batch_submit']) ){
+			$subject_name =$_POST['selected_subject_name'];
+			$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
+			$table_name = $_POST['batch_name1'];
+			if($table_name !="No batch selected"){ ?>
 
 			<form method="POST" action="Home.php" value="attendance">
 				<table class="table1">
@@ -216,9 +230,10 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 						</tr>
 					</thead>
 					<tbody>
+						<input type="hidden" name="table_name" value=<?php echo $table_name; ?>>
+						<input type="hidden" name="subject_name" value=<?php echo $subject_name_withoutspace; ?> >
 					<?php 
-
-						$table_name = $_POST['batch_name1'];
+						
 						$sql="SELECT * FROM $table_name";
 						$result=mysqli_query($conn ,$sql);
 						$serial_number=0;
@@ -228,7 +243,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 						?>
  																								<!--Attendance Sheet-->
 						<tr>
-							<input type="hidden" name="table_name" value=<?php echo $table_name; ?>>
+							
 							<td><?php echo $serial_number; ?></td>
 							<input type="hidden" name="roll_no[]" value=<?php echo $serial_number; ?>>
 							<td><?php echo $row['student_name'] ; ?></td>
@@ -251,7 +266,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				</table>
 				<input class="btn" type="submit" name="submit" value="SUBMIT">
 			</form>
-<?php } ?>
+<?php }} ?>
 
 </div>
 
