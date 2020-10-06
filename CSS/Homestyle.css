@@ -15,6 +15,8 @@ img{
 	margin: 0 auto;
 
 }
+
+
 header{
 			background:#00BEFF;
 			}
@@ -145,10 +147,26 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
 	border-bottom: 2px solid #00beff;
 }
-.batch{
+select, option { width: 240px; }
+.batch_select{
 	position: absolute;
 	top: 125px;
 	left:460px;
+
+	font-size: 20px;
+	padding: 8px 12px;
+	color: #333333;
+	background-color: ;
+	border:2px solid #dddddd;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
+.subject_select{
+	position: absolute;
+	top: 125px;
+	left:710px;
 	font-size: 20px;
 	padding: 8px 12px;
 	color: #333333;
@@ -176,7 +194,7 @@ tbody tr:last-of-type {
 .btn1{
 	display: block;
 	position: absolute;
-	left: 700px;
+	left: 970px;
 	top: 110px;
     width: 5%;
     height: 40px;

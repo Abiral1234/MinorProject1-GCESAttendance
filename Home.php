@@ -5,12 +5,12 @@ $score=0;
 
 if (isset($_POST['submit'])) { //checks if submit button is clicked
 
-	if($_POST['attendance_status']){ //checks if any radio buttons are checked
+	if(isset($_POST['attendance_status'])){ //checks if any radio buttons are checked
 
 		foreach($_POST['attendance_status'] as $id=>$attendance_status){ //loops through checked radio buttons
 
 
-			if($_POST['attendance_status'][$id]=="absent"){ //If anu student is absent it is recorded in the database
+			if($_POST['attendance_status'][$id]=="absent"){ //If any student is absent it is recorded in the database
 				$student_name=$_POST['student_name'][$id];
 				$roll_no=$_POST['roll_no'][$id];
 				$date=date("Y-m-d H:i:s");
@@ -46,56 +46,140 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-	
+
+	<script type="text/javascript">	
+		var pair; 	
+		function populate(s1,s2){   //funtion that run when different batch is selected to put differernt subject 
+			var s1=document.getElementById(s1);
+			var s2=document.getElementById(s2);
+			
+			var thisYear=<?php echo date("Y");?>;
+			var batchName=s1.value;
+
+			var pair=batchName.split("_");    //splitting the batch name to program and year using "_" as separator
+			var batchProgram =pair[0];      
+			var batchAdmitYear = pair[1];
+			
+
+			var batchCurrentYear= thisYear - batchAdmitYear;
+
+			s2.innerHTML = " ";
+			if(batchProgram == "BESE"){      //TO select subjects of BESE
+				if(batchCurrentYear == 1){   //BESE 1st Years
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics-I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics-II|MTH 114","Logic Circuits|ELX 212","Mathematical Foundation of Computer Science|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C++|CMP 115","Web Technology|CMP 213"];
+
+				}
+
+				else if(batchCurrentYear == 2){   //BESE 2nd Years
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics- III|","Software Engineering Fundamentals|","Microprocessor & Assembly Lang. Pro.|","Data Structure and Algorithms|","Probability & Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization & Architecture|","Database Management Systems|","Object Oriented Design & Modeling through UML|"];
+
+				}
+				else if(batchCurrentYear == 3){   //BESE 3rd Years
+					var optionArray=["Choose Your Subject|Not selected","Applied Operating System|","Simulation & Modeling|","Artificial Intelligence & Neural Network|","System Programming|","Analysis & Design of Algorithm|","Organization and Management|","Multimedia Systems|","Computer Networks|","Principles of Programming Languages|","Engineering Economics|","Object Oriented Software Development|"];
+
+				}
+				else if(batchCurrentYear == 4){   //BESE 4th Years
+					var optionArray=["Choose Your Subject|Not selected","Real Time Systems|","Distributed Systems|","Enterprise Application Development|","Image Processing and Pattern Recognition|","Software Testing,Verification,Validation and Quality Assurance|","Elective I|","Network Programming|","Software Project Management|","Elective II|"];
+
+				}
+
+			}
+			if (batchProgram =="BECE") {
+				if (batchCurrentYear == 1 ) {
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics I|","Chemistry|","Communication Technique|","Programming in C|","Basic Electrical Engineering|","Mechanical Workshop|","Engineering Mathematics II|","Physics|","Engineering Drawing|","Object Oriented Programming in C++|","Thermal Science|","Applied Mechanics|"]
+				}
+
+				else if (batchCurrentYear == 2 ) {
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics III|","Data Structure and Algorithm|","Electrical Engineering Materials|","Network Theory|","Electronic Devices|","Logic Circuits|","Engineering Mathematics IV|","Instrumentation|","Electronic Circuits|","Theory of Computation|","Microprocessors|"]
+				}
+				else if (batchCurrentYear == 3 ) {
+					var optionArray=["Choose Your Subject|Not selected","Numerical Methods|","Microprocessor System and Interfacing|","Operating System|","Computer Graphics|","Integrated Digital Electronics|","Probability and Statistics|","Simulation and Modeling|","Data Communication|","Database Management System|","Object Oriented Software Engineering|"]
+				}
+				else if (batchCurrentYear == 4 ) {
+					var optionArray=["Choose Your Subject|Not selected","Engineering Economics|","Computer Architecture|","Digital Signal Processing|","Computer Network|","Elective I|","Organization and Management|","Artificial Intelligence|","Image Processing & Pattern Recognition|","Elective II|"]
+				}
+			}
+
+			for(var option in optionArray){
+
+				pair= optionArray[option].split("|");
+				var newOption=document.createElement("option");
+				if(pair[0]=="Choose Your Subject"){
+					newOption.value = pair[1];
+				}
+				else{
+				newOption.value = pair[0];
+				}
+				newOption.name =pair[0];
+				newOption.innerHTML = pair[0];
+				s2.options.add(newOption);
+
+				}
+				}
+	</script> 
+
 </head>
 <body>
 	<header>
+
+		<!-- nav bar -->
+
 		<div class="navigation">	
 			<nav>
 				<ul> 
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>        <!-- nav bar -->
+				<li><a href="Statistics.php">Statistics</a> </li>        
 				<li><a href="index.php">logout</a> </li>
 				</ul>
 			</nav>
 		</div>
 
+		<!-- label -->
+
 		<div class="container" >
 			<h1>Attendance For<h1>
 		</div>
 
+		<!-- dynamic select menu to select batch and subject-->
+
 		<form action="Home.php" method="POST">
 			<div class="batchselector">
-				<select id="batch_select" class="batch" name="batch_name1" onchange="populate('batch_select','batch_name')">
-						<option disabled selected value="error">Choose Your Batch</option> 
-					
+
+			<!-- Select Menu for batch imported  from batch table database-->
+
+				<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
+					<option disabled selected value="error">Choose Your Batch</option> 
 					<?php 
 						$sql_select_batch="SELECT * FROM `batch_list`;";
 						$result_batch=mysqli_query($conn ,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){         
 		   			?>
-					<option required value="<?php echo $row['batchname']?>" name="option_value" >       <!-- Batch Select Option Menu-->
+					<option required value="<?php echo $row['batchname']?>" name="option_value" >
+
 						<?php echo $row['batchname'] ;?>
 					</option>
-					<?php }?>
-			</select>
+
+					<?php }?>	
+				</select>
+
+			<!-- Select Menu for subject shown according to selected batch-->
+
+				<select id="subject_select" class="subject_select" name="selected_subject_name">
+					<option disabled selected>Choose Your Subject</option> 
+					
+				</select>
+			
+
 			<input class="btn1" type="submit" name="batch_submit" value="Enter"  >
 		</form>
 
 
+
 		</div class="record_submit_message">
-	<!--	<script type="text/javascript">
-				var s3;
-				function populate(s1,s2){
-				var s1=document.getElementById(s1);
-				var s2=document.getElementById(s2);
-				s3=s1.value;
-				s2.innerHTML=s3;
-				}
-			</script> -->
+	
 		</div>
-		<br><br>
+		
 		<div class="pannel">
 			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
 			<div class="time">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
@@ -110,16 +194,16 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<?php if($flag==-1){ ?>
 			<div class="attendance_success" style="color: red">All Students attendance were not taken</div><!--shows succes or fail -->
 			<?php } ?>
+			<br>
 			<div id="batch_name">
-				
-			
-			 
-
-			
-			<div id="batch_name">
-				<?php if (isset($_POST['batch_submit'])) { echo $_POST['batch_name1']; } ?>
+				<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
+			</div>
+			<div id="subject_name">
+				<?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
 			</div>
 
+
+			
 			<?php if (isset($_POST['batch_submit']) ){ ?>
 
 			<form method="POST" action="Home.php" value="attendance">
@@ -170,6 +254,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <?php } ?>
 
 </div>
+
 </header>
 </body>
 </html>
