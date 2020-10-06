@@ -5,9 +5,13 @@ include_once 'connection.php';
 <html>
 <head>
 	<title>Calender</title>
+	
 	<link rel="stylesheet" type="text/css" href="CSS/Viewcss.css">
+	<link rel="stylesheet" type="text/css" href="CSS/calender.css">
+	
 </head>
 <body>
+	<div class="main">
 
 	<header>
 		<div class="navigation">	
@@ -22,74 +26,60 @@ include_once 'connection.php';
 		</div>
 
 	</header>
-
-		<div class="calendar">
-
-			<div class="col leftCol">
-				<div class="content">
-					<h1 class="date">Friday<span>July 24th</span></h1>
-				</div>
-			</div>
-
-			<div class="col rightCol">
-				<div class="content">
-					<h2 class="year">2020</h2>
-					<ul class="months">
-						<li><a href="#" title="Jan" data-value="1">Jan</a></li>
-						<li><a href="#" title="Feb" data-value="2">Feb</a></li>
-						<li><a href="#" title="Mar" data-value="3">Mar</a></li>
-						<li><a href="#" title="Apr" data-value="4">Apr</a></li>               
-						<li><a href="#" title="May" data-value="5">May</a></li>
-						<li><a href="#" title="Jun" data-value="6">Jun</a></li>
-						<li><a href="#" title="Jul" data-value="7" class="selected">Jul</a></li>  			 <!--CALENDER-->
-						<li><a href="#" title="Aug" data-value="8">Aug</a></li>
-						<li><a href="#" title="Sep" data-value="9" >Sep</a></li>
-						<li><a href="#" title="Oct" data-value="10">Oct</a></li>
-						<li><a href="#" title="Nov" data-value="11">Nov</a></li>
-						<li><a href="#" title="Dec" data-value="12">Dec</a></li>
-					</ul>
-					<div class="clearfix"></div>
-					<ul class="weekday">
-						<li><a href="#" title="Mon" data-value="1">Mon</a></li>
-						<li><a href="#" title="Tue" data-value="2">Tue</a></li>
-						<li><a href="#" title="Wed" data-value="3">Wed</a></li>
-						<li><a href="#" title="Thu" data-value="4">Thu</a></li>
-						<li><a href="#" title="Fri" data-value="5">Fri</a></li>
-						<li><a href="#" title="Say" data-value="6">Sat</a></li>
-						<li><a href="#" title="Sun" data-value="7">Sun</a></li>
-					</ul>
-					<div class="clearfix"></div>
-					<ul class="days">
-						<script>
-							for( var _i = 1; _i <= 31; _i += 1 ){
-								var _addClass = '';
-								if( _i === 24 ){ _addClass = ' class="selected"'; }
-								
-								switch( _i ){
-									case 6:
-									case 13:
-									case 20:
-									case 27:
-										_addClass = ' class="event"';
-									break;
-								}
-
-								document.write( '<li><a href="#" title="'+_i+'" data-value="'+_i+'"'+_addClass+'>'+_i+'</a></li>' );
-							}
-						</script>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-
-			<div class="clearfix"></div>
-
-		</div>
-
+    <div class="container">
+      <div class="calendar">
+        <div class="month">
+          <i class="fas fa-angle-left prev"></i>
+          <div class="date">
+            <h1></h1>
+            <p></p>
+          </div>
+          <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div class="holiday">Sat</div>
+        </div>
+        <div class="days"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="JS/calenderjs.js"></script>
+	 <div class="contain">
+			<h1>View For Batch :</h1>
+			<p>
+		<form action="view.php" method="POST">
+			<div class="batchselector">
+				<select id="batch_select" class="batch" name="batch_name1" onchange="populate('batch_select','batch_name')">
+						<option disabled selected value="error">Choose Your Batch</option> 
+					
+					<?php 
+						$sql_select_batch="SELECT * FROM `batch_list`;";
+						$result_batch=mysqli_query($conn ,$sql_select_batch);
+						while($row= mysqli_fetch_assoc($result_batch)){         
+		   			?>
+					<option required value="<?php echo $row['batchname']?>" name="option_value" >       <!-- Batch Select Option Menu-->
+						<?php echo $row['batchname'] ;?>
+					</option>
+					<?php }?>
+			</select>
+			<input class="btn1" type="submit" name="batch_submit" value="Enter"  >
+		</form>
+						</p>
+	 </div>
+					<div class="phpclass">
+						
 		<?php 
-			$sql_date="SELECT distinct date FROM `bese2016_attendance_record`;";
-			$result_date=mysqli_query($conn ,$sql_date);
-			while($row_date= mysqli_fetch_assoc($result_date)){                 
+			if (isset($_POST['batch_submit'])) {
+				$batch_name1=$_POST['batch_name1'];
+				$attendance_record_name=$batch_name1 ."_attendance_record";
+				$sql_date="SELECT distinct date FROM $attendance_record_name ;";
+				$result_date=mysqli_query($conn ,$sql_date);
+				while($row_date= mysqli_fetch_assoc($result_date)){                 
 		?>
 		<label class="labeldate"><?php echo $row_date['date']; ?></label>       <!--DATE-->
 		
@@ -103,8 +93,10 @@ include_once 'connection.php';
 				</tr>
 			</thead>
 			<?php 
+			$batch_name1=$_POST['batch_name1'];
+			$attendance_record_name=$batch_name1 ."_attendance_record";
 			$date=$row_date['date'];
-			$sql="SELECT * FROM `bese2016_attendance_record`Where date='$date'";
+			$sql="SELECT * FROM $attendance_record_name Where date='$date'";
 			$result=mysqli_query($conn ,$sql);
 			$serial_number=0;
 			$counter=0;
@@ -123,8 +115,9 @@ include_once 'connection.php';
 		<?php $counter++;
 		}?>
 		</table>
-		<?php } ?>
+		<?php } } ?>
+		</div>
 
-
+</
 		</body>
 </html>

@@ -5,9 +5,9 @@
 <html>
     <head>
         <title>Add Student</title>
-        
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+      
         <link rel="stylesheet" href="CSS/AddStudentCss.css" >
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="input roll">
                     <span>Roll No:</span>
-                    <input type="text" id="roll">
+                    <input type="number" id="roll">
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
