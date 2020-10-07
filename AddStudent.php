@@ -5,9 +5,9 @@
 <html>
     <head>
         <title>Add Student</title>
-        
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+      
         <link rel="stylesheet" href="CSS/AddStudentCss.css" >
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -48,13 +48,25 @@
                     </select><br>
                 </div>
                 <div class="input roll">
-                    <span>Roll No:</span>
-                    <input type="text" id="roll">
+                    <span>Roll No</span>
+                    <input type="number" id="roll"><br>
+                </div>
+                <div class="input regno">
+                    <span>Registration No</span>
+                    <input type="number" id="reg"><br>
+                </div>
+                <div class="input gender">    
+                    <span class="radio-inline">
+                        <input type="radio" name="Gender">Male
+                    </span>
+                    <span class="radio-inline">
+                        <input type="radio" name="Gender">Female
+                    </span>
                 </div>
                 <input type="submit" value="Enter the data" class="btn">
             </form>
         </div>
-        <script src="JS/addvalidate.js"type="text/javascript"></script> 
+        <script src="JS/addvalidate.js" type="text/javascript"></script> 
        
    
     </body>
