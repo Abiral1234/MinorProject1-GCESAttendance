@@ -73,7 +73,7 @@ span, label{
 }
 .batch_table_software{
     position: absolute;
-   left:1000px;
+   left:900px;
    top: 130px;
     border-collapse: collapse;
     min-width: 250px; 
@@ -84,7 +84,7 @@ span, label{
 }
 .batch_table_computer{
     position: absolute;
-   left:1300px;
+   left:1200px;
    top: 130px;
     border-collapse: collapse;
     min-width: 250px; 

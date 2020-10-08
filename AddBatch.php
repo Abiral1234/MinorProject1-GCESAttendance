@@ -47,7 +47,7 @@ include_once 'connection.php';
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/AddBatchCss4.css">
+	<link rel="stylesheet" type="text/css" href="CSS/AddBatchCss.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 

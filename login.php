@@ -1,42 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="CSS/cssfile.css">
-    <link rel="shortcut icon" href="">
+	<title>Login Form for Teacher and Admin</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <img src="Images/bg.jpg" class="webpage">
-    <div class="container">
-        <p id="invalid"></p>
-        <div class="login">
-            <form name="myform"  onsubmit="return validateform()" action="Home.php" method="POST">
-                <img src="Images/uavatar.png" class="avatar">
-                <h2 class="title">Login</h2>
-                <div class="input username">
-                    <div class="i"> 
-           		    	<i class="fas fa-user"></i>
+	
+	<div class="container">
+		<div class="img">
+			<img id="background" src="Images/login.svg">
+		</div>
+		<div class="login-content">
+			<form action="Home.php">
+				<img src="Images/avatar1.svg">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
            		   </div>
-                    <div class="in">
-                        <h5>Username</h5>
-                        <input type="text" name="name" class="u_input">
-                    </div>
-                </div>
-                <div class="input password">
-                    <div class="i"> 
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
            		    	<i class="fas fa-lock"></i>
            		   </div>
-                    <div class="in">
-                        <h5>Password</h5>
-                        <input type="password" name="password" id="pass" class="u_input">
-                    </div>
-                </div>
-                <input type="submit" class="btn" value="Login">
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	
+            	<input type="submit" class="btn" value="Login">
             </form>
         </div>
     </div>
-    <script src="JS/jsfile.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>

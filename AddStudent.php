@@ -66,7 +66,7 @@
                 <input type="submit" value="Enter the data" class="btn">
             </form>
         </div>
-        <script src="JS/addvalidate.js"type="text/javascript"></script> 
+        <script src="JS/addvalidate.js" type="text/javascript"></script> 
        
    
     </body>
