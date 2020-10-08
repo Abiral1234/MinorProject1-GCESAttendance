@@ -1,3 +1,6 @@
+<?php
+include_once'connection.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +29,10 @@
             <p id="invalid"></p>
             <form action="add_teacher_php.php" name="form1" method="POST">
                 <div class="input name">
-                    <span>Name of Teacher:</span><br>
-                    <input type="text" id="name" name="name" class="_dinput"><br>
+                    <span>First Name :</span><br>
+                    <input type="text" id="name" name="first_name" class="_dinput"><br>
+                    <span>Last Name:</span><br>
+                    <input type="text" id="name" name="last_name" class="_dinput"><br>
                 </div>
                 <div class="input username">
                     <span>Username</span>
@@ -59,9 +64,31 @@
                         <label for="1stsem">8th Semester</label><br>
                     </div>
                 </div>
-                <input type="submit" value="Enter the data" class="btn">
+                <input type="submit" value="Enter the data" name="teacher_submit"class="btn">
             </form>
         </div>
         <script src="JS/addteachervalidate.js" type="text/javascript"></script>
+
+        <table class="teacher_table">
+            <thead>
+                <tr >   
+                    <td>Tacher Name List</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                $sql_select="SELECT * FROM teacherlist";
+                $result3=mysqli_query($conn,$sql_select);
+                while ($row=mysqli_fetch_assoc($result3)) {
+                 ?>
+                <tr>
+                    <td><?php 
+                    echo $row['first_name']." ".$row['last_name'] ?></td>
+                </tr>
+            <?php }?>
+            </tbody>
+        </table>
+
     </body>
 </html>
