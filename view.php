@@ -71,8 +71,6 @@ include_once 'connection.php';
 				while($row_date= mysqli_fetch_assoc($result_date)){                 
 		?>
 		<label class="labeldate"><?php echo $row_date['date']; ?></label>       <!--DATE-->
-		
-
 		<table class="table1">	
 			<thead>															<!--Attendance Record -->
 				<tr>
@@ -92,15 +90,11 @@ include_once 'connection.php';
 			while($row= mysqli_fetch_assoc($result)){
 				$serial_number++;
 		?>
-		
-
 			<tr>
 				<td><?php echo $row['roll_number']; ?></td>
 				<td><?php echo $row['student_name']; ?></td>
 				<td><?php echo $row['attendance_status']; ?></td>
 			</tr>
-
-
 		<?php $counter++;
 		}?>
 		</table>
