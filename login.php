@@ -14,7 +14,7 @@
 			<img id="background" src="Images/login.svg">
 		</div>
 		<div class="login-content">
-			<form action="Home.php">
+			<form action="Home.php" name="loginform">
 				<img src="Images/avatar1.svg">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -23,19 +23,25 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input">
+           		   		<input type="text" class="input" name="name">
            		   </div>
+					
            		</div>
+				   <div class="invalid">
+						<p id="invalid1"></p>
+					</div>
            		<div class="input-div pass">
            		   <div class="i"> 
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" id="pass" name="password" class="input">
             	   </div>
             	</div>
-            	
+				<div class="invalid">
+					<p id="invalid2"></p>
+				</div>
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>
