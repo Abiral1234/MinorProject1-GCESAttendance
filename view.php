@@ -24,55 +24,44 @@ include_once 'connection.php';
 				</ul>
 			</nav>
 		</div>
-
 	</header>
-    <div class="container">
-      <div class="calendar">
-        <div class="month">
-          <i class="fas fa-angle-left prev"></i>
-          <div class="date">
-            <h1></h1>
-            <p></p>
-          </div>
-          <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div class="holiday">Sat</div>
-        </div>
-        <div class="days"></div>
-      </div>
+	<div class="time">Date:<?php $today_date = date("Y-m-d"); echo $today_date	?></div>
+	<p>
+		Choose the date:
+	</p>
+	<div class="date-picker">
+		<div class="selected-date"></div>
+
+		<div class="dates">
+			<div class="month">
+				<div class="arrows prev-mth">&lt;</div>
+				<div class="mth"></div>
+				<div class="arrows next-mth">&gt;</div>
+			</div>
+			<div class="days"></div>
+		</div>
+	</div>
     </div>
-    <script type="text/javascript" src="JS/calenderjs.js"></script>
+    <script type="text/javascript" src="JS/calender.js"></script>
 	 <div class="contain">
-			<h1>View For Batch :</h1>
-			<p>
-		<form action="view.php" method="POST">
-			<div class="batchselector">
-				<select id="batch_select" class="batch" name="batch_name1" onchange="populate('batch_select','batch_name')">
-						<option disabled selected value="error">Choose Your Batch</option> 
-					
-					<?php 
-						$sql_select_batch="SELECT * FROM `batch_list`;";
-						$result_batch=mysqli_query($conn ,$sql_select_batch);
-						while($row= mysqli_fetch_assoc($result_batch)){         
-		   			?>
-					<option required value="<?php echo $row['batchname']?>" name="option_value" >       <!-- Batch Select Option Menu-->
-						<?php echo $row['batchname'] ;?>
-					</option>
-					<?php }?>
-			</select>
-			<input class="btn1" type="submit" name="batch_submit" value="Enter"  >
-		</form>
-						</p>
+			<h1 id="batch">View For Batch :</h1>
+			<form class="newtype" action="view.php" method="POST">
+            <select id="batch_select" class="batch" name="batch_name1" onchange="populate('batch_select','batch_name')">
+                    <option disabled selected value="error">Choose Your Batch</option> 
+                <?php 
+                    $sql_select_batch="SELECT * FROM `batch_list`;";
+                    $result_batch=mysqli_query($conn ,$sql_select_batch);
+                    while($row= mysqli_fetch_assoc($result_batch)){         
+                   ?>
+                <option required value="<?php echo $row['batchname']?>" name="option_value" >       <!-- Batch Select Option Menu-->
+                    <?php echo $row['batchname'] ;?>
+                </option>
+                <?php }?>
+        </select>
+        <input class="btn1" type="submit" name="batch_submit" value="Enter"  >
+    </form>
 	 </div>
-					<div class="phpclass">
-						
+		<div class="phpclass">	
 		<?php 
 			if (isset($_POST['batch_submit'])) {
 				$batch_name1=$_POST['batch_name1'];

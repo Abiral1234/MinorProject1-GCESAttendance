@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tryin</title>
+    <link rel="stylesheet" type="text/css" href="tryout.css">
+</head>
+<body>
+    
+     <h1 id="batch">View For Batch :</h1>
+    <form class="newtype" action="view.php" method="POST">
+            <select id="batch_select" class="batch" name="batch_name1" onchange="populate('batch_select','batch_name')">
+                    <option disabled selected value="error">Choose Your Batch</option> 
+                    <option value="1">Audi</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Citroen</option>
+                    <option value="4">Ford</option>
+                    <option value="5">Honda</option>
+                
+                <?php 
+                    $sql_select_batch="SELECT * FROM `batch_list`;";
+                    $result_batch=mysqli_query($conn ,$sql_select_batch);
+                    while($row= mysqli_fetch_assoc($result_batch)){         
+                   ?>
+                <option required value="<?php echo $row['batchname']?>" name="option_value" >       <!-- Batch Select Option Menu-->
+                    <?php echo $row['batchname'] ;?>
+                </option>
+                <?php }?>
+        </select>
+        <input class="btn1" type="submit" name="batch_submit" value="Enter"  >
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#batch{
+    text-align: center;
+}
+.newtype{
+    padding: 10px;
+    display:inline-block;
+    position:relative;
+    left:50%;
+}
+.btn1{
+padding: 10px 10px;
+margin: 0px 10px;
+border: 1px solid transparent;
+background: #009bfb;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0s;
+}
+.btn1:hover{
+  background-color: royalblue;
+}
