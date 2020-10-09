@@ -10,6 +10,49 @@ body{
     margin: 0 auto;
 
 }
+.label1{
+            position: absolute;
+            top: 80px;
+            left: 840px;
+            font-family: 'poppins',sans-serif;
+        }
+
+.batch_select{
+    position: absolute;
+    font-weight: normal;
+    top: 95px;
+    left:1090px;
+    font-size: 18px;
+    padding: 8px 12px;
+    color: #333333;
+    background-color:white ;
+    border:2px solid #dddddd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+option{
+    font-weight: normal;
+}
+
+.btn1{
+    display: block;
+    position: absolute;
+    left: 1340px;
+    top: 82px;
+    width: 5%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    background-size: 200%;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+}
 header{
             background:#00BEFF;
             }
@@ -75,6 +118,39 @@ span{
     margin-left: 29em;
     margin-top: 2rem;
 }
+.student_table{
+    position: absolute;
+    left: 850px;
+    top: 140px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 560px;
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+thead tr{
+    background-color: #009879;
+    color: white;
+    height: 20px;
+    font-weight: bold;
+}
+td{
+    padding: 12px 15px;
+}
+tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #00beff;
+}
+select, option { width: 240px; }
+
 input{
     margin-top: 3px;
 }

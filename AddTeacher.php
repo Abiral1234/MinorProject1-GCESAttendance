@@ -1,5 +1,18 @@
 <?php
 include_once'connection.php';
+
+if(isset($_POST['teacher_submit'])){
+    $first_name=$_POST['first_name'];
+    $last_name=$_POST['last_name'];
+    $username=$_POST['username'];
+    $password=$_POST['pword'];
+    $sql_insert="INSERT INTO teacherlist (first_name ,last_name ,Username ,Password ) VALUES('$first_name','$last_name','$username','$password')";
+    if($result2=mysqli_query($conn,$sql_insert)){ }
+    else{
+        echo "Error";
+    }
+
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +40,7 @@ include_once'connection.php';
 	</header>
         <div class="container">
             <p id="invalid"></p>
-            <form action="add_teacher_php.php" name="form1" method="POST">
+            <form action="AddTeacher.php" name="form1" method="POST">
                 <div class="input name">
                     <span>First Name :</span><br>
                     <input type="text" id="name" name="first_name" class="_dinput"><br>
@@ -72,17 +85,32 @@ include_once'connection.php';
         <table class="teacher_table">
             <thead>
                 <tr >   
-                    <td>Tacher Name List</td>
-
+                    <td>No.</td>
+                    <td>Teacher Name List</td>
                 </tr>
             </thead>
             <tbody>
                 <?php 
+               $sql_create = "CREATE TABLE IF NOT EXISTS teacherlist (
+            `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            `first_name` varchar(255) NOT NULL,
+            `last_name` varchar(255) NOT NULL,
+            `Username` varchar(255) NOT NULL,
+            `Password` varchar(255) NOT NULL
+            ) ";
+            if($result1=mysqli_query($conn,$sql_create)){ }
+            else{
+             echo "Error";
+            }
+  
                 $sql_select="SELECT * FROM teacherlist";
                 $result3=mysqli_query($conn,$sql_select);
+                $serial_number=0;
                 while ($row=mysqli_fetch_assoc($result3)) {
+                     $serial_number++;
                  ?>
                 <tr>
+                    <td><?php echo $serial_number; ?></td>
                     <td><?php 
                     echo $row['first_name']." ".$row['last_name'] ?></td>
                 </tr>
