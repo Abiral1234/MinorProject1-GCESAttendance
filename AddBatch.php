@@ -5,28 +5,24 @@ include_once 'connection.php';
 	$batch_year =$_POST['year'];
 	$name =$batch_program ."_". $batch_year;
 
-	$sql_create1 = "CREATE TABLE IF NOT EXISTS $name (
+//creating student list
+
+	$sql_create1 = "CREATE TABLE IF NOT EXISTS $name (     
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		`student_name` varchar(255) NOT NULL,
-  		/* `roll_number` varchar(255) NOT NULL,*/
- 		`batch` varchar(255) NOT NULL
+  		 `roll_number` int(11) NOT NULL,
+ 		 `reg_number` int(15) NOT NULL,
+ 		 `gender` varchar(255) NOT NULL
 		) ";
 	if($result1=mysqli_query($conn,$sql_create1)){}
 	else{
 		echo "Error1";
 	}
 
-	$sql_create3= "CREATE TABLE IF NOT EXISTS `Batch_List` (
-  	`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  	`batchname` varchar(255) NOT NULL UNIQUE
-  	 )"; 
+//creating batch list
+	
 
-  	if($result3=mysqli_query($conn,$sql_create3)){ }
-	else{
-		echo "Error2";
-	} 
-
-
+//checking duplicate
 	$dup=mysqli_query($conn,"select * from `Batch_list` WHERE batchname='$name'");
 	if(mysqli_num_rows($dup)>0){
 		//echo "Already Created";
@@ -87,7 +83,7 @@ include_once 'connection.php';
 		<script src="JS/AddBatch.js" type="text/javascript"></script>
 		</div>
 
-		<?php if (isset($_POST['batch_submit2'])) { ?>
+	
 			
 		
 		<table class="batch_table_software">
@@ -97,6 +93,16 @@ include_once 'connection.php';
 				</tr>
 			</thead>
 			<tbody>
+			<?php $sql_create3= "CREATE TABLE IF NOT EXISTS `Batch_List` (
+  				`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  				`batchname` varchar(255) NOT NULL UNIQUE
+  				 )"; 
+
+  				if($result3=mysqli_query($conn,$sql_create3)){ }
+				else{
+			echo "Error2";
+				} 
+				?>
 				<tr >
 				<?php 
 			$sql_select_batch="SELECT * FROM `batch_list`;";
@@ -135,7 +141,7 @@ include_once 'connection.php';
 				<?php  }?>
 			</tbody>
 		</table>
-	<?php }?>
+	
 	
 </body>
 </html>

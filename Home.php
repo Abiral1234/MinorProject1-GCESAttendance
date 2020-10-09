@@ -6,6 +6,7 @@ $score=0;
 
 if (isset($_POST['submit'])) { //checks if submit button is clicked
 	$subject=$_POST['subject_name'];
+	
 	$attendance_sheet= $subject . "_attendance_record";//Creates attendance record table with name of the subject if not exists
 	$sql_create2= "CREATE TABLE IF NOT EXISTS $attendance_sheet (   
   	`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -14,10 +15,8 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
   	`attendance_status` varchar(255) NOT NULL,
   	`date` date NOT NULL )"; 
 
-  	if($result2=mysqli_query($conn,$sql_create2)){ }
-	else{
-		echo "Error2";
-	}
+  	$result2=mysqli_query($conn,$sql_create2);
+	
 
 	if(isset($_POST['attendance_status'])){ //checks if any radio buttons are checked
 
@@ -202,8 +201,9 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<div class="attendance_success" style="color: green">Attendance is taken succesfully</div>
 			<?php } ?>
 			<?php if($flag==2){ ?>
-			<div class="attendance_success" style="color: red">Attendance wasn't taken</div><!--shows succes or fail -->
+			<div class="attendance_success" style="color: red">No Student to take Attendance</div><!--shows succes or fail -->
 			<?php } ?>
+			
 			<br>
 			<div id="batch_name">
 				<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
@@ -218,9 +218,9 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			$subject_name =$_POST['selected_subject_name'];
 			$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
 			$table_name = $_POST['batch_name1'];
-			if($table_name !="No batch selected"){ ?>
-
+			if($table_name !="No batch selected" && $subject_name!="Not selected"){ ?>
 			<form method="POST" action="Home.php" value="attendance">
+
 				<table class="table1">
 					<thead>
 						<tr>
