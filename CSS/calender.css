@@ -1,132 +1,134 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
-  color: black;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-
-html {
-  font-size: 62.5%;
+body {
+	background-color: white;
+	font-family: 'Saira', Arial, Helvetica, sans-serif;
 }
 
-.container {
-  width: 40%;
-  height: 52%;
-  background-image: url("../Images/pattern.jpg");
-  position: absolute;
-  left: 300px; 
-  top: 150px;
-  color: #eee;
-  justify-content: left;
-  align-items: left;
+p {
+	margin: 30px 0px;
+	color: #313131;
+	font-size: 24px;
+	font-weight: 900;
+	text-align: center;
 }
 
-.calendar {
-  width: 45rem;
-  height: 52rem;
-  background-color: #ffffff;
-  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.3);
+.date-picker {
+	position: relative;
+	width: 100%;
+	max-width: 320px;
+	height: 60px;
+	background-color: #FFF;
+	margin: 30px auto;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+	cursor: pointer;
+	user-select: none;
 }
 
-.month {
-  width: 100%;
-  height: 12rem;
-  background-color: #00beff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  text-align: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+.date-picker:hover {
+	background-color: #F3F3F3;
 }
 
-.month i {
-  font-size: 2.5rem;
-  cursor: pointer;
+.date-picker .selected-date {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #313131;
+	font-size: 28px;
 }
 
-.month h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-bottom: 1rem;
+.date-picker .dates {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+
+	background-color: #FFF;
 }
 
-.month p {
-  font-size: 1.6rem;
+.date-picker .dates.active {
+	display: block;
 }
 
-.weekdays {
-  width: 100%;
-  height: 5rem;
-  padding: 0 0.4rem;
-  display: flex;
-  align-items: center;
+.date-picker .dates .month {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid #EEE;
 }
 
-.weekdays div {
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  width: calc(44.2rem / 7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
-}
-.weekdays .holiday{
-  color:red;
-
+.date-picker .dates .month .arrows {
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #313131;
+	font-size: 20px;
 }
 
-.days {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0.2rem;
+.date-picker .dates .month .arrows:hover {
+	background-color: #F3F3F3;
 }
 
-.days div {
-  font-size: 1.4rem;
-  margin: 0.3rem;
-  width: calc(40.2rem / 7);
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
-  transition: background-color 0.2s;
+.date-picker .dates .month .arrows:active {
+	background-color: #00beff;
 }
 
-.days div:hover:not(.today) {
-  background-color: #00bd62;
-  border: 0.2rem solid #777;
-  cursor: pointer;
+.date-picker .dates .days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	height: 200px;
 }
-
-.prev-date,
-.next-date {
-  opacity: 0.5;
+.date-picker .dates .days .day { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #313131;
 }
-
-.today {
-  background-color: #00beff;  
+.date-picker .dates .days .day.selected {
+	background-color: #00beff;
 }
-.contain{
-  position: relative;
-  display: flex;
-  top: 80px;
-  left: 700px;
-  font-family: 'poppins',sans-serif;
+#batch{
+    text-align: center;
+}
+.newtype{
+    padding: 10px;
+    display: flex; 
+	justify-content: center;
+}
+.btn1{
+padding: 10px 10px;
+margin: 0px 10px;
+border: 1px solid transparent;
+background: #009bfb;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0s;
+}
+.btn1:hover{
+  background-color: royalblue;
 }
 .phpclass{
-  position: absolute;
-  display: inline-block;
-  top: 30px;
-  left: -900px;
-  font-family: 'poppins',sans-serif;
+	margin-top: 100px;
+	position: relative;
+	left: -30%;
+}
+.labeldate{
+	display: block;
+}
+.tabel1{
+	
+
 }
