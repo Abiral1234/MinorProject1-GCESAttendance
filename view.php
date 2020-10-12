@@ -11,8 +11,6 @@ include_once 'connection.php';
 	
 </head>
 <body>
-	<div class="main">
-
 	<header>
 		<div class="navigation">	
 			<nav>
@@ -25,6 +23,7 @@ include_once 'connection.php';
 			</nav>
 		</div>
 	</header>
+	<div class="main">
 	<div class="time">Date:<?php $today_date = date("Y-m-d"); echo $today_date	?></div>
 	<p>
 		Choose the date:
@@ -41,7 +40,6 @@ include_once 'connection.php';
 			<div class="days"></div>
 		</div>
 	</div>
-    </div>
     <script type="text/javascript" src="JS/calender.js"></script>
 	 <div class="contain">
 			<h1 id="batch">View For Batch :</h1>
@@ -100,7 +98,6 @@ include_once 'connection.php';
 		</table>
 		<?php } } ?>
 		</div>
-
-</
-		</body>
+</div>	
+	</body>
 </html>

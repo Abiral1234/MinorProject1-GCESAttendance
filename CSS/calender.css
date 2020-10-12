@@ -8,7 +8,6 @@ body {
 	background-color: white;
 	font-family: 'Saira', Arial, Helvetica, sans-serif;
 }
-
 p {
 	margin: 30px 0px;
 	color: #313131;
@@ -123,6 +122,7 @@ transition: all 0s;
 .phpclass{
 	margin-top: 100px;
 	position: relative;
+	
 	left: -30%;
 }
 .labeldate{
