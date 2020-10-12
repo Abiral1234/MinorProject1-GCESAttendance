@@ -14,7 +14,10 @@
 			<div class="img">
 				<img id="background" src="Images/login.svg">
 			</div>
-			<p id="description">Gandaki College of Engineering and Science (GCES) is located in Pokhara. Founded in 1998 and offically inaguratd i 1999 this college has always been driven by mission of becoming an international centre of acdemic excellence with it's motto "Knowledge, Character, and Service".
+			<p id="description">Gandaki College of Engineering and Science (GCES) is located in Pokhara. 
+			Founded in 1998 and offically inaguratd i 1999 this college has always been driven
+			by mission of becoming an international centre of acdemic excellence with it's motto
+			"Knowledge, Character, and Service".
 			</p>
 		</div>
 		<div class="login-content">
