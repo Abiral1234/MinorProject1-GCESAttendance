@@ -147,8 +147,10 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				</ul>
 			</nav>
 		</div>
+	</header>
 
 		<!-- label -->
+		<div class="main">
 
 		<div class="container" >
 			<h1>Attendance For<h1>
@@ -187,8 +189,6 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 		</div class="record_submit_message">
 	
-		</div>
-		
 		<div class="pannel">
 			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
 			<div class="time">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
@@ -269,7 +269,6 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <?php }} ?>
 
 </div>
-
-</header>
+</div>
 </body>
 </html>
