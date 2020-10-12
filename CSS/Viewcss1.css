@@ -2,7 +2,27 @@ body{
 	margin: 0;
 	font-family: sans-serif;
 	font-weight: 350;
-	background-image: url("../Images/pattern.jpg");
+}
+.background_image{
+	background: url("../Images/white.jpg");
+	height: 1000px;
+	background-size: cover;
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	z-index: -1;
+}
+.background_image2{
+	background: url("../Images/calender.svg");
+	background-size: cover;
+	width: 1000px;
+	height: 800px;
+	position: fixed;
+	right: 100px;
+	left: 250px;
+	top: 200px;
+	opacity: 0.2;
+	z-index: 0;
 }
 .labeldate{
 	position: absolute;
@@ -206,6 +226,7 @@ td{
 }
 tbody tr{
 	border-bottom: 1px solid #dddddd;
+	background-color: #f3f3f3;
 }
 tbody tr:nth-of-type(even) {
 	background-color: #f3f3f3;}

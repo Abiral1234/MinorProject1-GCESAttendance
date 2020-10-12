@@ -4,9 +4,9 @@ include_once 'connection.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calender</title>
+	<title>View Page</title>
 	
-	<link rel="stylesheet" type="text/css" href="CSS/Viewcss.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Viewcss1.css">
 	<link rel="stylesheet" type="text/css" href="CSS/calender5.css">
 	<script type="text/javascript">	
 		var pair; 	
@@ -27,12 +27,12 @@ include_once 'connection.php';
 			s2.innerHTML = " ";
 			if(batchProgram == "BESE"){      //TO select subjects of BESE
 				if(batchCurrentYear == 1){   //BESE 1st Years
-					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics-I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics-II|MTH 114","Logic Circuits|ELX 212","Mathematical Foundation of Computer Science|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C++|CMP 115","Web Technology|CMP 213"];
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics-II|MTH 114","Logic Circuits|ELX 212","Mathematical Foundation of Computer Science|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C++|CMP 115","Web Technology|CMP 213"];
 
 				}
 
 				else if(batchCurrentYear == 2){   //BESE 2nd Years
-					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics- III|","Software Engineering Fundamentals|","Microprocessor & Assembly Lang. Pro.|","Data Structure and Algorithms|","Probability & Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization & Architecture|","Database Management Systems|","Object Oriented Design & Modeling through UML|"];
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics III|","Software Engineering Fundamentals|","Microprocessor & Assembly Lang. Pro.|","Data Structure and Algorithms|","Probability & Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization & Architecture|","Database Management Systems|","Object Oriented Design & Modeling through UML|"];
 
 				}
 				else if(batchCurrentYear == 3){   //BESE 3rd Years
@@ -57,7 +57,7 @@ include_once 'connection.php';
 					var optionArray=["Choose Your Subject|Not selected","Numerical Methods|","Microprocessor System and Interfacing|","Operating System|","Computer Graphics|","Integrated Digital Electronics|","Probability and Statistics|","Simulation and Modeling|","Data Communication|","Database Management System|","Object Oriented Software Engineering|"]
 				}
 				else if (batchCurrentYear == 4 ) {
-					var optionArray=["Choose Your Subject|No subject selected","Engineering Economics|","Computer Architecture|","Digital Signal Processing|","Computer Network|","Elective I|","Organization and Management|","Artificial Intelligence|","Image Processing & Pattern Recognition|","Elective II|"]
+					var optionArray=["Choose Your Subject|Not selected","Engineering Economics|","Computer Architecture|","Digital Signal Processing|","Computer Network|","Elective I|","Organization and Management|","Artificial Intelligence|","Image Processing & Pattern Recognition|","Elective II|"]
 				}
 			}
 
@@ -78,8 +78,11 @@ include_once 'connection.php';
 				}
 				}
 	</script> 
+
 </head>
 <body>
+	<div class="background_image"></div>
+	<div class="background_image2"></div>
 	<div class="main">
 
 	<header>

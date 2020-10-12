@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
@@ -79,12 +79,12 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			s2.innerHTML = " ";
 			if(batchProgram == "BESE"){      //TO select subjects of BESE
 				if(batchCurrentYear == 1){   //BESE 1st Years
-					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics-I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics-II|MTH 114","Logic Circuits|ELX 212","Mathematical Foundation of Computer Science|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C++|CMP 115","Web Technology|CMP 213"];
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics-II|MTH 114","Logic Circuits|ELX 212","Mathematical Foundation of Computer Science|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C++|CMP 115","Web Technology|CMP 213"];
 
 				}
 
 				else if(batchCurrentYear == 2){   //BESE 2nd Years
-					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics- III|","Software Engineering Fundamentals|","Microprocessor & Assembly Lang. Pro.|","Data Structure and Algorithms|","Probability & Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization & Architecture|","Database Management Systems|","Object Oriented Design & Modeling through UML|"];
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics III|","Software Engineering Fundamentals|","Microprocessor & Assembly Lang. Pro.|","Data Structure and Algorithms|","Probability & Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization & Architecture|","Database Management Systems|","Object Oriented Design & Modeling through UML|"];
 
 				}
 				else if(batchCurrentYear == 3){   //BESE 3rd Years
@@ -133,6 +133,8 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 </head>
 <body>
+	<div class="background_image"></div>
+	<div class="background_image2"></div>
 	<header>
 
 		<!-- nav bar -->
@@ -278,5 +280,9 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 </div>
 
 </header>
+<!--<a href="http://www.freepik.com">Designed by Freepik</a>-->
+
 </body>
+
+	
 </html>
