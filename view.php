@@ -23,7 +23,7 @@ include_once 'connection.php';
 			</nav>
 		</div>
 	</header>
-	<div class="main">
+	<div class="fix">
 	<div class="time">Date:<?php $today_date = date("Y-m-d"); echo $today_date	?></div>
 	<p>
 		Choose the date:
@@ -39,6 +39,7 @@ include_once 'connection.php';
 			</div>
 			<div class="days"></div>
 		</div>
+	</div>
 	</div>
     <script type="text/javascript" src="JS/calender.js"></script>
 	 <div class="contain">
@@ -97,7 +98,6 @@ include_once 'connection.php';
 		}?>
 		</table>
 		<?php } } ?>
-		</div>
-</div>	
+		</div>	
 	</body>
 </html>
