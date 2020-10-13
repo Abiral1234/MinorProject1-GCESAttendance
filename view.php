@@ -11,18 +11,24 @@ include_once 'connection.php';
 	
 </head>
 <body>
-	<header>
-		<div class="navigation">	
-			<nav>
-				<ul> 
+<header>
+      <nav class="navbar">
+        <div class="brand-title">Gces Attendence</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul> 
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
 				<li><a href="index.php">logout</a> </li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+			</ul>
+        </div>
+	  </nav>
+</header>
 	<div class="fix">
 	<div class="time">Date:<?php $today_date = date("Y-m-d"); echo $today_date	?></div>
 	<p>
@@ -41,7 +47,8 @@ include_once 'connection.php';
 		</div>
 	</div>
 	</div>
-    <script type="text/javascript" src="JS/calender.js"></script>
+	<script type="text/javascript" src="JS/calender.js"></script>
+	<script type="text/javascript" src="JS/navbar.js"></script>
 	 <div class="contain">
 			<h1 id="batch">View For Batch :</h1>
 			<form class="newtype" action="view.php" method="POST">
