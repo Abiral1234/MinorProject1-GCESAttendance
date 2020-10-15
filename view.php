@@ -80,18 +80,26 @@ include_once 'connection.php';
 	</script> 
 </head>
 <body>
-	<header>
-		<div class="navigation">	
-			<nav>
-				<ul> 
+<header>
+      <nav class="navbar">
+        <div class="brand-title">Gces Attendence</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul> 
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
 				<li><a href="index.php">logout</a> </li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+
+			</ul>
+        </div>
+	  </nav>
+</header>
+	
 
 <label class="labeldate"><?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
 
@@ -102,7 +110,6 @@ include_once 'connection.php';
 
     
 	<span class="label1" value="hi">View Attendance For</span>
-		
 
 	 <div class="contain">
 			

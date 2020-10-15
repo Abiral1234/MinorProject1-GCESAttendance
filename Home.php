@@ -133,21 +133,24 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 </head>
 <body>
-	<header>
-
-		<!-- nav bar -->
-
-		<div class="navigation">	
-			<nav>
-				<ul> 
+<header>
+      <nav class="navbar">
+        <div class="brand-title">Gces Attendence</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul> 
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>        
+				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
 				<li><a href="index.php">logout</a> </li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+			</ul>
+        </div>
+	  </nav>
+</header>
 
 		<!-- label -->
 		<div class="main">
@@ -277,5 +280,6 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 </div>
 </div>
+<script src="Js/navbar.js"></script>
 </body>
 </html>
