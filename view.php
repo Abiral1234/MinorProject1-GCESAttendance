@@ -80,8 +80,6 @@ include_once 'connection.php';
 	</script> 
 </head>
 <body>
-	<div class="main">
-
 	<header>
 		<div class="navigation">	
 			<nav>
@@ -94,6 +92,7 @@ include_once 'connection.php';
 			</nav>
 		</div>
 	</header>
+
 <label class="labeldate"><?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
 
 <!-- Date picker and batch/subject selector in a form -->
@@ -104,6 +103,7 @@ include_once 'connection.php';
     
 	<span class="label1" value="hi">View Attendance For</span>
 		
+
 	 <div class="contain">
 			
 			<div class="batchselector">
@@ -207,9 +207,9 @@ include_once 'connection.php';
 		<?php 
 		}?>
 		</table>
+
 		<?php }  } } } ?>
 		</div>
-
-</
 		</body>
+
 </html>

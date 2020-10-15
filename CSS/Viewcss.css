@@ -5,6 +5,41 @@ body{
 	background-image: url("../Images/pattern.jpg");
 }
 .labeldate{
+	position: relative;
+	margin-top: 55px;
+	margin-left: 900px;
+}
+
+input{
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, p{
+	margin-bottom: 10px;
+}
+
+p{
+	line-height: 20px;
+}
+
+a{
+	text-decoration: none;
+	color: #FF462B;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.animate{
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+
+.calendar{
+
 	position: absolute;
 	margin-top: 230px;
 	margin-left: 150px;
@@ -117,9 +152,14 @@ a{
 	color: #FF462B;
 }
 
+
 .clearfix{
 	clear: both;
 }
+
+.calendar .days li .event{
+	color: #F5A1A3;
+} 
 
 ms-input-placeholder {color: #ffffff; }
 
@@ -130,14 +170,21 @@ ms-input-placeholder {color: #ffffff; }
 
 }
 header{
-			background:#00BEFF;
-			}
+	position: fixed;
+	width: 100%;
+	background:#00BEFF;
+	z-index: 1;
+	overflow: auto;
+}
 
 header::after{
 			content: '';
 			display: table;
 			clear: both;
 		}
+.fix{
+	padding-top: 80px;
+}
 
 nav ul >li>a{
 			color: white;

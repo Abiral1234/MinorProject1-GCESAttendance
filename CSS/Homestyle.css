@@ -40,8 +40,12 @@ img{
 	top: 170px;
 }
 header{
-			background:#00BEFF;
-			}
+	position: fixed;
+	width: 100%;
+	background:#00BEFF;
+	z-index: 1;
+	overflow: auto;
+}
 
 header::after{
 			content: '';
