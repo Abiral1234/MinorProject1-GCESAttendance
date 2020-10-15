@@ -12,6 +12,38 @@ img{
 	width: 1000px;
 	height: 1000px;
 }
+
+.attendance_sucess{
+	postion:absolute;
+	left:200px; 
+	top: 2000px; 
+}
+.navigation{
+	width: 80%;
+	margin: 0 auto;
+
+}
+.day{
+	position: absolute;
+	top: 50px;
+	left: 420px;
+}
+.date{
+	position: absolute;
+	top:90px;
+	left: 400px;
+}
+#batch_name{
+	position: absolute;
+	font-size: 22px;
+	top: 130px;
+}
+#subject_name{
+	position: absolute;
+	font-size: 22px;
+	top: 170px;
+}
+
 header{
 	position: fixed;
 	width: 100%;
@@ -184,7 +216,7 @@ a{
 }
 .table1{
 	border-collapse: collapse;
-	margin: 25px 0;
+	margin: 120px 0px 0px;
 	min-width: 1200px;
 	text-align: left;
 	border-radius: 5px 5px 0 0;
@@ -214,7 +246,6 @@ select, option { width: 240px; }
 	position: absolute;
 	top: 125px;
 	left:460px;
-
 	font-size: 20px;
 	padding: 8px 12px;
 	color: #333333;

@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			if($_POST['attendance_status'][$id]=="absent"){ //If any student is absent it is recorded in the database
 				$student_name=$_POST['student_name'][$id];
 				$roll_no=$_POST['roll_no'][$id];
-				$date=date("Y-m-d H:i:s");
+				$date=date("Y-m-d");
 				$attendance_table= strtolower ($attendance_sheet);
 				$sql="INSERT INTO $attendance_table (id ,student_name ,roll_number ,attendance_status , date) VALUES(0,'$student_name','$roll_no','$attendance_status', '$date')";
 				$result=mysqli_query($conn,$sql);
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				}
 				else{
 					$flag=-1;
-					echo "Absent error";
+					
 				}
 				}
 
@@ -194,17 +194,24 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 	
 		<div class="pannel">
 			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
-			<div class="time">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
-			<div class="time">Date:<?php $today_date = date("Y-m-d"); echo $today_date	?></div>
+			<div class="day">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
+			<div class="date"><?php $today_date =date(" F jS , Y "); echo $today_date	?></div>
 			<button class="btn" id="addbtn0"><a href="AddBatch.php" id="add_txt">Add Batch</a></button>
 			<button class="btn" id="addbtn1"><a href="AddTeacher.php" id="add_txt">Add Teacher</a></button>   <!--Add Buttons -->
 			<button class="btn" id="addbtn2"><a href="AddStudent.php" id="add_txt">Add Student</a></button> 
 
+
+			<!--shows succes or fail -->
+
+
 			<?php if($flag==1){ ?>
-			<div class="attendance_success" style="color: green">Attendance is taken succesfully</div>
+			<div class="attendance_success" style="position: absolute; left: 330px;top: 130px;  color: green">Attendance is taken succesfully</div>
 			<?php } ?>
 			<?php if($flag==2){ ?>
-			<div class="attendance_success" style="color: red">No Student to take Attendance</div><!--shows succes or fail -->
+			<div class="attendance_fail" style="position: absolute; left: 330px;top: 130px;  color: red">No Student to take Attendance</div>
+			<?php } ?>
+			<?php if($flag==-1){ ?>
+			<div class="attendance_crash" style="position: absolute; left: 330px;top: 130px;  color: red">Error</div>
 			<?php } ?>
 			
 			<br>
