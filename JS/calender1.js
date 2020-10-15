@@ -113,5 +113,5 @@ function formatDate (d) {
 
 	let year = d.getFullYear();
 
-	return year + ' - ' + month + ' - ' + day;
+	return year + '-' + month + '-' + day;
 }

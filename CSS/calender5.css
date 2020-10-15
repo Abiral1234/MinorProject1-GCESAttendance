@@ -6,26 +6,32 @@
 
 body {
 	background-color: white;
-	font-family: 'Saira', Arial, Helvetica, sans-serif;
+	 font-family: 'poppins',sans-serif;
 }
 
 p {
+	position: absolute;
+	top: 60px;
+	left: 960px;
 	margin: 30px 0px;
 	color: #313131;
 	font-size: 24px;
-	font-weight: 900;
+	font-weight: 300;
 	text-align: center;
+	color: grey;
 }
 
 .date-picker {
-	position: relative;
+	position: absolute;
+	top: 96px;
+	left:960px;
 	width: 100%;
-	max-width: 320px;
-	height: 60px;
+	max-width: 240px;
+	height: 40px;
 	background-color: #FFF;
 	margin: 30px auto;
 	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-
+	border-radius: 5px;
 	cursor: pointer;
 	user-select: none;
 }
@@ -107,16 +113,7 @@ p {
     display: flex; 
 	justify-content: center;
 }
-.btn1{
-padding: 10px 10px;
-margin: 0px 10px;
-border: 1px solid transparent;
-background: #009bfb;
-color: white;
-border-radius: 5px;
-cursor: pointer;
-transition: all 0s;
-}
+
 .btn1:hover{
   background-color: royalblue;
 }
