@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 	<script type="text/javascript">	
@@ -133,6 +133,8 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 </head>
 <body>
+	<div class="background_image"></div>
+	<div class="background_image2"></div>
 <header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendence</div>

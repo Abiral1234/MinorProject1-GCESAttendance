@@ -1,55 +1,30 @@
-* {
-    box-sizing: border-box;
-}
 body{
 	margin: 0;
 	font-family: sans-serif;
 	font-weight: 350;
-	background-image: url("../Images/pattern.jpg");
+}
+.background_image{
+	background: url("../Images/white.jpg");
+	height: 1000px;
+	background-size: cover;
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	z-index: -1;
+}
+.background_image2{
+	background: url("../Images/calender.svg");
+	background-size: cover;
+	width: 1000px;
+	height: 800px;
+	position: fixed;
+	right: 100px;
+	left: 250px;
+	top: 200px;
+	opacity: 0.2;
+	z-index: 0;
 }
 .labeldate{
-	position: relative;
-	margin-top: 55px;
-	margin-left: 900px;
-}
-
-input{
-	font-family: Helvetica, Arial, sans-serif;
-}
-
-h1, h2, h3, h4, h5, p{
-	margin-bottom: 10px;
-}
-
-p{
-	line-height: 20px;
-}
-
-a{
-	text-decoration: none;
-	color: #FF462B;
-}
-
-.clearfix{
-	clear: both;
-}
-
-.animate{
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
-
-/* placeholder color */
-::-webkit-input-placeholder {color: #ffffff; }
-:-moz-placeholder {color: #ffffff; }
-::-moz-placeholder {color: #ffffff; }
-:-ms-input-placeholder {color: #ffffff; }
-
-
-.calendar{
-
 	position: absolute;
 	margin-top: 230px;
 	margin-left: 150px;
@@ -162,30 +137,28 @@ a{
 	color: #FF462B;
 }
 
-
 .clearfix{
 	clear: both;
 }
 
-.calendar .days li .event{
-	color: #F5A1A3;
-} 
-
 ms-input-placeholder {color: #ffffff; }
 
 
-header{
-	position: fixed;
-	width: 100%;
-	background:#00BEFF;
-	z-index: 1;
-	overflow: auto;
+.navigation{
+	width: 80%;
+	margin: 0 auto;
+
 }
+header{
+			background:#00BEFF;
+			}
+
 header::after{
 			content: '';
 			display: table;
 			clear: both;
 		}
+
 .navbar {
     display: flex;
     position: relative;
@@ -296,9 +269,6 @@ header::after{
         display: flex;
     }
 }
-.fix{
-	padding-top: 90px;
-}
 
 .table1{
 	font-size: 20px;
@@ -321,9 +291,13 @@ td{
 }
 tbody tr{
 	border-bottom: 1px solid #dddddd;
+	background-color: #f3f3f3;
 }
 tbody tr:nth-of-type(even) {
 	background-color: #f3f3f3;}
+
+tbody tr:nth-of-type(odd) {
+	background-color: #ffffff;}
 
 tbody tr:last-of-type {
 	border-bottom: 2px solid #00beff;

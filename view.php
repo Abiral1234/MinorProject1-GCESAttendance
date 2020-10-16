@@ -6,7 +6,7 @@ include_once 'connection.php';
 <head>
 	<title>Calender</title>
 	
-	<link rel="stylesheet" type="text/css" href="CSS/Viewcss.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Viewcss2.css">
 	<link rel="stylesheet" type="text/css" href="CSS/calender5.css">
 	<script type="text/javascript">	
 		var pair; 	
@@ -80,6 +80,8 @@ include_once 'connection.php';
 	</script> 
 </head>
 <body>
+	<div class="background_image"></div>
+	<div class="background_image2"></div>
 <header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendence</div>
@@ -100,7 +102,7 @@ include_once 'connection.php';
 	  </nav>
 </header>
 	
-
+<script src="Js/navbar.js"></script>
 <label class="labeldate"><?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
 
 <!-- Date picker and batch/subject selector in a form -->

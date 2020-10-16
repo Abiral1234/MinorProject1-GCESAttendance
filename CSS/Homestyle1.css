@@ -5,7 +5,27 @@ body{
 	margin: 0;
 	font-family:sans-serif;
 	font-weight: 350;
-	background-image: url("../Images/pattern.jpg");
+}
+.background_image{
+	background: url("../Images/white.jpg");
+	height: 1000px;
+	background-size: cover;
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	z-index: -1;
+}
+.background_image2{
+	background: url("../Images/choose.svg");
+	background-size: cover;
+	width: 1000px;
+	height: 1000px;
+	position: fixed;
+	right: 100px;
+	left: 180px;
+	top: 100px;
+	opacity: 0.4;
+	z-index: 0;
 }
 
 img{
@@ -237,6 +257,9 @@ tbody tr{
 }
 tbody tr:nth-of-type(even) {
 	background-color: #f3f3f3;}
+
+tbody tr:nth-of-type(odd) {
+	background-color: #FFFFFF;}
 
 tbody tr:last-of-type {
 	border-bottom: 2px solid #00beff;
