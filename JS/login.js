@@ -1,6 +1,6 @@
 const inputs = document.querySelectorAll(".input");
 document.loginform.addEventListener( "submit", function(event){
-var username=document.loginform.name.value;  
+var username=document.loginform.username.value;  
 var password = document.getElementById("pass").value;  
 if(username == ""){
     text1 = "Username Invalid";
