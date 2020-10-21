@@ -19,13 +19,17 @@
     <head>
         <title>Add Student</title>
       
-        <link rel="stylesheet" href="CSS/AddStudentCss.css" >
+
+        
         <link rel="stylesheet" href="CSS/upload.css" >
+
+        <link rel="stylesheet" href="CSS/AddStudentCss6.css" >
+
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-      <nav class="navbar">
+           <nav class="navbar">
         <div class="brand-title">Gces Attendence</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
@@ -33,18 +37,17 @@
           <span class="bar"></span>
         </a>
         <div class="navbar-links">
-            <ul> 
-                <li><a href="Home.php">Home</a> </li>
-                <li><a href="view.php">View</a> </li>
-                <li><a href="Statistics.php">Statistics</a> </li>                  <!-- nav bar -->
+                <ul> 
+                <li><a href="admin_home.php">Home</a> </li>
+                <li><a href="admin_view.php">View</a> </li>
+                <li><a href="admin_statistics.php">Statistics</a> </li>        
                 <li><a href="index.php">logout</a> </li>
-
-            </ul>
+                </ul>
+           
         </div>
-      </nav>
-</header>
-    
-<script src="Js/navbar.js"></script>
+         </nav>
+       </header>
+
 
 
         <div class="container">
@@ -86,6 +89,17 @@
                     </span>
                 </div>
                 <input type="submit" value="Enter the data" class="btn" name="student_submit">
+                <div class="Alt">OR</div>
+                <div class="upfile">
+                        <input type="file" id="actual-btn" hidden/>
+
+                        <!--custom upload button -->
+                        <label for="actual-btn">Choose File</label>
+
+                        <!-- name of file chosen -->
+                        <span id="file-chosen">No file chosen</span>
+                        <input type="submit" value="Submit File" class="btn" name="student_submit">
+                </div>
             </form>
         </div>
         <script src="JS/addvalidate.js" type="text/javascript"></script> 
@@ -151,7 +165,18 @@
 </table>
 <?php } }?>
 
+
+   <script>
+       const actualBtn = document.getElementById('actual-btn');
+
+        const fileChosen = document.getElementById('file-chosen');
+
+        actualBtn.addEventListener('change', function(){
+        fileChosen.textContent = this.files[0].name
+})
+</script>    
+
    
-   
+<script src="Js/navbar.js"></script>
     </body>
 </html>

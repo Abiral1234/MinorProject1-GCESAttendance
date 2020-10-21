@@ -17,6 +17,13 @@ body{
 	z-index: -1;
 }
 
+.error{
+	margin: auto;
+	width: 70%;
+	text-align: center;
+	color: #da1313;
+}
+
 .container{
     width: 100vw;
     height: 100vh;

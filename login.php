@@ -8,7 +8,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	
+	<div class="databseconnect">
+		<?php
+			include_once'connection.php';
+			$error=null;
+			if(isset($_POST['FormSubmit'])){
+				$sql_select="SELECT * FROM teacherlist";
+				$result3=mysqli_query($conn,$sql_select);
+				while($row=mysqli_fetch_assoc($result3)){
+					$dbusername=$row['Username'];
+					$dbpassword=$row['Password'];
+				}
+				$username=$_POST['username'];
+				$password=$_POST['password'];
+				if($username == $dbusername && $password == $dbpassword) {
+					header("Location: Home.php"); 
+				}else{
+					$error = "Username or Password didn't match with record.";
+				}
+			}
+		?>
+	</div>
 	<div class="container">
 		<div id="gridrow">
 			<div class="img">
@@ -21,16 +41,19 @@
 			</p>
 		</div>
 		<div class="login-content">
-			<form action="Home.php" name="loginform">
+			<form action="" name="loginform" method="POST">
 				<img src="Images/avatar1.svg" id="avatar">
 				<h2 class="title">Welcome</h2>
+				<div class="error">
+					<?php echo $error; ?>
+				</div>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input" name="name">
+           		   		<input type="text" class="input" name="username">
            		   </div>
 					
            		</div>
@@ -49,7 +72,7 @@
 				<div class="invalid">
 					<p id="invalid2"></p>
 				</div>
-            	<input type="submit" class="btn" value="Login">
+            	<input type="submit" class="btn" value="Login" name="FormSubmit">
             </form>
         </div>
     </div>
