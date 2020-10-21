@@ -1,21 +1,57 @@
 <?php 
 include_once 'connection.php'; 
 $flag=0;
+$flag1=0;
 $score=0;
 
 
 if (isset($_POST['submit'])) { //checks if submit button is clicked
 	$subject=$_POST['subject_name'];
-	
-	$attendance_sheet= $subject . "_attendance_record";//Creates attendance record table with name of the subject if not exists
+	$batchname2=$_POST['table_name'];
+	$attendance_sheet= $subject . "_attendance_record";//Creates attendance record table with name of the subject+attedance_reocord if not exists
 	$sql_create2= "CREATE TABLE IF NOT EXISTS $attendance_sheet (   
   	`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
   	`student_name` varchar(255) NOT NULL,
   	`roll_number` varchar(255) NOT NULL,
   	`attendance_status` varchar(255) NOT NULL,
   	`date` date NOT NULL )"; 
-
   	$result2=mysqli_query($conn,$sql_create2);
+
+  	//create table with subject name only to add all student in it and update their score
+  	$sql_create1 = "CREATE TABLE IF NOT EXISTS $subject (     
+  		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		`student_name` varchar(255) NOT NULL,
+  		 `roll_number` int(11) NOT NULL,
+ 		 `reg_number` int(15) NOT NULL UNIQUE,
+ 		 `gender` varchar(255) NOT NULL,
+ 		 `present_counter` int(12),
+         `total_attendance` int(12) 
+		) ";
+	if($result1=mysqli_query($conn,$sql_create1)){}
+	else{
+		echo "Error1";
+	}
+
+	//Transfering Student name from their batch table to subject table 
+	$sql_transfer="INSERT INTO $subject(student_name,roll_number,reg_number,gender,present_counter,total_attendance)
+	SELECT student_name,roll_number,reg_number,gender,0,0
+	FROM $batchname2 " ;
+	if($result_transfer=mysqli_query($conn,$sql_transfer)){}
+	else{
+		//If there is already data in the subject table name the data wont be transferred again
+	}
+
+
+  	/* $sql_date_duplicate="SELECT DISTINCT date FROM $attendance_sheet";//check if the attendance is takentoday
+  	$result_date=mysqli_query($conn ,$sql_date_duplicate);
+	if(isset($result_date)){
+	while($row_date= mysqli_fetch_assoc($result_date)){
+		if($row_date['date'] == date("Y-m-d")){
+			$flag1=3;
+			goto NoAttendance;
+		}
+	}} */
+	
 	
 
 	if(isset($_POST['attendance_status'])){ //checks if any radio buttons are checked
@@ -39,18 +75,51 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 					
 				}
 				}
-
-			if($_POST['attendance_status'][$id]=="present"){ //If student is present score is added by one
+			//If student is present counter in subject table of respective student is added by one to their previous value
+			if($_POST['attendance_status'][$id]=="present" ){ 
 				$score++;
 				$flag=1;
+
+				$student_name=$_POST['student_name'][$id];
+				$sql_plus="SELECT * FROM $subject WHERE student_name = '$student_name'";
+				$result_counter=mysqli_query($conn,$sql_plus);
+
+				$row_counter= mysqli_fetch_assoc($result_counter);
+				$prev_counter=$row_counter['present_counter'];
+				$update_counter=$prev_counter+1;
+				$sql_update="UPDATE $subject
+				SET present_counter=$update_counter
+				WHERE student_name = '$student_name'";
+				$update_result=mysqli_query($conn,$sql_update);
 				}
+
+			//add total attendance taken
+			if($_POST['attendance_status'][$id]=="present" || $_POST['attendance_status'][$id]=="absent" ){ 
+				$score++;
+				$flag=1;
+
+				$student_name=$_POST['student_name'][$id];
+				$sql_plus="SELECT * FROM $subject WHERE student_name = '$student_name'";
+				$result_counter=mysqli_query($conn,$sql_plus);
+
+				$row_counter= mysqli_fetch_assoc($result_counter);
+				$prev_counter=$row_counter['total_attendance'];
+				$update_counter=$prev_counter+1;
+				$sql_update="UPDATE $subject
+				SET total_attendance=$update_counter
+				WHERE student_name = '$student_name'";
+				$update_result=mysqli_query($conn,$sql_update);
+				}
+
 		}
+		
 
 		}
 	else{
 		$flag=2;
 	}
-}	
+}
+NoAttendance:	
  ?>
 
 <!DOCTYPE html>
@@ -69,7 +138,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			var thisYear=<?php echo date("Y");?>;
 			var batchName=s1.value;
 
-			var pair=batchName.split("_");    //splitting the batch name to program and year using "_" as separator
+			var pair=batchName.split("_");//splitting the batch name to program and year using "_" as separator foreg: BESE_2018 to BESE and 2018
 			var batchProgram =pair[0];      
 			var batchAdmitYear = pair[1];
 			
@@ -135,7 +204,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <body>
 	<div class="background_image"></div>
 	<div class="background_image2"></div>
-<header>
+<header><!-- NAvigation BAR -->
       <nav class="navbar">
         <div class="brand-title">Gces Attendence</div>
         <a href="#" class="toggle-button">
@@ -165,10 +234,10 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 		<!-- dynamic select menu to select batch and subject-->
 
-		<form action="Home.php" method="POST">
+<form action="Home.php" method="POST">
 			<div class="batchselector">
 			<!-- Select Menu for batch imported  from batch table database-->
-				<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
+				<select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
 					<option  selected value="No batch selected" >Choose Your Batch</option> 
 					<?php 
 						$sql_select_batch="SELECT * FROM `batch_list`;";
@@ -190,7 +259,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 					
 				</select>
 				<input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
-		</form>
+</form>
 
 		</div class="record_submit_message">
 	
@@ -211,6 +280,9 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			<?php } ?>
 			<?php if($flag==2){ ?>
 			<div class="attendance_fail" style="position: absolute; left: 330px;top: 130px;  color: red">No Student to take Attendance</div>
+			<?php } ?>
+			<?php if($flag1==3){ ?>
+			<div class="attendance_fail" style="position: absolute; left: 280px;top: 130px;  color: red">Todays Attendance Has Been Taken Already </div>
 			<?php } ?>
 			<?php if($flag==-1){ ?>
 			<div class="attendance_crash" style="position: absolute; left: 330px;top: 130px;  color: red">Error</div>
@@ -246,14 +318,14 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 						<input type="hidden" name="subject_name" value=<?php echo $subject_name_withoutspace; ?> >
 					<?php 
 						
-						$sql="SELECT * FROM $table_name";
+						$sql="SELECT * FROM $table_name order by student_name asc";
 						$result=mysqli_query($conn ,$sql);
 						$serial_number=0;
 						$counter=0;
 						while($row= mysqli_fetch_assoc($result)){
 							$serial_number++;
 						?>
- 																								<!--Attendance Sheet-->
+																		<!--Attendance Sheet-->
 						<tr>
 							
 							<td><?php echo $serial_number; ?></td>
@@ -263,8 +335,8 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 							
 							<td>
 							<div class="status">
-							<input  type="radio"  id="present+<?php echo $counter;?>" name="attendance_status[<?php echo $counter;?>]" value="present" >
-							<label for="present+<?php echo $counter;?>" class="present_class" >Present</label>
+							<input type="radio"  id="present+<?php echo $counter;?>" name="attendance_status[<?php echo $counter;?>]" value="present" >
+							<label  for="present+<?php echo $counter;?>" class="present_class" >Present</label>
 
 							<input  type="radio" id="absent+<?php echo $counter;?>" name="attendance_status[<?php echo $counter;?>]" value="absent" required >
 							<label for="absent+<?php echo $counter;?>" class="absent_class" >Absent</label> 

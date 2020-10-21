@@ -11,7 +11,7 @@ include_once 'connection.php';
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		`student_name` varchar(255) NOT NULL,
   		 `roll_number` int(11) NOT NULL,
- 		 `reg_number` int(15) NOT NULL,
+ 		 `reg_number` int(15) NOT NULL UNIQUE,
  		 `gender` varchar(255) NOT NULL
 		) ";
 	if($result1=mysqli_query($conn,$sql_create1)){}
