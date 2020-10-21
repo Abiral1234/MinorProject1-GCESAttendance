@@ -89,7 +89,7 @@
                         <input type="file" id="actual-btn" hidden/>
 
                         <!--custom upload button -->
-                        <label for="actual-btn">Choose File</label>
+                        <label for="actual-btn">Choose A File</label>
 
                         <!-- name of file chosen -->
                         <span id="file-chosen">No file chosen</span>
