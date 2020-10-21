@@ -20,6 +20,7 @@
         <title>Add Student</title>
       
         <link rel="stylesheet" href="CSS/AddStudentCss.css" >
+        <link rel="stylesheet" href="CSS/upload.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -78,7 +79,7 @@
                 </div>
                 <div class="input gender">    
                     <span class="radio-inline">
-                        <input type="radio" name="Gender" value="male">Male
+                        <input checked type="radio" name="Gender" value="male">Male
                     </span>
                     <span class="radio-inline">
                         <input type="radio" name="Gender" value="female">Female
@@ -115,7 +116,7 @@
                 </select>
                 <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
         </form>
-
+<h2><?echo $_POST['selected_batch']?></h2>
 <?php if (isset($_POST['batch_submit']) || isset($_POST['student_submit']) ){
     $table_name = $_POST['selected_batch'];
     if($table_name !="No batch selected"){ ?>
@@ -132,7 +133,7 @@
             </thead>
             <tbody>
             <?php         
-                $sql="SELECT * FROM $table_name";
+                $sql="SELECT * FROM $table_name order by student_name asc";
                 $result=mysqli_query($conn ,$sql);
                 $serial_number=0;
                 $counter=0;
@@ -148,14 +149,9 @@
           <?php }?>
             </tbody>
 </table>
-
-
-
-
-
 <?php } }?>
 
-       
+   
    
     </body>
 </html>
