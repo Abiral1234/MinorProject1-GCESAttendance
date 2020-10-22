@@ -18,13 +18,13 @@
 				while($row=mysqli_fetch_assoc($result3)){
 					$dbusername=$row['Username'];
 					$dbpassword=$row['Password'];
+					$username=$_POST['username'];
+					$password=$_POST['password'];
+					if($username == $dbusername && $password == $dbpassword) {
+						header("Location: Home.php"); 
+					}else{
+						$error = "Username or Password didn't match with record.";
 				}
-				$username=$_POST['username'];
-				$password=$_POST['password'];
-				if($username == $dbusername && $password == $dbpassword) {
-					header("Location: Home.php"); 
-				}else{
-					$error = "Username or Password didn't match with record.";
 				}
 			}
 		?>
