@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:'Poppins',sans-serif ;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82vh;
+    width: 97.5vw;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+}
+
+#bg{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.content{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+h1{
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 45px;
+    color: black;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+button{
+    background-color: #00beff;
+    padding: 8px 60px; 
+	border-radius: 50px;
+    border:none;
+    margin-bottom: 40px;
+}
+
+.button{
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	font-size: 30px;
+}
+
+.about{
+    margin: auto;
+    width: 80%;
+    height: 284px;
+    display: flex;
+    justify-self: center;
+    background-image: linear-gradient(to right, rgb(182, 179, 179), rgb(221, 213, 213), rgb(247, 247, 247));
+}
+
+.GcesImage{
+    justify-content: flex-start;
+    width: 50%;
+    flex: 1;
+}
+
+.GcesImage img{
+    height: 100%;
+    width: 100%;
+}
+
+.GcesImage img:hover{
+    opacity: 0.8;
+}
+
+.aboutGces{
+    background-color: rgb(194, 193, 193);
+    flex: 1;
+    width: 50%;
+    padding: 5vh;
+    justify-content: flex-end;
+}
+
+h4{
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+#gces{
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(82, 80, 80);
+    font-family: 'Poppins', sans-serif;
+}
+
+#gces:hover {
+    color: #337ab7;
+}
+
+@media screen and (max-width:1173px){
+    .about{
+        flex-direction: column;
+    }
+
+    .GcesImage{
+        width: 100%;
+    }
+
+    .GcesImage img{
+        width: 100%;
+    }
+
+    .aboutGces{
+        padding: 0vh;
+        width: 100%;
+    }
+
+    h4{
+        padding-top: 2vh;
+    }
+
+    #about-text{
+        padding: 0vh 5vh 5vh 5vh;
+    }
+}
+
+@media screen and (max-width:1173px){
+
+}
