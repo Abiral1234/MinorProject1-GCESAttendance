@@ -273,11 +273,10 @@ input{
     margin-top: 50px;
 }
 label {
-    padding: 0.5rem;
-
-    border-radius: 25px;
+    padding: 0.4rem;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
     outline: none;
-    border: none;
     background-image: linear-gradient(to right, #00beff, #00beff);
     background-size: 200%;
     font-size: 1.2rem;
