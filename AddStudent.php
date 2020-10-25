@@ -19,21 +19,28 @@
     <head>
         <title>Add Student</title>
       
-        <link rel="stylesheet" href="CSS/AddStudentCss5.css" >
+        <link rel="stylesheet" href="CSS/AddStudentCss6.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <div class="navigation">    
-            <nav>
+           <nav class="navbar">
+        <div class="brand-title">Gces Attendence</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
                 <ul> 
-                <li><a href="Home.php">Home</a> </li>
-                <li><a href="view.php">View</a> </li>
-                <li><a href="Statistics.php">Statistics</a> </li>        <!-- nav bar -->
+                <li><a href="admin_home.php">Home</a> </li>
+                <li><a href="admin_view.php">View</a> </li>
+                <li><a href="admin_statistics.php">Statistics</a> </li>        
                 <li><a href="index.php">logout</a> </li>
                 </ul>
-            </nav>
+           
         </div>
+         </nav>
        </header>
 
 
@@ -70,7 +77,7 @@
                 </div>
                 <div class="input gender">    
                     <span class="radio-inline">
-                        <input type="radio" name="Gender" value="male">Male
+                        <input checked type="radio" name="Gender" value="male">Male
                     </span>
                     <span class="radio-inline">
                         <input type="radio" name="Gender" value="female">Female
@@ -149,5 +156,6 @@
 
        
    
+<script src="Js/navbar.js"></script>
     </body>
 </html>

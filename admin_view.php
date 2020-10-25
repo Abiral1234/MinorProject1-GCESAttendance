@@ -96,14 +96,13 @@ include_once 'connection.php';
         </a>
         <div class="navbar-links">
 				<ul> 
-				<li><a href="teacher_homepage.php">Home</a> </li>
-				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
+				<li><a href="admin_home.php">Home</a> </li>
+				<li><a href="admin_view.php">View</a> </li>
+				<li><a href="admin_statistics.php">Statistics</a> </li>        
 				<li><a href="index.php">logout</a> </li>
 				</ul>
-			
 		</div>
-		</nav>
+	  </nav>
 	</header>
 <label class="labeldate"><?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
 

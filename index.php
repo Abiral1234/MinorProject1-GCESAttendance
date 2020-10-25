@@ -9,9 +9,9 @@
 <div class="container">
 	<img src="Images/index.jpg">
 	<h1>Enter as</h1>
-	<button class="btn" id="btn1" ><a href="Home.php">Student</a></button>
-	<button class="btn" id="btn2"><a href="login.php">Teacher</a></button>
-	<button class="btn" id="btn3"><a href="login.php">  Admin  </a></button>
+	<button class="btn" id="btn1" ><a href="student_view.php">Student</a></button>
+	<button class="btn" id="btn2"><a href="teacher_login.php">Teacher</a></button>
+	<button class="btn" id="btn3"><a href="admin_login.php">  Admin  </a></button>
 </div>
 
 </body>

@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/teacher_homepage_css.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 	<script type="text/javascript">	
@@ -79,20 +79,20 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			s2.innerHTML = " ";
 			if(batchProgram == "BESE"){      //TO select subjects of BESE
 				if(batchCurrentYear == 1){   //BESE 1st Years
-					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics-II|MTH 114","Logic Circuits|ELX 212","Mathematical Foundation of Computer Science|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C++|CMP 115","Web Technology|CMP 213"];
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics I|MTH 112","Physics|PHY 111","Communication Technique|ENG 111","Problem Solving Techniques|CMP 114","Fundamentals of IT|CMP 110","Programming in C|CMP 113","Engineering Mathematics II|MTH 114","Logic Circuits|ELX 212","MFCS|MTH 130","Engineering Drawing|MEC 120","Object Oriented Programming in C|CMP 115","Web Technology|CMP 213"];
 
 				}
 
 				else if(batchCurrentYear == 2){   //BESE 2nd Years
-					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics III|","Software Engineering Fundamentals|","Microprocessor & Assembly Lang. Pro.|","Data Structure and Algorithms|","Probability & Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization & Architecture|","Database Management Systems|","Object Oriented Design & Modeling through UML|"];
+					var optionArray=["Choose Your Subject|Not selected","Engineering Mathematics III|","Software Engineering Fundamentals|","Microprocessor and Assembly Lang Pro|","Data Structure and Algorithms|","Probability and Queuing Theory|","Programming in Java |","Numerical Methods|","Computer Graphics|","Computer Organization and Architecture|","Database Management Systems|","UML|"];
 
 				}
 				else if(batchCurrentYear == 3){   //BESE 3rd Years
-					var optionArray=["Choose Your Subject|Not selected","Applied Operating System|","Simulation & Modeling|","Artificial Intelligence & Neural Network|","System Programming|","Analysis & Design of Algorithm|","Organization and Management|","Multimedia Systems|","Computer Networks|","Principles of Programming Languages|","Engineering Economics|","Object Oriented Software Development|"];
+					var optionArray=["Choose Your Subject|Not selected","Applied Operating System|","Simulation and Modeling|","Artificial Intelligence and Neural Network|","System Programming|","Analysis and Design of Algorithm|","Organization and Management|","Multimedia Systems|","Computer Networks|","Principles of Programming Languages|","Engineering Economics|","Object Oriented Software Development|"];
 
 				}
 				else if(batchCurrentYear == 4){   //BESE 4th Years
-					var optionArray=["Choose Your Subject|Not selected","Real Time Systems|","Distributed Systems|","Enterprise Application Development|","Image Processing and Pattern Recognition|","Software Testing,Verification,Validation and Quality Assurance|","Elective I|","Network Programming|","Software Project Management|","Elective II|"];
+					var optionArray=["Choose Your Subject|Not selected","Real Time Systems|","Distributed Systems|","Enterprise Application Development|","Image Processing and Pattern Recognition|","Software Testing Validation and Quality Assur|","Elective I|","Network Programming|","Software Project Management|","Elective II|"];
 
 				}
 
@@ -131,6 +131,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				}
 	</script> 
 
+
 </head>
 <body>
 	<div class="background_image"></div>
@@ -139,28 +140,31 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 		<!-- nav bar -->
 
-		<div class="navigation">	
-			<nav>
+		<nav class="navbar">
+        <div class="brand-title">Gces Attendence</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
 				<ul> 
-				<li><a href="Home.php">Home</a> </li>
+				<li><a href="teacher_homepage.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>        
 				<li><a href="index.php">logout</a> </li>
 				</ul>
-			</nav>
+			
 		</div>
-
+		</nav>
 		<!-- label -->
-
+		<div class="topbar">
 		<div class="container" >
 			<h1>Attendance For<h1>
 		</div>
-
-		
-
 		<!-- dynamic select menu to select batch and subject-->
 
-		<form action="Home.php" method="POST">
+		<form action="teacher_homepage.php" method="POST">
 			<div class="batchselector">
 			<!-- Select Menu for batch imported  from batch table database-->
 				<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
@@ -186,18 +190,19 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				</select>
 				<input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
 		</form>
-
+</div>
 		</div class="record_submit_message">
 	
 		</div>
 		
 		<div class="pannel">
-			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
+			
 			<div class="day">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
 			<div class="date"><?php $today_date =date(" F jS , Y "); echo $today_date	?></div>
-			<button class="btn" id="addbtn0"><a href="AddBatch.php" id="add_txt">Add Batch</a></button>
-			<button class="btn" id="addbtn1"><a href="AddTeacher.php" id="add_txt">Add Teacher</a></button>   <!--Add Buttons -->
-			<button class="btn" id="addbtn2"><a href="AddStudent.php" id="add_txt">Add Student</a></button> 
+			<!-- <button class="btn"><a href="view.php" id="viewbtn">View</a></button>
+			 <button class="btn" id="addbtn0"><a href="AddBatch.php" id="add_txt">Add Batch</a></button>
+			<button class="btn" id="addbtn1"><a href="AddTeacher.php" id="add_txt">Add Teacher</a></button>  Add Buttons 
+			<button class="btn" id="addbtn2"><a href="AddStudent.php" id="add_txt">Add Student</a></button> -->
 
 
 			<!--shows succes or fail -->
@@ -228,7 +233,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 			$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
 			$table_name = $_POST['batch_name1'];
 			if($table_name !="No batch selected" && $subject_name!="Not selected"){ ?>
-			<form method="POST" action="Home.php" value="attendance">
+			<form method="POST" action="teacher_homepage.php" value="attendance">
 
 				<table class="table1">
 					<thead>
@@ -279,6 +284,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 </div>
 
+<script src="Js/navbar.js"></script>
 </header>
 <!--<a href="http://www.freepik.com">Designed by Freepik</a>-->
 

@@ -1,13 +1,64 @@
-<?php
-include_once 'connection.php';
-?>
+<?php 
+include_once 'connection.php'; 
+$flag=0;
+$score=0;
+
+
+if (isset($_POST['submit'])) { //checks if submit button is clicked
+	$subject=$_POST['subject_name'];
+	
+	$attendance_sheet= $subject . "_attendance_record";//Creates attendance record table with name of the subject if not exists
+	$sql_create2= "CREATE TABLE IF NOT EXISTS $attendance_sheet (   
+  	`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  	`student_name` varchar(255) NOT NULL,
+  	`roll_number` varchar(255) NOT NULL,
+  	`attendance_status` varchar(255) NOT NULL,
+  	`date` date NOT NULL )"; 
+
+  	$result2=mysqli_query($conn,$sql_create2);
+	
+
+	if(isset($_POST['attendance_status'])){ //checks if any radio buttons are checked
+
+		foreach($_POST['attendance_status'] as $id=>$attendance_status){ //loops through checked radio buttons
+
+
+			if($_POST['attendance_status'][$id]=="absent"){ //If any student is absent it is recorded in the database
+				$student_name=$_POST['student_name'][$id];
+				$roll_no=$_POST['roll_no'][$id];
+				$date=date("Y-m-d");
+				$attendance_table= strtolower ($attendance_sheet);
+				$sql="INSERT INTO $attendance_table (id ,student_name ,roll_number ,attendance_status , date) VALUES(0,'$student_name','$roll_no','$attendance_status', '$date')";
+				$result=mysqli_query($conn,$sql);
+		
+				if($result){
+				$flag=1;
+				}
+				else{
+					$flag=-1;
+					
+				}
+				}
+
+			if($_POST['attendance_status'][$id]=="present"){ //If student is present score is added by one
+				$score++;
+				$flag=1;
+				}
+		}
+
+		}
+	else{
+		$flag=2;
+	}
+}	
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Page</title>
-	
-	<link rel="stylesheet" type="text/css" href="CSS/Viewcss2.css">
-	<link rel="stylesheet" type="text/css" href="CSS/calender5.css">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle2.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 	<script type="text/javascript">	
 		var pair; 	
@@ -80,14 +131,16 @@ include_once 'connection.php';
 				}
 	</script> 
 
+
 </head>
 <body>
 	<div class="background_image"></div>
 	<div class="background_image2"></div>
-	<div class="main">
-
 	<header>
-		<nav class="navbar">
+
+		<!-- nav bar -->
+
+	<nav class="navbar">
         <div class="brand-title">Gces Attendence</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
@@ -95,28 +148,26 @@ include_once 'connection.php';
           <span class="bar"></span>
         </a>
         <div class="navbar-links">
-				<ul> 
-				<li><a href="teacher_homepage.php">Home</a> </li>
+            <ul> 
+				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
 				<li><a href="index.php">logout</a> </li>
-				</ul>
-			
+			</ul>
+        </div>
+	  </nav>
+
+		<!-- label -->
+
+		<div class="container" >
+			<h1>Attendance For<h1>
 		</div>
-		</nav>
-	</header>
-<label class="labeldate"><?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
 
-<!-- Date picker and batch/subject selector in a form -->
-
-	<form action="View.php" method="POST">
 		
 
-    
-	<span class="label1" value="hi">View Attendance For</span>
-		
-	 <div class="contain">
-			
+		<!-- dynamic select menu to select batch and subject-->
+
+		<form action="Home.php" method="POST">
 			<div class="batchselector">
 			<!-- Select Menu for batch imported  from batch table database-->
 				<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
@@ -137,91 +188,108 @@ include_once 'connection.php';
 			<!-- Select Menu for subject shown according to selected batch-->
 
 				<select id="subject_select" class="subject_select" name="selected_subject_name">
-					<option  selected value="Not selected">Choose Your Subject</option> 
+					<option  selected value="No subject selected">Choose Your Subject</option> 
 					
 				</select>
-
-				<p>
-				Choose the date:
-				</p>
-				<input type="date" class="date_class"  name="selected_date"required>
-				<input  class="btn1" type="submit" name="batch_submit" value="Enter">
+				<input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
 		</form>
 
-		<div id="batch_name">
-			
-				<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
+		</div class="record_submit_message">
+	
 		</div>
-		<div id="subject_name">
-			
-				<?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
-		</div>
-
-
-<!--Attendance record in a table --> 
-	 </div>
-		<div class="phpclass">	
-
-		<?php 
-			if (isset($_POST['batch_submit'])) {
-
-				
-				$subject_name =$_POST['selected_subject_name'];
-				$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
-				$attendance_record_name=$subject_name_withoutspace ."_attendance_record";//attendance_record_table_name
-
-				//Creates attendance record table with name of the subject if not exists
-				$sql_create2= "CREATE TABLE IF NOT EXISTS $attendance_record_name (   
-  				`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  				`student_name` varchar(255) NOT NULL,
-  				`roll_number` varchar(255) NOT NULL,
-  				`attendance_status` varchar(255) NOT NULL,
-  				`date` date NOT NULL )";
-  				$result2=mysqli_query($conn,$sql_create2);
-
-
-				$table_name=$_POST['batch_name1'];
-				$picked_date=$_POST['selected_date'];
-				if($table_name !="No batch selected" && $subject_name!="Not selected"){
-				$sql_date="SELECT distinct date FROM $attendance_record_name ;";
-				$result_date=mysqli_query($conn ,$sql_date);
-				while($row_date= mysqli_fetch_assoc($result_date)){ 
-					$counter=0;
-				$database_date=$row_date['date'];
-				if($database_date == $picked_date){
-				$counter++; ?>               
 		
-		<label class="labeldate"><?php echo $row_date['date']; ?></label>       <!--DATE-->
-		<table class="table1">	
-			<thead>															<!--Attendance Record -->
-				<tr>
-					<th>Roll No</th>
-					<th>Name</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<?php 
+		<div class="pannel">
+			<button class="btn"><a href="view.php" id="viewbtn">View</a></button>
+			<div class="day">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
+			<div class="date"><?php $today_date =date(" F jS , Y "); echo $today_date	?></div>
+			<button class="btn" id="addbtn0"><a href="AddBatch.php" id="add_txt">Add Batch</a></button>
+			<button class="btn" id="addbtn1"><a href="AddTeacher.php" id="add_txt">Add Teacher</a></button>   <!--Add Buttons -->
+			<button class="btn" id="addbtn2"><a href="AddStudent.php" id="add_txt">Add Student</a></button> 
+
+
+			<!--shows succes or fail -->
+
+
+			<?php if($flag==1){ ?>
+			<div class="attendance_success" style="position: absolute; left: 330px;top: 130px;  color: green">Attendance is taken succesfully</div>
+			<?php } ?>
+			<?php if($flag==2){ ?>
+			<div class="attendance_fail" style="position: absolute; left: 330px;top: 130px;  color: red">No Student to take Attendance</div>
+			<?php } ?>
+			<?php if($flag==-1){ ?>
+			<div class="attendance_crash" style="position: absolute; left: 330px;top: 130px;  color: red">Error</div>
+			<?php } ?>
 			
-
-			$sql="SELECT * FROM $attendance_record_name Where date='$picked_date'";
-			$result=mysqli_query($conn ,$sql);
-			$serial_number=0;
-			$counter=0;
-			while($row= mysqli_fetch_assoc($result)){
-				$serial_number++;
-		?>
-			<tr>
-				<td><?php echo $row['roll_number']; ?></td>
-				<td><?php echo $row['student_name']; ?></td>
-				<td><?php echo $row['attendance_status']; ?></td>
-			</tr>
-		<?php 
-		}?>
-		</table>
-		<?php }  } } } ?>
-		</div>
+			<br>
+			<div id="batch_name">
+				<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
+			</div>
+			<div id="subject_name">
+				<?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
+			</div>
 
 
+			
+			<?php if (isset($_POST['batch_submit']) ){
+			$subject_name =$_POST['selected_subject_name'];
+			$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
+			$table_name = $_POST['batch_name1'];
+			if($table_name !="No batch selected" && $subject_name!="Not selected"){ ?>
+			<form method="POST" action="Home.php" value="attendance">
+
+				<table class="table1">
+					<thead>
+						<tr>
+							<th>Roll no</th>
+							<th>Name       </th>
+							<th>Attendance </th>
+						</tr>
+					</thead>
+					<tbody>
+						<input type="hidden" name="table_name" value=<?php echo $table_name; ?>>
+						<input type="hidden" name="subject_name" value=<?php echo $subject_name_withoutspace; ?> >
+					<?php 
+						
+						$sql="SELECT * FROM $table_name";
+						$result=mysqli_query($conn ,$sql);
+						$serial_number=0;
+						$counter=0;
+						while($row= mysqli_fetch_assoc($result)){
+							$serial_number++;
+						?>
+ 																								<!--Attendance Sheet-->
+						<tr>
+							
+							<td><?php echo $serial_number; ?></td>
+							<input type="hidden" name="roll_no[]" value=<?php echo $serial_number; ?>>
+							<td><?php echo $row['student_name'] ; ?></td>
+							<input type="hidden" value="<?php echo $row['student_name'] ; ?>" name="student_name[]">
+							
+							<td>
+							<div class="status">
+							<input  type="radio"  id="present+<?php echo $counter;?>" name="attendance_status[<?php echo $counter;?>]" value="present" >
+							<label for="present+<?php echo $counter;?>" class="present_class" >Present</label>
+
+							<input  type="radio" id="absent+<?php echo $counter;?>" name="attendance_status[<?php echo $counter;?>]" value="absent" required >
+							<label for="absent+<?php echo $counter;?>" class="absent_class" >Absent</label> 
+							</div>
+
+							</td>
+						</tr>
+					<?php 
+				$counter++;} ?>
+					</tbody>
+				</table>
+				<input class="btn" type="submit" name="submit" value="SUBMIT">
+			</form>
+<?php }} ?>
+
+</div>
 <script src="Js/navbar.js"></script>
-		</body>
+</header>
+<!--<a href="http://www.freepik.com">Designed by Freepik</a>-->
+
+</body>
+
+	
 </html>
