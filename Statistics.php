@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/StatisticsCss1.css">
+	<link rel="stylesheet" type="text/css" href="CSS/StatisticsCss3.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
    <script type="text/javascript"> 
     var pair;   
@@ -149,7 +149,6 @@
   $sql_connect=" SELECT * FROM  $subject_name_withoutspace ";
   $result=mysqli_query($conn,$sql_connect);
    if ($result != NULL) {
-
   ?>
   
 
@@ -172,9 +171,13 @@
   <tr>
     <td><?php echo $row['id']?></td>
      <td><?php echo $row['student_name']?></td>
-     <?php if(true){?>
-      <td><progress style="background:white;" value="<?php echo $present?>" max="<?php echo $total ?>"> </td>
+     <?php if($percentage >= 70){?>
+      <td><progress class="eligible" value="<?php echo $present?>" max="<?php echo $total ?>"><?php echo $percentage ?> </td>
       <?php } ?>
+      <?php if($percentage < 70){?>
+      <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
+      <?php } ?>
+
       <td><?php echo (int)$percentage."%";?> </td>
       <td><?php echo $present ?>/<?php echo $total ?></td>
   </tr>

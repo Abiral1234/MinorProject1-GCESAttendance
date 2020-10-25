@@ -23,7 +23,7 @@
         
         <link rel="stylesheet" href="CSS/upload.css" >
 
-        <link rel="stylesheet" href="CSS/AddStudentCss6.css" >
+        <link rel="stylesheet" href="CSS/AddStudentCss7.css" >
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
@@ -38,9 +38,9 @@
         </a>
         <div class="navbar-links">
                 <ul> 
-                <li><a href="admin_home.php">Home</a> </li>
-                <li><a href="admin_view.php">View</a> </li>
-                <li><a href="admin_statistics.php">Statistics</a> </li>        
+                <li><a href="Home.php">Home</a> </li>
+                <li><a href="view.php">View</a> </li>
+                <li><a href="Statistics.php">Statistics</a> </li>        
                 <li><a href="index.php">logout</a> </li>
                 </ul>
            
@@ -89,12 +89,15 @@
                     </span>
                 </div>
                 <input type="submit" value="Enter the data" class="btn" name="student_submit">
+            </form>
+
                 <div class="Alt">OR</div>
+                <form>
                 <div class="upfile">
                         <input type="file" id="actual-btn" hidden/>
 
                         <!--custom upload button -->
-                        <label for="actual-btn">Choose A File</label>
+                        <label for="actual-btn">Choose File</label>
 
                         <!-- name of file chosen -->
                         <span id="file-chosen">No file chosen</span>
