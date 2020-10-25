@@ -44,6 +44,39 @@ body{
     top: 250px;
     left:150px;
 }
+       
+.eligible {
+  border: none;
+  height: 30px;
+}
+
+.eligible::-webkit-progress-value {
+  background: #00beff;
+  border-radius: 5px;
+
+}
+
+.eligible::-webkit-progress-bar {
+  background: #dcdcdc;
+  border-radius: 5px;
+}
+
+.ineligible {
+  border: none;
+  height: 30px;
+
+}
+
+.ineligible::-webkit-progress-value {
+  background: #FF0000;
+  border-radius: 5px;
+
+}
+
+.ineligible::-webkit-progress-bar {
+  background: #dcdcdc ; 
+  border-radius: 5px;
+}
 
 header{
 			background:#00BEFF;
