@@ -1,13 +1,13 @@
 <?php
-include_once 'connection.php';
+include_once '../connection.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Calender</title>
 	
-	<link rel="stylesheet" type="text/css" href="CSS/Viewcss2.css">
-	<link rel="stylesheet" type="text/css" href="CSS/calender5.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/Viewcss2.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/calender5.css">
 	<script type="text/javascript">	
 		var pair; 	
 		function populate(s1,s2){   //funtion that run when different batch is selected to put differernt subject 
@@ -84,7 +84,7 @@ include_once 'connection.php';
 	<div class="background_image2"></div>
 <header>
       <nav class="navbar">
-        <div class="brand-title">Gces Attendence</div>
+        <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -95,7 +95,8 @@ include_once 'connection.php';
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
-				<li><a href="index.php">logout</a> </li>
+				<li><a href="notice.php">Notice</a></li>
+				<li><a href="../index.php">logout</a> </li>
 
 			</ul>
         </div>

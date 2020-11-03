@@ -1,10 +1,10 @@
-<?php include_once 'connection.php';
+<?php include_once '../connection.php';
   $flag=0; ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/StatisticsCss3.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
    <script type="text/javascript"> 
     var pair;   
@@ -95,7 +95,8 @@
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
-				<li><a href="index.php">logout</a> </li>
+				<li><a href="notice.php">Notice</a></li>
+        <li><a href="../index.php">logout</a> </li>
 			</ul>
         </div>
 	  </nav>

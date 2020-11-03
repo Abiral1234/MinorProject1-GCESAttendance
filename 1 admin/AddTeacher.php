@@ -1,5 +1,5 @@
 <?php
-include_once'connection.php';
+include_once'../connection.php';
 
 if(isset($_POST['teacher_submit'])){
     $first_name=$_POST['first_name'];
@@ -18,7 +18,7 @@ if(isset($_POST['teacher_submit'])){
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/AddTeacherCss.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/AddTeacherCss.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -26,7 +26,7 @@ if(isset($_POST['teacher_submit'])){
 
 	<header>
       <nav class="navbar">
-        <div class="brand-title">Gces Attendence</div>
+        <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -37,7 +37,8 @@ if(isset($_POST['teacher_submit'])){
                 <li><a href="Home.php">Home</a> </li>
                 <li><a href="view.php">View</a> </li>
                 <li><a href="Statistics.php">Statistics</a> </li>                  <!-- nav bar -->
-                <li><a href="index.php">logout</a> </li>
+                <li><a href="notice.php">Notice</a></li>
+                <li><a href="../index.php">logout</a> </li>
 
             </ul>
         </div>

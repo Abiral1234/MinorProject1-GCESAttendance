@@ -1,5 +1,5 @@
 <?php 
-include_once 'connection.php';
+include_once '../connection.php';
   	if(isset($_POST['batch_submit2'])){
 	$batch_program =$_POST['program'];
 	$batch_year =$_POST['year'];
@@ -43,14 +43,14 @@ include_once 'connection.php';
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/AddBatchCss1.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <header>
       <nav class="navbar">
-        <div class="brand-title">Gces Attendence</div>
+        <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -60,8 +60,9 @@ include_once 'connection.php';
             <ul> 
 				<li><a href="Home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
-				<li><a href="index.php">logout</a> </li>
+				<li><a href="Statistics.php">Statistics</a> </li> 
+				<li><a href="notice.php">Notice</a></li>    			   <!-- nav bar -->
+				<li><a href="../index.php">logout</a> </li>
 
 			</ul>
         </div>

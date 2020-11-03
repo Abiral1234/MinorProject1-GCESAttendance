@@ -1,5 +1,5 @@
 <?php 
-include_once 'connection.php';
+include_once '../connection.php';
 	$sql_create = "CREATE TABLE IF NOT EXISTS TeacherList (
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		`teacher_name` varchar(255) NOT NULL,

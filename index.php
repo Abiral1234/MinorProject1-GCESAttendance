@@ -21,9 +21,9 @@
 			<img src="Images/Index.jpg" id="bg">
 			<div class="content">
 				<h1>Enter as</h1>
-				<button class="btn" id="btn1"><a class="button" href="Home.php">Student</a></button>
-				<button class="btn" id="btn2"><a class="button" href="login.php">Teacher</a></button>
-				<button class="btn" id="btn3"><a class="button" href="login.php">  Admin  </a></button>
+				<button class="btn" id="btn1"><a class="button" href="3 student/home.php">Student</a></button>
+				<button class="btn" id="btn2"><a class="button" href="2 teacher/home.php">Teacher</a></button>
+				<button class="btn" id="btn3"><a class="button" href="1 admin/home.php">  Admin  </a></button>
 			</div>
 			</div>
 		</section>

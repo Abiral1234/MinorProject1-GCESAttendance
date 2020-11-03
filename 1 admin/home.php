@@ -1,5 +1,5 @@
 <?php 
-include_once 'connection.php'; 
+include_once '../connection.php'; 
 $flag=0;
 $flag1=0;
 $score=0;
@@ -126,7 +126,7 @@ NoAttendance:
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="CSS/HomeStyle1.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/HomeStyle1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 	<script type="text/javascript">	
@@ -206,7 +206,7 @@ NoAttendance:
 	<div class="background_image2"></div>
 <header><!-- NAvigation BAR -->
       <nav class="navbar">
-        <div class="brand-title">Gces Attendence</div>
+        <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -214,10 +214,11 @@ NoAttendance:
         </a>
         <div class="navbar-links">
             <ul> 
-				<li><a href="Home.php">Home</a> </li>
+				<li><a href="home.php">Home</a> </li>
 				<li><a href="view.php">View</a> </li>
 				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
-				<li><a href="index.php">logout</a> </li>
+				<li><a href="notice.php">Notice</a></li>
+				<li><a href="../index.php">logout</a> </li>
 			</ul>
         </div>
 	  </nav>
@@ -234,7 +235,7 @@ NoAttendance:
 
 		<!-- dynamic select menu to select batch and subject-->
 
-<form action="Home.php" method="POST">
+<form action="home.php" method="POST">
 			<div class="batchselector">
 			<!-- Select Menu for batch imported  from batch table database-->
 				<select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">

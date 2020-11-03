@@ -1,4 +1,5 @@
-<?php include_once 'connection.php';
+  
+<?php include_once '../connection.php';
 
     if (isset($_POST['student_submit'])) {
     $student_name =$_POST['name'];
@@ -19,12 +20,7 @@
     <head>
         <title>Add Student</title>
       
-
-        
-        <link rel="stylesheet" href="CSS/upload.css" >
-
-        <link rel="stylesheet" href="CSS/AddStudentCss7.css" >
-
+        <link rel="stylesheet" href="../CSS/AddStudentCss7.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -38,10 +34,11 @@
         </a>
         <div class="navbar-links">
                 <ul> 
-                <li><a href="Home.php">Home</a> </li>
+                <li><a href="home.php">Home</a> </li>
                 <li><a href="view.php">View</a> </li>
-                <li><a href="Statistics.php">Statistics</a> </li>        
-                <li><a href="index.php">logout</a> </li>
+                <li><a href="statistics.php">Statistics</a> </li> 
+                <li><a href="notice.php">Notice</a> </li>       
+                <li><a href="../index.php">logout</a> </li>
                 </ul>
            
         </div>
@@ -90,20 +87,50 @@
                 </div>
                 <input type="submit" value="Enter the data" class="btn" name="student_submit">
             </form>
-
                 <div class="Alt">OR</div>
-                <form>
                 <div class="upfile">
-                        <input type="file" id="actual-btn" hidden/>
+                <form method="post" action="" enctype='multipart/form-data'>
+                        <input type="file" name="file" id="actual-btn" hidden />
 
                         <!--custom upload button -->
-                        <label for="actual-btn">Choose File</label>
+                        <label for="actual-btn">Choose A File</label>
 
                         <!-- name of file chosen -->
                         <span id="file-chosen">No file chosen</span>
-                        <input type="submit" value="Submit File" class="btn" name="student_submit">
+                        <input type="submit" value="Submit File" class="btn" name="import">
+                    </form>
+                    <?php 
+                                $msg = '';
+                                 
+                                if(isset($_POST['import'])){
+
+                                    $filename = $_FILES["file"]["tmp_name"];
+
+                                    if($_FILES["file"]["size"] > 0)
+                                    {
+                                        
+                                        $file = fopen($filename, "r");
+
+                                        while (($col = fgetcsv($file, 10000, ",")) !== FALSE) 
+                                        {
+                                            // echo'<pre>'; print_r($col);
+                                            $filename = $_FILES['file']['name']; //print filename eg:bece_2018.csv
+                                            $filename_withoutextension = basename($filename,".csv"); 
+                                            //eg:remove extension from file name
+
+                                            $insert = "INSERT INTO $filename_withoutextension (student_name,roll_number,reg_number,gender)values('".$col[0]."','".$col[1]."','".$col[2]."','".$col[3]."')";
+                                            mysqli_query($conn,$insert);
+
+
+                                        }
+                                        echo '<p style="color:green;font-size:20px;"> CSV Data inserted successfully</p>';
+
+                                    }
+
+                                }
+                                ?>         
                 </div>
-            </form>
+            
         </div>
         <script src="JS/addvalidate.js" type="text/javascript"></script> 
 
@@ -133,7 +160,7 @@
                 </select>
                 <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
         </form>
-<h2><?echo $_POST['selected_batch']?></h2>
+
 <?php if (isset($_POST['batch_submit']) || isset($_POST['student_submit']) ){
     $table_name = $_POST['selected_batch'];
     if($table_name !="No batch selected"){ ?>
@@ -150,7 +177,7 @@
             </thead>
             <tbody>
             <?php         
-                $sql="SELECT * FROM $table_name order by student_name asc";
+                $sql="SELECT * FROM $table_name";
                 $result=mysqli_query($conn ,$sql);
                 $serial_number=0;
                 $counter=0;
@@ -166,8 +193,12 @@
           <?php }?>
             </tbody>
 </table>
-<?php } }?>
 
+
+
+
+
+<?php } }?>
 
    <script>
        const actualBtn = document.getElementById('actual-btn');
@@ -178,8 +209,7 @@
         fileChosen.textContent = this.files[0].name
 })
 </script>    
-
    
 <script src="Js/navbar.js"></script>
-    </body>
+</body>
 </html>
