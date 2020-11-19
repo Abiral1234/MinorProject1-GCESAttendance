@@ -83,7 +83,6 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				$student_name=$_POST['student_name'][$id];
 				$sql_plus="SELECT * FROM $subject WHERE student_name = '$student_name'";
 				$result_counter=mysqli_query($conn,$sql_plus);
-
 				$row_counter= mysqli_fetch_assoc($result_counter);
 				$prev_counter=$row_counter['present_counter'];
 				$update_counter=$prev_counter+1;
@@ -110,10 +109,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				WHERE student_name = '$student_name'";
 				$update_result=mysqli_query($conn,$sql_update);
 				}
-
 		}
-		
-
 		}
 	else{
 		$flag=2;
@@ -121,15 +117,15 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 }
 NoAttendance:	
  ?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/HomeStyle1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../CSS/homecss5.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-	<script type="text/javascript">	
+<script type="text/javascript">	
 		var pair; 	
 		function populate(s1,s2){   //funtion that run when different batch is selected to put differernt subject 
 			var s1=document.getElementById(s1);
@@ -198,14 +194,11 @@ NoAttendance:
 
 				}
 				}
-	</script> 
+</script> 
 
 </head>
 <body>
-	<div class="background_image"></div>
-	<div class="background_image2"></div>
-<header><!-- NAvigation BAR -->
-      <nav class="navbar">
+<nav class="navbar">
         <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
           <span class="bar"></span>
@@ -221,23 +214,12 @@ NoAttendance:
 				<li><a href="../index.php">logout</a> </li>
 			</ul>
         </div>
-	  </nav>
-</header>
+</nav>
 
-		<!-- label -->
-		<div class="main">
-
-		<div class="container" >
-			<h1>Attendance For<h1>
-		</div>
-
-		
-
-		<!-- dynamic select menu to select batch and subject-->
-
+<div class="select_button">
 <form action="home.php" method="POST">
-			<div class="batchselector">
 			<!-- Select Menu for batch imported  from batch table database-->
+			<span class="select_menu_span">Attendance For:</span>
 				<select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
 					<option  selected value="No batch selected" >Choose Your Batch</option> 
 					<?php 
@@ -245,8 +227,8 @@ NoAttendance:
 						$result_batch=mysqli_query($conn ,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){         
 		   			?>
-					<option required value="<?php echo $row['batchname']?>" name="option_value" >
-
+					<option required value="<?php echo $row['batchname'] ;?>" name="option_value" >
+						
 						<?php echo $row['batchname'] ;?>
 					</option>
 
@@ -259,40 +241,43 @@ NoAttendance:
 					<option  selected value="No subject selected">Choose Your Subject</option> 
 					
 				</select>
-				<input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
+				<input  class="enterbutton" type="submit" name="batch_submit" value="Enter" >
 </form>
+</div>
 
-		</div class="record_submit_message">
-	
-		<div class="pannel">
-			<div class="day">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></div>
-			<div class="date"><?php $today_date =date(" F jS , Y "); echo $today_date	?></div>
-			<!--shows succes or fail -->
+<div class="date">
+	<span class="day">Day:<?php $dayofweek =date("l"); echo $dayofweek ?></span><br>
+	<span class="date1"><?php $today_date =date(" F jS , Y "); echo $today_date	?></span>
+</div>
 
-
-			<?php if($flag==1){ ?>
-			<div class="attendance_success" style="position: absolute; left: 330px;top: 130px;  color: green">Attendance is taken succesfully</div>
-			<?php } ?>
-			<?php if($flag==2){ ?>
-			<div class="attendance_fail" style="position: absolute; left: 330px;top: 130px;  color: red">No Student to take Attendance</div>
-			<?php } ?>
-			<?php if($flag1==3){ ?>
-			<div class="attendance_fail" style="position: absolute; left: 280px;top: 130px;  color: red">Todays Attendance Has Been Taken Already </div>
-			<?php } ?>
-			<?php if($flag==-1){ ?>
-			<div class="attendance_crash" style="position: absolute; left: 330px;top: 130px;  color: red">Error</div>
-			<?php } ?>
-			
-			<br>
-			<div id="batch_name">
+<div class="select_name">
+			<span id="batch_name">
 				<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
-			</div>
-			<div id="subject_name">
+			</span>
+			<span id="subject_name">
 				<?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
-			</div>
+			</span>
+</div>
+
+<div class="attendance_status">
+	<?php if($flag==1){ ?>
+		<div class="attendance_success" >Attendance is taken succesfully!!!</div>
+	<?php } ?>	
+	<?php if($flag==2){ ?>
+		<div class="attendance_fail" >No Student to take Attendance</div>
+	<?php } ?>
+	<?php if($flag1==3){ ?>
+		<div class="attendance_fail" >Todays Attendance Has Been Taken Already </div>
+	<?php } ?>
+	<?php if($flag==-1){ ?>
+		<div class="attendance_crash">Error</div>
+	<?php } ?> 
+	
+</div>
 
 
-			
+
+<div class="attendance_sheet">
 			<?php if (isset($_POST['batch_submit']) ){
 			$subject_name =$_POST['selected_subject_name'];
 			$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
@@ -347,8 +332,17 @@ NoAttendance:
 			</form>
 <?php }} ?>
 
+
 </div>
-</div>
-<script src="Js/navbar.js"></script>
+
+
+<script type="text/javascript">
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+</script>
 </body>
 </html>
