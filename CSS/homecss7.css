@@ -2,7 +2,22 @@ body{
 		margin: 0px;
 		padding: 0px;
 		font-family: sans-serif;
+        z-index: 10;
 	}
+.background_image{
+    background: url("../Images/white.jpg");
+    width: 1000px;
+    height: 1000px;
+    background-size: cover;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    z-index: -3;
+}
+
+.image1{
+    z-index: -2;
+}
 .nav{
 		background-color: #00beff;
 		width: 100%;
@@ -15,6 +30,7 @@ body{
 		width: 100%;	
 		text-align: center;
 		align-items: center;
+        z-index: 20;
 	}
 .date{
 		/*background-color: lightgreen;  */
@@ -29,6 +45,7 @@ body{
     position: relative;
     /*background-color: pink; */
     text-align: center;
+
   
 }
 #batch_name, #subject_name{
