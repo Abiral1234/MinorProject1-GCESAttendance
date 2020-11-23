@@ -210,6 +210,6 @@
     
   </div>
 </main>
-<script src="Js/navbar.js"></script>
+<!-- <script src="Js/navbar.js"></script> -->
 </body>
 </html>

@@ -10,8 +10,8 @@ body{
 }
 .background_image{
 	background: url("../Images/white.jpg");
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 	background-size: cover;
 	position: fixed;
 	/* right: 0px;
@@ -22,9 +22,9 @@ body{
 	background: url("../Images/Charts.svg");
     background-size: contain;
     background-repeat: no-repeat;
-	width: 70vw;
+	width: 70%;
     /* height: 600px; */
-    height: 70vh;
+    height: 70%;
     position: fixed;
     object-fit: scale-down;
 	top: 200px;
@@ -107,6 +107,7 @@ header::after{
 		}
 
 .container{
+    /* background-color: red; */
     display: flex;
     justify-content: center;
     padding: 0;
@@ -161,7 +162,7 @@ select, option { width: 240px; }
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     cursor: pointer;
 }
 
@@ -322,9 +323,59 @@ tbody tr:last-of-type {
     }
 }
 
-@media screen and (max-width:1257px){
+@media screen and (max-width: 1257px){
     .background_image{
         height: 100%;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1070px){
+    .progresstable{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 890px){
+    .container{
+        flex-direction: column;
+        height: 100px;
+    }
+    
+    h1{
+        /* margin-block-start: 2em; */
+        margin-block-end: 0px;
+        margin-top: 0in;
+    }
+}
+
+@media screen and (max-width: 605px){
+    .container{
+        height: auto;
+    }
+     
+    h1{
+        margin-top: 0px;
+    }
+
+    .form{
+        margin: 0px;
+    }
+
+    .formcontent{
+        display: flex;
+        height: 135px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .subject_select{
+        margin-left: 0px;
+    }
+
+    .btn1{
+        margin-left: 0px;
+        width: 70px;
+        /* margin-top: 0px; */
     }
 }

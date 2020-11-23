@@ -6,6 +6,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script type="text/javascript"> 
     var pair;   
     function populate(s1,s2){   //funtion that run when different batch is selected to put differernt subject 
@@ -82,27 +83,27 @@
 <div class="background_image"></div>
 <div class="background_image2"></div>
 
-<header>
+<!-- <header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendance</div>
-        <a href="#" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
+          <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </a>
         <div class="navbar-links">
-            <ul> 
-				<li><a href="Home.php">Home</a> </li>
-				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
-				<li><a href="notice.php">Notice</a></li>
-        <li><a href="../index.php">logout</a> </li>
-			</ul>
+          <ul> 
+            <li><a href="Home.php">Home</a> </li>
+            <li><a href="view.php">View</a> </li>
+            <li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
+            <!-- <li><a href="notice.php">Notice</a></li>
+            <li><a href="../index.php">logout</a> </li>
+        </ul>
         </div>
 	  </nav>
    
 
-</header>
+</header> -->
 
 <main>
         <section>
@@ -117,30 +118,33 @@
 
               <form action="Statistics.php" method="POST">
                 <!-- Select Menu for batch imported  from batch table database-->
-                <select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
-                  <option  selected value="No batch selected" >Choose Your Batch</option> 
-                    <?php 
-                    $sql_select_batch="SELECT * FROM `batch_list`;";
-                    $result_batch=mysqli_query($conn ,$sql_select_batch);
-                    while($row= mysqli_fetch_assoc($result_batch)){         
-                    ?>
-                  <option required value="<?php echo $row['batchname']?>" name="option_value" >
+                <div class="formcontent">
+                  <select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
+                    <option  selected value="No batch selected" >Choose Your Batch</option> 
+                      <?php 
+                      $sql_select_batch="SELECT * FROM `batch_list`;";
+                      $result_batch=mysqli_query($conn ,$sql_select_batch);
+                      while($row= mysqli_fetch_assoc($result_batch)){         
+                      ?>
+                    <option required value="<?php echo $row['batchname']?>" name="option_value" >
 
-                    <?php echo $row['batchname'] ;?>
-                  </option>
+                      <?php echo $row['batchname'] ;?>
+                    </option>
 
-                  <?php }?> 
-                </select>
+                    <?php }?> 
+                  </select>
 
-                </select>
+                  </select>
 
-                <!-- Select Menu for subject shown according to selected batch-->
+                  <!-- Select Menu for subject shown according to selected batch-->
 
-                <select id="subject_select" class="subject_select" name="selected_subject_name">
-                  <option  selected value="No subject selected">Choose Your Subject</option> 
-                    
-                </select>
-                <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
+                  <select id="subject_select" class="subject_select" name="selected_subject_name">
+                    <option  selected value="No subject selected">Choose Your Subject</option> 
+                      
+                  </select>
+                  <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
+                </div>
+                
               </form>
             </div>
           </div>
