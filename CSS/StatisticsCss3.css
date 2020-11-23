@@ -7,6 +7,7 @@ body{
     font-weight: 350;
     min-width: fit-content;
     min-height: fit-content;
+    min-width: 300px;
 }
 .background_image{
 	background: url("../Images/white.jpg");
@@ -176,7 +177,7 @@ select, option { width: 240px; }
 .table1{
     border-collapse: collapse;
     margin: 0px;
-    min-width: 90vw;
+    width: 90vw;
     text-align: left;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
@@ -290,7 +291,7 @@ tbody tr:last-of-type {
     border-radius: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1180px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -330,9 +331,21 @@ tbody tr:last-of-type {
     }
 }
 
-@media screen and (max-width: 1070px){
-    .progresstable{
-        flex-direction: column;
+@media screen and (max-width: 1180px){
+    .table1{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .table1{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 570px){
+    .table1{
+        font-size: 15px;
     }
 }
 
