@@ -362,6 +362,7 @@ tbody tr:last-of-type {
     }
 }
 
+
 @media screen and (max-width: 605px){
     .container{
         height: auto;
@@ -377,10 +378,14 @@ tbody tr:last-of-type {
 
     .formcontent{
         display: flex;
-        height: 135px;
+        height: 145px;
         flex-direction: column;
         justify-content: space-between;
     }
+
+    /* .btn1{
+        justify-self: flex-end;
+    } */
 
     .subject_select{
         margin-left: 0px;
