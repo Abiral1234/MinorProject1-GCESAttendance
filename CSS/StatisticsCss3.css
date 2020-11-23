@@ -47,6 +47,7 @@ body{
 .batchinfo{
     margin-top: 5px;
     display: flex;
+    font-weight: bold;
     justify-content: space-around;
 }
 
@@ -396,4 +397,11 @@ tbody tr:last-of-type {
         width: 70px;
         /* margin-top: 0px; */
     }
+
+    .batchinfo{
+        /* display: flex; */
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
