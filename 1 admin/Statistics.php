@@ -104,93 +104,112 @@
 
 </header>
 
-<div class="container" >
-      <h1>View Statistics For<h1>
+<main>
+        <section>
+
+          <div class="container">
+            <div>
+              <h1>View Statistics for</h1>
+            </div>
+
+            <div class="form">
+            <!-- dynamic select menu to select batch and subject-->
+
+              <form action="Statistics.php" method="POST">
+                <!-- Select Menu for batch imported  from batch table database-->
+                <select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
+                  <option  selected value="No batch selected" >Choose Your Batch</option> 
+                    <?php 
+                    $sql_select_batch="SELECT * FROM `batch_list`;";
+                    $result_batch=mysqli_query($conn ,$sql_select_batch);
+                    while($row= mysqli_fetch_assoc($result_batch)){         
+                    ?>
+                  <option required value="<?php echo $row['batchname']?>" name="option_value" >
+
+                    <?php echo $row['batchname'] ;?>
+                  </option>
+
+                  <?php }?> 
+                </select>
+
+                </select>
+
+                <!-- Select Menu for subject shown according to selected batch-->
+
+                <select id="subject_select" class="subject_select" name="selected_subject_name">
+                  <option  selected value="No subject selected">Choose Your Subject</option> 
+                    
+                </select>
+                <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
+              </form>
+            </div>
+          </div>
+
+        </section>
+
+        <div class="batchinfo">
+          <div id="batch_name">
+            <?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
+          </div>
+          <div id="subject_name">
+            <?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
+          </div>
+        </div>
+        
+
+    <?php if (isset($_POST['batch_submit'])) { 
+      $subject_name =$_POST['selected_subject_name'];
+      $subject_name_withoutspace= str_replace(" ", "_", $subject_name);
+      $sql_connect=" SELECT * FROM  $subject_name_withoutspace ";
+      $result=mysqli_query($conn,$sql_connect);
+      if ($result != NULL) {
+    ?>
+      
+    <div class="progresstable">
+      <table class="table1">
+        <thead>
+          <tr>
+          <th>Roll No.</th>
+          <th>Student Name</th>
+          <th>Progress Bar</th>
+          <th>Percentage</th>
+          <th>Attendance Score</th>
+        </tr>
+        </thead>
+        <?php 
+          while ($row=mysqli_fetch_assoc($result)) {
+            $present = $row['present_counter'] ;
+            $total=$row['total_attendance'];
+            $percentage=$present/$total*100;
+        ?>
+        <tr>
+          <td><?php echo $row['id']?></td>
+          <td><?php echo $row['student_name']?></td>
+          <?php if($percentage >= 70){?>
+            <td><progress class="eligible" value="<?php echo $present?>" max="<?php echo $total ?>"><?php echo $percentage ?> </td>
+            <?php } ?>
+            <?php if($percentage < 70){?>
+            <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
+            <?php } ?>
+
+            <td><?php echo (int)$percentage."%";?> </td>
+            <td><?php echo $present ?>/<?php echo $total ?></td>
+        </tr>
+        <?php    } ?>
+    
+      </table>
     </div>
-
-    <!-- dynamic select menu to select batch and subject-->
-
-<form action="Statistics.php" method="POST">
-      <div class="batchselector">
-      <!-- Select Menu for batch imported  from batch table database-->
-        <select required id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
-          <option  selected value="No batch selected" >Choose Your Batch</option> 
-          <?php 
-            $sql_select_batch="SELECT * FROM `batch_list`;";
-            $result_batch=mysqli_query($conn ,$sql_select_batch);
-            while($row= mysqli_fetch_assoc($result_batch)){         
-            ?>
-          <option required value="<?php echo $row['batchname']?>" name="option_value" >
-
-            <?php echo $row['batchname'] ;?>
-          </option>
-
-          <?php }?> 
-        </select>
-
-      <!-- Select Menu for subject shown according to selected batch-->
-
-        <select id="subject_select" class="subject_select" name="selected_subject_name">
-          <option  selected value="No subject selected">Choose Your Subject</option> 
-          
-        </select>
-        <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
-</form>
-      <div id="batch_name">
-        <?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
-      </div>
-      <div id="subject_name">
-        <?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
-      </div>
-
-
-<?php if (isset($_POST['batch_submit'])) { 
-   $subject_name =$_POST['selected_subject_name'];
-  $subject_name_withoutspace= str_replace(" ", "_", $subject_name);
-  $sql_connect=" SELECT * FROM  $subject_name_withoutspace ";
-  $result=mysqli_query($conn,$sql_connect);
-   if ($result != NULL) {
-  ?>
-  
-
-<table class="table1">
-  <thead>
-    <tr>
-    <th>Roll No.</th>
-    <th>Student Name</th>
-    <th>Progress Bar</th>
-    <th>Percentage</th>
-    <th>Attendance Score</th>
-  </tr>
-  </thead>
-  <?php 
-  while ($row=mysqli_fetch_assoc($result)) {
-    $present = $row['present_counter'] ;
-    $total=$row['total_attendance'];
-    $percentage=$present/$total*100;
-  ?>
-  <tr>
-    <td><?php echo $row['id']?></td>
-     <td><?php echo $row['student_name']?></td>
-     <?php if($percentage >= 70){?>
-      <td><progress class="eligible" value="<?php echo $present?>" max="<?php echo $total ?>"><?php echo $percentage ?> </td>
+    
+    <div class="error">
+      <?php } 
+        else{ $flag=4; }  }?>
+      <?php if($flag==4){ ?>
+            <div class="attendance_fail" style="font-size: 30px;  color: red">No Attendance has been taken to show statistics</div>
       <?php } ?>
-      <?php if($percentage < 70){?>
-      <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
-      <?php } ?>
-
-      <td><?php echo (int)$percentage."%";?> </td>
-      <td><?php echo $present ?>/<?php echo $total ?></td>
-  </tr>
- <?php    } ?>
- 
-</table>
-<?php } 
-  else{ $flag=4; }  }?>
-<?php if($flag==4){ ?>
-      <div class="attendance_fail" style="position: absolute; left: 450px;top: 290px; font-size: 30px;  color: red">No Attendance has been taken to show statistics</div>
-      <?php } ?>
-
-<script src="Js/navbar.js"></script>
+    </div>
+    
+  </div>
+</main>
+<!-- <script src="Js/navbar.js"></script> -->
 </body>
 </html>
