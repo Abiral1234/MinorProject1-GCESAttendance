@@ -1,9 +1,9 @@
-<?php include_once '../connection.php'; ?>
+`<?php include_once'../connection.php';?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Events</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/AddEvent.css">
+  <title>Notices</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/AddNotice.css">
 </head>
 <body>
 <nav class="navbar">
@@ -28,41 +28,48 @@
 	
 <script src="../JS/navbar.js"></script>
 <div class="container">
-<form class="Event" action="" method="POST">
-	<div class="addevent"> 
-<span class="hello">ADD EVENT</span><br></br>
-	</div>
-	<div class="entertitle">
-<span>TITLE</span><br>
-	
-<input type="text" name="title"><br>
-	</div>
-	<div class="enterdate">
-<span>DATE:</span><br>
-<input type="date" class="dateclass" name="date"><br> 
-	</div>
-	<div class="entertime">
-	<span>Time:</span><br>
-<input type="time" name="time">
-	</div>
-	<div class="submitbut">
-<input type="submit" class="btn1" name="event_submit">
-	</div>
+<form action="" method="POST" class="textform">
+<span class="hello">ADD NOTICE</span><br></br>
+<div class="addsub">
+  <span>SUBJECT</span><br>
+  <input type="text" name="subject"><br>
+</div>
+  <div class="addsub">
+  <span>DETAIL</span><br>
+<textarea class="textarea" name="detail"></textarea><br>
+</div>
+<div class="addbatch">
+<span>TO:</span></br>
+ <!-- Select Menu for batch imported  from batch table database-->
+<select id="batch_select2" class="batch_select2" name="selected_batch" >
+<option  selected value="No batch selected" >Choose Your Batch</option> 
+<?php 
+    $sql_select_batch="SELECT * FROM `batch_list`;";
+    $result_batch=mysqli_query($conn ,$sql_select_batch);
+    while($row= mysqli_fetch_assoc($result_batch)){         
+?>
+<option required value="<?php echo $row['batchname']?>" name="option_value" >
+    <?php echo $row['batchname'] ;?>
+  </option>
+    <?php }?>   
+</select>
+</div>
+<div class="enter">
+<input  class="btn1" type="submit" name="text_submit" value="Enter">
+</div>
 </form>
 <?php
-	if (isset($_POST['event_submit'])) {
-	$title=$_POST['title'];
-	$date=$_POST['date'];
-	$time= $_POST['time'];
-	echo $time;
-	$sql_insert_event="INSERT INTO `upcoming_event`(title,date) VALUES('$title','$date')";
-	$result=mysqli_query($conn,$sql_insert_event);
-
-	}
+if (isset($_POST['text_submit'])) {
+  $subject=$_POST['subject'];
+  $detail=$_POST['detail'];
+  $datetime1=date("Y-m-d H:i:s");
+  $date=date("Y-m-d");
+  $sql_insert_textnotice="INSERT INTO `text_notice`(subject,detail,datetime,date) VALUES('$subject','$detail','$datetime1','$date')";
+  if($result=mysqli_query($conn , $sql_insert_textnotice)){}
+    else{echo "cannot import";}
+}
 ?>
-<div class="backbut">
 <a href="notice.php"><button class="btn1">BACK</button></a>
-</div>
 </div>
 </body>
 </html>
