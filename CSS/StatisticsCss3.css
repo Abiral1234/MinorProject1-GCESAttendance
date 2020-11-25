@@ -350,7 +350,7 @@ tbody tr:last-of-type {
     }
 }
 
-@media screen and (max-width: 890px){
+@media screen and (max-width: 940px){
     .container{
         flex-direction: column;
         height: 100px;
@@ -364,9 +364,11 @@ tbody tr:last-of-type {
 }
 
 
-@media screen and (max-width: 605px){
+@media screen and (max-width: 620px){
     .container{
         height: auto;
+        padding-left: 25px;
+        align-items: flex-start;
     }
      
     h1{
@@ -377,12 +379,16 @@ tbody tr:last-of-type {
         margin: 0px;
     }
 
+
     .formcontent{
         display: flex;
         height: 145px;
-        flex-direction: column;
+        align-items: left;
+        flex-direction: column; 
         justify-content: space-between;
     }
+
+
 
     /* .btn1{
         justify-self: flex-end;
