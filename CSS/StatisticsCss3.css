@@ -370,9 +370,14 @@ tbody tr:last-of-type {
         padding-left: 25px;
         align-items: flex-start;
     }
+
+    select, option {
+        width: 190px;
+    }
      
     h1{
         margin-top: 0px;
+        font-size: 23px;
     }
 
     .form{
@@ -382,10 +387,10 @@ tbody tr:last-of-type {
 
     .formcontent{
         display: flex;
-        height: 145px;
+        /* height: 145px; */
         align-items: left;
-        flex-direction: column; 
-        justify-content: space-between;
+        /* flex-direction: column;  */
+        /* justify-content: space-around; */
     }
 
 
@@ -395,19 +400,26 @@ tbody tr:last-of-type {
     } */
 
     .subject_select{
-        margin-left: 0px;
+        margin-left: 5px;
+        font-size: 15px;
     }
 
     .btn1{
-        margin-left: 0px;
-        width: 70px;
+        margin-left: 5px;
+        width: 60px;
+        font-size: 16px;
         /* margin-top: 0px; */
     }
 
     .batchinfo{
         /* display: flex; */
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        padding-left: 25px;
+    }
+
+    .batch_select{
+        font-size: 15px;
     }
 
 }
