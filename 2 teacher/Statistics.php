@@ -168,9 +168,19 @@
       $result=mysqli_query($conn,$sql_connect);
       if ($result != NULL) {
     ?>
+    
+    <div class="searchbox">
+      <div class="search">
+        <input type="text" 
+        id="userInput" 
+        onkeyup="searchFunction()" 
+        placeholder="Search for names.."
+        title="Type in a name to Search">
+      </div>
+    </div>
       
     <div class="progresstable">
-      <table class="table1">
+      <table class="table1" id="table1">
         <thead>
           <tr>
           <th>Roll No.</th>
@@ -204,7 +214,7 @@
       </table>
     </div>
     
-  <div class="error">
+      <div class="error">
       <?php } 
         else{ $flag=4; }  }?>
       <?php if($flag==4){ ?>
@@ -212,9 +222,10 @@
       <?php } ?>
     </div>
     
+    
   </div>
 </main>
-<script src="../Js/navbar.js"></script>
-
+<script src="Js/navbar.js"></script>
+<script src="../JS/Statistics.js"></script>
 </body>
 </html>
