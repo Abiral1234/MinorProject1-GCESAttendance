@@ -32,7 +32,7 @@
 	<div class="container">
 		<div id="gridrow">
 			<div class="img">
-				<img id="background" src="Images/login.svg">
+				<img id="background" src="../Images/login.svg">
 			</div>
 			<p id="description">Gandaki College of Engineering and Science (GCES) is located in Pokhara. 
 			Founded in 1998 and offically inaguratd i 1999 this college has always been driven
@@ -42,7 +42,7 @@
 		</div>
 		<div class="login-content">
 			<form action="" name="loginform" method="POST">
-				<img src="Images/avatar1.svg" id="avatar">
+				<img src="../Images/avatar1.svg" id="avatar">
 				<h2 class="title">Welcome</h2>
 				<div class="error">
 					<?php echo $error; ?>
@@ -76,6 +76,6 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
 </body>
 </html>

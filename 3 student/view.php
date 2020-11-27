@@ -220,6 +220,8 @@ include_once '../connection.php';
 
 		<?php }  } } } ?>
 		</div>
+		
+<script src="../Js/navbar.js"></script>
 		</body>
 
 </html>

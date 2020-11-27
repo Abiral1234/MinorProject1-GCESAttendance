@@ -281,6 +281,7 @@ echo "<a href='$imageurl'><img src='$imageurl' width='700px' height='600px'/><a>
 </table>
 </div>
 
+<script src="../Js/navbar.js"></script>
 
 </body>
 </html>

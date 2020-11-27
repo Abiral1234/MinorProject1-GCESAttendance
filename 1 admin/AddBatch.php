@@ -87,7 +87,7 @@ include_once '../connection.php';
                 <input type="submit" value="Enter the data" class="btn" name="batch_submit2">
             </form>
 		
-		<script src="JS/AddBatch.js" type="text/javascript"></script>
+		<script src="../JS/AddBatch.js" type="text/javascript"></script>
 		</div>
 
 	

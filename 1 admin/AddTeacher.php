@@ -45,7 +45,7 @@ if(isset($_POST['teacher_submit'])){
       </nav>
 </header>
     
-<script src="Js/navbar.js"></script>
+<script src="../Js/navbar.js"></script>
         <div class="container">
             <p id="invalid"></p>
             <form action="AddTeacher.php" name="form1" method="POST">
@@ -88,7 +88,7 @@ if(isset($_POST['teacher_submit'])){
                 <input type="submit" value="Enter the data" name="teacher_submit"class="btn">
             </form>
         </div>
-        <script src="JS/addteachervalidate.js" type="text/javascript"></script>
+        <script src="../JS/addteachervalidate.js" type="text/javascript"></script>
 
         <table class="teacher_table">
             <thead>

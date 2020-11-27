@@ -210,10 +210,30 @@
       <?php if($flag==4){ ?>
             <div class="attendance_fail" style="font-size: 30px;  color: red">No Attendance has been taken to show statistics</div>
       <?php } ?>
+
+      <?php if($percentage < 70){?>
+      <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
+      <?php } ?>
+
+      <td><?php echo (int)$percentage."%";?> </td>
+      <td><?php echo $present ?>/<?php echo $total ?></td>
+  </tr>
+ <?php    } ?>
+ 
+</table>
+<?php } 
+  else{ $flag=4; }  }?>
+<?php if($flag==4){ ?>
+      <div class="attendance_fail" style="position: absolute; left: 450px;top: 290px; font-size: 30px;  color: red">No Attendance has been taken to show statistics</div>
+      <?php } ?>
+
+
+
     </div>
     
   </div>
 </main>
-<script src="Js/navbar.js"></script>
+<script src="../Js/navbar.js"></script>
+
 </body>
 </html>
