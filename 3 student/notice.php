@@ -100,18 +100,7 @@ error_reporting(0);
                 <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
         </form> -->
 
-        <form action="" method="POST" enctype="multipart/form-data">
-                <div class="upfile">
-                        <input type="file" id="actual-btn" name="uploadfile" hidden/>
-
-                        <!--custom upload button -->
-                        <label for="actual-btn">Choose File</label>
-
-                        <!-- name of file chosen -->
-                        <span id="file-chosen">No file chosen</span>
-                        <input type="submit" value="Upload Image" class="btn" name="submit">
-                </div>
-            </form>
+      
         </div>
       <script>
        const actualBtn = document.getElementById('actual-btn');
@@ -272,6 +261,7 @@ echo "<a href='$imageurl'><img src='$imageurl' width='700px' height='600px'/><a>
 </table>
 </div>
 
+<script src="../Js/navbar.js"></script>
 
 </body>
 </html>

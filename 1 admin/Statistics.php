@@ -191,6 +191,6 @@
       <div class="attendance_fail" style="position: absolute; left: 450px;top: 290px; font-size: 30px;  color: red">No Attendance has been taken to show statistics</div>
       <?php } ?>
 
-<script src="Js/navbar.js"></script>
+<script src="../Js/navbar.js"></script>
 </body>
 </html>

@@ -89,7 +89,7 @@
             </form>
                 <div class="Alt">OR</div>
                 <div class="upfile">
-                <form method="post" action="" enctype='multipart/form-data'>
+                <form method="post" action="AddStudent.php" enctype='multipart/form-data'>
                         <input type="file" name="file" id="actual-btn" hidden />
 
                         <!--custom upload button -->
@@ -132,7 +132,7 @@
                 </div>
             
         </div>
-        <script src="JS/addvalidate.js" type="text/javascript"></script> 
+        <script src="../JS/addvalidate.js" type="text/javascript"></script> 
 
 
 
@@ -210,6 +210,6 @@
 })
 </script>    
    
-<script src="Js/navbar.js"></script>
+<script src="../Js/navbar.js"></script>
 </body>
 </html>
