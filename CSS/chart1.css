@@ -1,0 +1,62 @@
+.statistics_image{
+	position: absolute;
+	top:0px;
+	z-index: -5;
+	opacity: 0.8;
+	margin-top: 200px;
+	
+		}
+svg{
+	width: 80vw;
+	}
+
+	.purplebar{
+			
+			animation: purplebar 3s infinite;
+		}
+	@keyframes purplebar{
+		0%{  transform: scaleY(1) translate(-213.54528 , -184.27953) ; }
+		50%{ transform: scaleY(0.5) translateY(116px) translateX(-214.1px); }
+		
+	}
+		.redbar{
+			
+			animation: redbar 2.5s infinite;
+		}
+	@keyframes redbar{
+		0%{  transform: scaleY(1) translate(-213.54528 , -184.27953) ; }
+		50%{ transform: scaleY(0.5) translateY(116px) translateX(-214.1px); }
+		
+	}
+	.hbar{
+		animation: hbar 10s infinite;
+	}
+	@keyframes hbar{
+		0%{  transform: scaleX(1) translate(-213.54528 , -184.27953) ; }
+		50%{ transform: scaleX(0.5) translateY(-185px) translateX(100.1px); }
+		
+	}
+	.hand{
+		animation: hand 3s infinite;
+	}
+	@keyframes hand{
+		0%{  transform: rotate(0deg) translate(-213.54528 , -184.27953) ; }
+		50%{ transform: rotate(-5deg) translateY(-180px) translateX(-230.1px) ;}
+		
+	}
+	.head{
+		animation: head 3s infinite;
+	}
+	@keyframes head{
+		0%{  transform: rotate(0deg) translate(-213.54528 , -184.27953) ; }
+		50%{ transform: rotate(-5deg) translateY(-172px) translateX(-230.1px) ;}
+		
+	}
+	.path{
+		animation: path 3s infinite;
+	}
+	@keyframes path{
+		0%{  transform:  scale(0.2) translate(213.54528 , 184.27953) ; }
+		50%{ transform: scale(1) translateY(-186px) translateX(-210.1px) ;}
+		
+	}
