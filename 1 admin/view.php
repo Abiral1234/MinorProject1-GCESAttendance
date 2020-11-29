@@ -7,7 +7,6 @@ include_once '../connection.php';
 	<title>Calender</title>
 	
 	<link rel="stylesheet" type="text/css" href="../CSS/Viewcss2.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/calender5.css">
 	<script type="text/javascript">	
 		var pair; 	
 		function populate(s1,s2){   //funtion that run when different batch is selected to put differernt subject 
@@ -104,7 +103,6 @@ include_once '../connection.php';
 </header>
 	
 <script src="Js/navbar.js"></script>
-<label class="labeldate"><?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
 
 <!-- Date picker and batch/subject selector in a form -->
 
@@ -112,53 +110,60 @@ include_once '../connection.php';
 		
 
     
-	<span class="label1" value="hi">View Attendance For</span>
 
-	 <div class="contain">
-			
-			<div class="batchselector">
-			<!-- Select Menu for batch imported  from batch table database-->
-				<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
-					<option  selected value="No batch selected" >Choose Your Batch</option> 
-					<?php 
-						$sql_select_batch="SELECT * FROM `batch_list`;";
-						$result_batch=mysqli_query($conn ,$sql_select_batch);
-						while($row= mysqli_fetch_assoc($result_batch)){         
-		   			?>
-					<option required value="<?php echo $row['batchname']?>" name="option_value" >
 
-						<?php echo $row['batchname'] ;?>
-					</option>
+	<div class="contain">
+					<div class="view">	
+					<span class="label1" value="hi">View Attendance For</span>
+					</div>
+				<div class="batchselector">
+					<!-- Select Menu for batch imported  from batch table database-->
+						<select id="batch_select" class="batch_select" name="batch_name1" onchange="populate('batch_select','subject_select')">
+							<option  selected value="No batch selected" >Choose Your Batch</option> 
+							<?php 
+								$sql_select_batch="SELECT * FROM `batch_list`;";
+								$result_batch=mysqli_query($conn ,$sql_select_batch);
+								while($row= mysqli_fetch_assoc($result_batch)){         
+							?>
+							<option required value="<?php echo $row['batchname']?>" name="option_value" >
 
-					<?php }?>	
-				</select>
+								<?php echo $row['batchname'] ;?>
+							</option>
 
-			<!-- Select Menu for subject shown according to selected batch-->
+							<?php }?>	
+						</select>
+				</div>
+								
 
-				<select id="subject_select" class="subject_select" name="selected_subject_name">
-					<option  selected value="Not selected">Choose Your Subject</option> 
+					<!-- Select Menu for subject shown according to selected batch-->
+				<div class="subjectselector">			
+						<select id="subject_select" class="subject_select" name="selected_subject_name">
+							<option  selected value="Not selected">Choose Your Subject</option> 
+						</select>
+				</div>
+				
+				<div class="dateselector">
+						<input type="date" class="date_class"  name="selected_date"required>
+						</div>
+				<div class="enterval">		
+						<input  class="btn1" type="submit" name="batch_submit" value="Enter">
+				</div>	
+	</div>
+				</form>
+	<div class="lcontain">
+				<div id="batch_name">
 					
-				</select>
-
-				<p>
-				Choose the date:
-				</p>
-				<input type="date" class="date_class"  name="selected_date"required>
-				<input  class="btn1" type="submit" name="batch_submit" value="Enter">
-		</form>
-
-		<div id="batch_name">
-			
-				<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
-		</div>
-		<div id="subject_name">
-			
-				<?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
-		</div>
-
+						<?php if (isset($_POST['batch_submit'])) { echo "Batch Name       :  ";  echo $_POST['batch_name1'];  } ?>
+				</div>
+				<div id="subject_name">
+					
+						<?php if (isset($_POST['batch_submit'])) { echo "Subject Name:";  echo $_POST['selected_subject_name'];  } ?>
+				</div>
+				<div id="text">	
+					<?php if(isset($_POST['batch_submit'])){ echo "Selected Date:". $_POST['selected_date'];}?></label>
+				</div>
 
 <!--Attendance record in a table --> 
-	 </div>
 		<div class="phpclass">	
 
 		<?php 
@@ -189,8 +194,7 @@ include_once '../connection.php';
 				$database_date=$row_date['date'];
 				if($database_date == $picked_date){
 				$counter++; ?>               
-		
-		<label class="labeldate"><?php echo $row_date['date']; ?></label>       <!--DATE-->
+		      <!--DATE-->
 		<table class="table1">	
 			<thead>															<!--Attendance Record -->
 				<tr>
@@ -220,6 +224,6 @@ include_once '../connection.php';
 
 		<?php }  } } } ?>
 		</div>
+	</div>	
 		</body>
-
 </html>

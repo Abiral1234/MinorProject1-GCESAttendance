@@ -1,9 +1,17 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body{
+	width: 100%;
 	margin: 0;
 	font-family: sans-serif;
 	font-weight: 350;
 }
-.background_image{
+
+/* .background_image{
 	background: url("../Images/white.jpg");
 	height: 1000px;
 	background-size: cover;
@@ -23,21 +31,13 @@ body{
 	top: 200px;
 	opacity: 0.2;
 	z-index: 0;
-}
-.labeldate{
-	position: absolute;
-	margin-top: 230px;
-	margin-left: 150px;
-	font-weight: 500;
-	font-size: 28px;
-}
+} */
+
+
 
 .label1{
-	position: absolute;
 	font-size: 30px;
 	font-weight: 600;
-	top: 130px;
-	left: 150px;
 }
 select, option {
 	 width: 240px;
@@ -46,31 +46,23 @@ select, option {
 .btn1{
 	font-family: 'Poppins', sans-serif;
 	display: block;
-	position: absolute;
-	left: 1210px;
-	top: 110px;
-    width: 5%;
+    width: 100px;
     height: 40px;
     border-radius: 5px;
     outline: none;
     border: none;
     background-image: linear-gradient(to right, #00beff, #00beff);
-    background-size: 200%;
     color: white;
-    font-size: 1.2rem;
+    font-size: 20px;
     text-transform: uppercase;
-    margin: 1rem 0;
     cursor: pointer;
 }
 
 .batch_select{
-	position: absolute;
-	top: 125px;
-	left:460px;
 	font-size: 20px;
 	padding: 8px 12px;
 	color: #333333;
-	background-color: ;
+	background-color: white;
 	border:2px solid #dddddd;
 	cursor: pointer;
 	border-radius: 5px;
@@ -78,48 +70,28 @@ select, option {
 
 
 .subject_select{
-	position: absolute;
-	top: 125px;
-	left:710px;
 	font-size: 20px;
 	padding: 8px 12px;
 	color: #333333;
-	background-color: ;
+	background-color: white;
 	border:2px solid #dddddd;
 	cursor: pointer;
 	border-radius: 5px;
 }
 .date_class{
-	position: absolute;
-	left:963px;
-	top: 125px;
 	width: 237px;
 	height: 43px;
 	font-size: 20px;
 	padding: 8px 12px;
 	color: #333333;
-	background-color: ;
+	background-color: white;
 	border:2px solid #dddddd;
 	cursor: pointer;
 	border-radius: 5px;
 
 }
-#batch_name{
-	font-weight: 500;
-	position: absolute;
-	font-size: 28px;
-	top: 200px;
-	left: 150px;
-	 
-}
-#subject_name{
-	font-weight: 500;
-	position: absolute;
-	font-size: 28px;
-	top: 250px;
-	left: 150px;
-	 
-}
+
+
 input{
 	font-family: Helvetica, Arial, sans-serif;
 }
@@ -143,9 +115,54 @@ a{
 
 ms-input-placeholder {color: #ffffff; }
 
+.contain{
+	margin-top: 3.5rem;
+	margin-left: 10rem;
+	margin-right: 7rem;
+	display: flex;
+}
+.contain>div{
+	margin-right: 1.3rem;
+}
+.view{
+	
+}
+.batchselector{
+
+}
+.subjectselector{
+	
+
+}
+.dateselector{
+
+
+}
+.enterval{
+}
+.lcontain{
+	display: flex;
+	margin-top: 3.5rem;
+	margin-left: 10rem;
+	flex-direction: column;
+	justify-content: center;
+	/* align-items: center; */
+
+	
+}
+.lcontain>div{
+	font-weight: 400;
+	font-size: 20px;
+	margin-bottom: 1.5rem;
+	/* align-self: flex-start; */
+	
+}
+.phpclass{
+	align-self: center;
+}
 
 .navigation{
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 
 }
@@ -236,44 +253,9 @@ header::after{
     background-color: white;
     border-radius: 10px;
 }
-
-@media (max-width: 800px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .toggle-button {
-        display: flex;
-    }
-
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links ul li {
-        text-align: center;
-    }
-
-    .navbar-links ul li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-}
-
 .table1{
 	font-size: 20px;
 	border-collapse: collapse;
-	margin: 250px 900px;
 	min-width: 600px;
 	text-align: left;
 	border-radius: 5px 5px 0 0;
@@ -309,3 +291,64 @@ tbody tr:last-of-type {
 h1{
 	font-size: 20px;
 }
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+	.contain{
+		margin-top: 2rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.contain>div{
+		margin-bottom: 1rem;
+	}
+	.lcontain{
+		margin-left: 0;
+		margin-top: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+	.lcontain>div{
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	.phpclass{
+		margin-left: 0px;
+	}
+	.table1{
+		font-size: 16px;
+		min-width: 400px;
+		text-align: center;
+	}
+}
+
+
