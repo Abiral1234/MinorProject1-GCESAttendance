@@ -5,8 +5,9 @@ include_once '../connection.php';
 <html>
 <head>
 	<title>Calender</title>
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../CSS/Viewcss2.css">
+
 	<script type="text/javascript">	
 		var pair; 	
 		function populate(s1,s2){   //funtion that run when different batch is selected to put differernt subject 
@@ -81,6 +82,7 @@ include_once '../connection.php';
 <body>
 	<div class="background_image"></div>
 	<div class="background_image2"></div>
+<div>
 <header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendance</div>
@@ -101,8 +103,9 @@ include_once '../connection.php';
         </div>
 	  </nav>
 </header>
+</div>
 	
-<script src="Js/navbar.js"></script>
+<script src="../Js/navbar.js"></script>
 
 <!-- Date picker and batch/subject selector in a form -->
 
