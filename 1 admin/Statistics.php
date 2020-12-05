@@ -198,10 +198,10 @@
         <tr>
           <td><?php echo $row['id']?></td>
           <td><?php echo $row['student_name']?></td>
-          <?php if($percentage >= 70){?>
+          <?php if($percentage >= 80){?>
             <td><progress class="eligible" value="<?php echo $present?>" max="<?php echo $total ?>"><?php echo $percentage ?> </td>
             <?php } ?>
-            <?php if($percentage < 70){?>
+            <?php if($percentage < 80){?>
             <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
             <?php } ?>
 
