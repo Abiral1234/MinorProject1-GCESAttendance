@@ -188,7 +188,7 @@
             <th onclick="sortTable(1)">Student Name<i class="fa fa-sort" style="font-size:24px"></i></th>
             <th>Progress Bar</th>
             <th onclick="sortTable(3)">Percentage<i class="fa fa-sort" style="font-size:24px"></i></th>
-            <th onclick="sortTable(3)">Attendance Score<i class="fa fa-sort" style="font-size:24px"></i></th>
+            <th>Attendance Score</i></th>
           </tr>
         </thead>
         <?php 
