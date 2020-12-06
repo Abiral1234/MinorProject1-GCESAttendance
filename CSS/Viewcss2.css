@@ -8,6 +8,7 @@ body{
 	font-weight: 350;
 	height: 100%;
 	width: 100%;
+	background-color: #dddddd50;
 }
 
 .background_image{
@@ -31,8 +32,31 @@ body{
 	opacity: 0.2;
 	z-index: -1;
 }
+.contain{
+	margin-top: 8rem;
+	margin-left: 10rem;
+	margin-right: 7rem;
+	display: flex;
+}
+.contain>div{
+	margin-right: 1.3rem;
+}
+/* .view{
+	
+}
+.batchselector{
+
+}
+.subjectselector{
+	
+
+}
+.dateselector{
 
 
+}
+.enterval{
+} */
 
 .label1{
 	font-size: 30px;
@@ -42,20 +66,6 @@ select, option {
 	 width: 240px;
 	  }
 
-.btn1{
-	font-family: 'Poppins', sans-serif;
-	display: block;
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, #00beff, #00beff);
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
 
 .batch_select{
 	font-size: 20px;
@@ -89,6 +99,20 @@ select, option {
 	border-radius: 5px;
 
 }
+.btn1{
+	font-family: 'Poppins', sans-serif;
+	display: block;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
 
 input{
@@ -114,31 +138,7 @@ a{
 
 ms-input-placeholder {color: #ffffff; }
 
-.contain{
-	margin-top: 8rem;
-	margin-left: 10rem;
-	margin-right: 7rem;
-	display: flex;
-}
-.contain>div{
-	margin-right: 1.3rem;
-}
-/* .view{
-	
-}
-.batchselector{
 
-}
-.subjectselector{
-	
-
-}
-.dateselector{
-
-
-}
-.enterval{
-} */
 .lcontain{
 	display: flex;
 	margin-top: 3.5rem;
@@ -166,7 +166,6 @@ header{
 	width: 100%;
 	background:#00BEFF;
 	z-index: 1;
-	overflow: hidden;
 	top: 0px;
 }
 header::after{
@@ -290,7 +289,8 @@ tbody tr:last-of-type {
 h1{
 	font-size: 20px;
 }
-@media (max-width: 800px) {
+
+@media (max-width: 820px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -322,7 +322,7 @@ h1{
         display: flex;
     }
 	.contain{
-		margin-top: 5rem;
+		margin-top: 4.75rem;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -347,5 +347,83 @@ h1{
 		font-size: 16px;
 		min-width: 400px;
 		text-align: center;
+	}
+	.label1{
+		font-size: 30px;
+		font-weight: 600;
+	}
+	select, option {
+		width: 240px;
+		}
+
+
+	.batch_select{
+		font-size: 20px;
+    	padding: 8px 12px;
+	}
+
+
+	.subject_select{
+		font-size: 20px;
+    	padding: 8px 12px;
+	}
+	.date_class{
+		font-size: 20px;
+    	padding: 8px 12px;
+		width: 240px;
+	}
+	.btn1{
+		width: 100px;
+	}
+}
+@media (max-width: 1200px) and (min-width: 820px) {
+	.navbar-links li a {
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: white;
+		padding: 1.2rem;
+		font-size: 22px;
+	}
+	.navbar-links li {
+		list-style: none;
+		margin-right: 0px;
+	}
+	.contain{
+		margin-top: 8rem;
+		margin-left: 1.5rem;
+		margin-right: 7rem;
+		display: flex;
+	}
+	.contain>div{
+		margin-right: 2%;
+	}
+
+	.label1{
+		font-size: 22px;
+		font-weight: 600;
+	}
+	select, option {
+		width: 200px;
+		}
+
+
+	.batch_select{
+		font-size: 18px;
+    	padding: 10px 0px;
+	}
+
+
+	.subject_select{
+		font-size: 18px;
+    	padding: 10px 0px;
+	}
+	.date_class{
+		font-size: 18px;
+    	padding: 10px 0px;
+		width: 200px;
+	}
+	.btn1{
+		width: 80px;
 	}
 }
