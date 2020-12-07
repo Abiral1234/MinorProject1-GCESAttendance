@@ -122,7 +122,7 @@ NoAttendance:
 <head>
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../CSS/homecss7.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/homecss13.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/image2.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
@@ -311,8 +311,10 @@ NoAttendance:
 						<tr>
 							
 							<td><?php echo $serial_number; ?></td>
+							
 							<input type="hidden" name="roll_no[]" value=<?php echo $serial_number; ?>>
-							<td><?php echo $row['student_name'] ; ?></td>
+							
+							<td style="max-width: 20vw; word-wrap: break-word;"><?php echo $row['student_name'] ; ?></td>
 							<input type="hidden" value="<?php echo $row['student_name'] ; ?>" name="student_name[]">
 							
 							<td>

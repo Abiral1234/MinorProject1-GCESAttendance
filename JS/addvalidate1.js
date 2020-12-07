@@ -11,7 +11,7 @@ document.form1.addEventListener( "submit", function(event){
         text = "Please Select Batch";
         event.preventDefault();
     }
-    else if(isNaN(roll) || roll <= "0" || roll >= "49"){
+    else if(isNaN(roll) || roll <= 0 || roll >= 49){
         text = "Roll Number Invalid";
         event.preventDefault();
     }
