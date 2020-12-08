@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/homecss7.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/Student_home.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/image2.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
@@ -28,6 +28,82 @@
         </div>
 	  </nav>
 </header>
+<div class="sidebutton">
+<form action="home.php" method="POST">
+	<input type="submit" class="sideinput" id="notice" name="notice" value="Notice">
+	<label for="notice" class="sidebtn0">Notice</label>
+
+	<input type="submit" class="sideinput" id="events" name="events" value="events">
+	<label for="events" class="sidebtn0">Events</label>
+
+	<input type="submit" class="sideinput" id="class_time_table" name="class_time_table" value="class_time_table">
+	<label for="class_time_table" class="sidebtn">Class Time Table</label>
+
+	<input type="submit" class="sideinput" id="exam_routine" name="exam_routine" value="exam_routine">
+	<label for="exam_routine" class="sidebtn">Exam Routine</label>
+
+	<input type="submit" class="sideinput" id="study_material" name="study_material" value="study_material">
+	<label for="study_material" class="sidebtn">Study Material</label>
+
+	<input type="submit" class="sideinput" id="ask_questions" name="ask_questions" value="ask_questions">
+	<label for="ask_questions" class="sidebtn">Ask Questions</label>
+</form>
+</div>
+
+<?php if (isset($_POST['notice'])) { ?>
+<div class="table_section">
+<h1>NOTICE</h1>
+<table class="table1">
+	<thead>
+		<tr>
+			<td>SN</td>
+			<td>Subject</td>
+			<td>Detail</td>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</thead>
+</table>
+</div>
+<?php } ?>
+
+
+<?php if (isset($_POST['events'])) { ?>
+<div class="table_section">
+<h1>Event</h1>
+</div>
+<?php } ?>
+
+
+<?php if (isset($_POST['class_time_table'])) { ?>
+<div class="table_section">
+<h1>Class Time</h1>
+</div>
+<?php } ?>
+
+
+<?php if (isset($_POST['exam_routine'])) { ?>
+<div class="table_section">
+<h1>Exam Routine</h1>
+</div>
+<?php } ?>
+
+
+<?php if (isset($_POST['study_material'])) { ?>
+<div class="table_section">
+<h1>Study Material</h1>
+</div>
+<?php } ?>
+
+<?php if (isset($_POST['ask_questions'])) { ?>
+<div class="table_section">
+<h1>Ask Questions</h1>
+</div>
+<?php } ?>
+
+
+
+
 
 <script src="../Js/navbar.js"></script>
 <div class="svg">

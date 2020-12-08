@@ -132,7 +132,7 @@
                 </div>
             
         </div>
-        <script src="../JS/addvalidate.js" type="text/javascript"></script> 
+        <script src="../JS/addvalidate1.js" type="text/javascript"></script> 
 
 
 
