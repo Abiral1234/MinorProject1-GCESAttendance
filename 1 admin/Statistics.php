@@ -3,10 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
+
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
   <link rel="stylesheet" type="text/css" href="../CSS/chart1.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script type="text/javascript"> 
     var pair;   
@@ -182,10 +185,10 @@
       <table class="table1" id="table1">
         <thead>
           <tr>
-          <th>Roll No.</th>
-          <th>Student Name</th>
+          <th onclick="sortTable(0)">Roll No.<i class="fa fa-sort" style="font-size:24px"></i></th>
+          <th onclick="sortTable(1)">Student Name<i class="fa fa-sort" style="font-size:24px"></i></th>
           <th>Progress Bar</th>
-          <th>Percentage</th>
+          <th onclick="sortTable(3)">Percentage<i class="fa fa-sort" style="font-size:24px"></i></th>
           <th>Attendance Score</th>
         </tr>
         </thead>
