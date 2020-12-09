@@ -43,7 +43,7 @@ body{
 .sidebtn0{
     display: block;
     position: relative;
-    left:15vw;
+    left:10vw;
     top:60px;
     margin-bottom: 5px;
     width: 150px;
@@ -62,7 +62,7 @@ body{
 .sidebtn{
     display: flex;
     position: relative;
-    left:15vw;
+    left:10vw;
     top:60px;
     margin-bottom: 5px;
     width: 150px;
@@ -85,15 +85,15 @@ body{
     width: 30vw;
     height: 100vh;
     align-items: center;
-    background-color: lightblue;
+   /* background-color: lightblue; */
 }
 .table_section{
     position: relative;
-    top: -20px;
+    top: 40px;
     left: 30vw;
     width: 69%;
     height: 100vh;
-    background-color: lightpink;
+   /* background-color: lightpink; */
 }
 .date{
 		/*background-color: lightgreen;  */
@@ -108,7 +108,6 @@ font-weight: bold;
 span{
     font-size: 25px;
 }
-
 .table1{
     background-image: linear-gradient(to right, #45B5E9, #10D7E2);
     border-collapse: collapse;
@@ -121,7 +120,6 @@ span{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
     word-wrap: break-word;
-
 }
 thead tr{
     background-image: linear-gradient(to right, #6197EE, #10D7E2);

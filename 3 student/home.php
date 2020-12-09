@@ -1,8 +1,9 @@
+<?php include'../connection.php'?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/Student_home.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/Student_home1.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/image2.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
@@ -63,6 +64,52 @@
 			<td>Time</td>
 		</tr>
 	</thead>
+	<tbody>
+	    <?php 
+    $counter=0;
+    $sql_select_text="SELECT * from `text_notice` ORDER BY datetime desc ";
+    $result_text=mysqli_query($conn,$sql_select_text);
+    while($text_row=mysqli_fetch_assoc($result_text)) { 
+      $counter++;
+      $todaydate=date("Y-m-d H:i:s");
+      $todaydate_in_second=strtotime($todaydate);
+      $datepublished=$text_row['datetime'];
+      $datepublished_in_second=strtotime($datepublished);
+      $diff=$todaydate_in_second-$datepublished_in_second;//as going time always greater than past time
+      $difference_in_year=floor($diff/(60*60*24*365));
+      $difference_in_days=floor($diff/(60*60*24));
+      $difference_in_hour=floor($diff/(60*60));
+      $difference_in_minute=floor($diff/(60));
+      $difference_in_second=floor($diff);
+
+    ?>
+  <tr>
+    <td><?php echo $counter;?></td>
+    <td><?php echo $text_row['subject']; ?></td>
+    <td><?php echo $text_row['detail']; ?></td>
+    <td><?php echo $text_row['date']; ?></td> 
+    <td><?php 
+    if ($difference_in_second<60) {
+     echo $difference_in_second.' seconds ago';
+    }
+    elseif ($difference_in_minute<60) {
+     echo $difference_in_minute.' minutes ago';
+    }
+    elseif ($difference_in_hour< 24) {
+     echo $difference_in_hour.' hour ago';
+    }
+    elseif ($difference_in_days < 365) {
+     echo $difference_in_days.' days ago';
+    }
+    else{
+      echo $difference_in_year.' years ago';
+
+    }
+    ?></td>  
+  </tr>
+<?php } ?>
+
+	</tbody>
 </table>
 </div>
 <?php } ?>
@@ -71,6 +118,67 @@
 <?php if (isset($_POST['events'])) { ?>
 <div class="table_section">
 <h1>Event</h1>
+<table class="table1" >
+  <thead  >
+    <tr>
+    <td>SN</td>
+    <td>Title</td>
+    <td>Date Published</td>
+    <td>Time</td>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    $counter=0;
+    $sql_select_text="SELECT * from `upcoming_event` ORDER BY date desc ";
+    $result_text=mysqli_query($conn,$sql_select_text);
+    while($event=mysqli_fetch_assoc($result_text)) { 
+    $counter++;
+    $todaydate=date("Y-m-d");
+    $todaydate_in_second=strtotime($todaydate);
+    $datepublished=$event['date'];
+    $datepublished_in_second=strtotime($datepublished);
+    $diff=$datepublished_in_second-$todaydate_in_second;
+    $difference_in_days=floor($diff/(60*60*24));
+    if($difference_in_days == 0){ //ie today
+    ?>
+  <tr style="background: #add8e6;">
+    <td  ><?php echo $counter;?></td>
+    <td><?php echo $event['Title']; ?></td>
+    <td><?php echo $event['date']; ?></td>
+    <!-- DAYS TO GO / DAYS AFTER -->
+    <td><?php
+    $difference_in_second=floor($diff);
+    $difference_in_minute=floor($diff/(60));
+    $difference_in_hour=floor($diff/(60*60));
+
+    if ($difference_in_days == 0) {
+      echo 'Today';
+    }
+    ?></td>  
+  </tr><?php } else{ ?>
+    <tr>
+    <td ><?php echo $counter;?></td>
+    <td><?php echo $event['Title']; ?></td>
+    <td><?php echo $event['date']; ?></td>
+    <!-- DAYS TO GO / DAYS AFTER -->
+    <td><?php 
+    
+    if($difference_in_days>0){  //ie published date >today date (so using later)   
+      echo $difference_in_days.' days later';
+    }
+    if ($difference_in_days<0) { //ie published date < today date (so using ago)  
+      echo -$difference_in_days.' days ago';
+    }
+    if ($difference_in_days == 0) {
+      echo 'Today';
+    }
+    ?></td>  
+  </tr>
+
+<?php }} ?>
+</tbody>
+</table>
 </div>
 <?php } ?>
 
@@ -78,6 +186,7 @@
 <?php if (isset($_POST['class_time_table'])) { ?>
 <div class="table_section">
 <h1>Class Time</h1>
+
 </div>
 <?php } ?>
 
@@ -98,6 +207,9 @@
 <?php if (isset($_POST['ask_questions'])) { ?>
 <div class="table_section">
 <h1>Ask Questions</h1>
+<form>
+  
+</form>
 </div>
 <?php } ?>
 

@@ -36,65 +36,7 @@ body{
 
 	}
 
-.sideinput{
-    display: none;
-}
 
-.sidebtn0{
-    display: block;
-    position: relative;
-    left:15vw;
-    top:60px;
-    margin-bottom: 5px;
-    width: 150px;
-    height: 80px;
-    border-radius: 5px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 80px;
-    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
-    background-size: 100%;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-.sidebtn{
-    display: flex;
-    position: relative;
-    left:15vw;
-    top:60px;
-    margin-bottom: 5px;
-    width: 150px;
-    height: 80px;
-    border-radius: 5px;
-    font-size: 20px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
-    background-size: 100%;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-.sidebutton{
-    position: absolute;
-    top: 87px;
-    left: 0vw;
-    width: 30vw;
-    height: 100vh;
-    align-items: center;
-    background-color: lightblue;
-}
-.table_section{
-    position: relative;
-    top: -20px;
-    left: 30vw;
-    width: 69%;
-    height: 100vh;
-    background-color: lightpink;
-}
 .date{
 		/*background-color: lightgreen;  */
 		width: 100%;
@@ -264,7 +206,7 @@ input[type="radio"]:checked + .absent_class{
     border-radius: 5px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #A1FF8B, #3F93FF);
+    background-image: linear-gradient(to right, #009879, #009879);
     background-size: 200%;
     color: white;
     font-size: 1.2rem;
