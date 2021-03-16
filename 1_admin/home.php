@@ -38,7 +38,9 @@
 	<div class="button3">
 		<a href="AddTeacher.php" ><button class="btn" >Add Teacher</button></a>   <!--Add Buttons -->
 	</div>
-
+	<div class="button3">
+		<a href="AddAdmin.php" ><button class="btn" >Add Admin</button></a>   <!--Add Buttons -->
+	</div>
 <script src="../Js/navbar.js"></script>
 
 <div class="svg">
