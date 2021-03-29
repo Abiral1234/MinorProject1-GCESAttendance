@@ -20,7 +20,7 @@
     <head>
         <title>Add Student</title>
       
-        <link rel="stylesheet" href="../CSS/AddStudentCss7.css" >
+        <link rel="stylesheet" href="../CSS/AddStudentCss1.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -211,5 +211,11 @@
 </script>    
    
 <script src="../Js/navbar.js"></script>
+
+
+    <div>
+        <img class="background" src="../Images/addstudent.jpg" >
+    </div>
+
 </body>
 </html>

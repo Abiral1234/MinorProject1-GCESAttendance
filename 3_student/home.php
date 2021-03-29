@@ -1,10 +1,16 @@
-<?php include'../connection.php'?>
+<?php include'../connection.php';
+  session_start();
+  if (!isset($_SESSION['username'] ) ) {
+      header("Location: ../index"); 
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../CSS/Student_home1.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/image2.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 </head>
@@ -20,9 +26,9 @@
         </a>
         <div class="navbar-links">
             <ul> 
-				<li><a href="Home.php">Home</a> </li>
-				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
+				<li><a href="Home.php">Attendance</a> </li>
+				<li><a href="view.php">Routine</a> </li>
+				<li><a href="Statistics.php">Study Material</a> </li>     			   <!-- nav bar -->
 				<li><a href="notice.php">Notice</a></li>
 				<li><a href="../index.php">logout</a> </li>
 			</ul>
@@ -30,7 +36,7 @@
 	  </nav>
 </header>
 <div class="sidebutton">
-<form action="home.php" method="POST">
+<!-- <form action="home.php" method="POST">
 	<input type="submit" class="sideinput" id="notice" name="notice" value="Notice">
 	<label for="notice" class="sidebtn0">Notice</label>
 
@@ -49,7 +55,9 @@
 	<input type="submit" class="sideinput" id="ask_questions" name="ask_questions" value="ask_questions">
 	<label for="ask_questions" class="sidebtn">Ask Questions</label>
 </form>
-</div>
+</div> 
+
+
 
 <?php if (isset($_POST['notice'])) { ?>
 <div class="table_section">
@@ -146,7 +154,7 @@
     <td  ><?php echo $counter;?></td>
     <td><?php echo $event['Title']; ?></td>
     <td><?php echo $event['date']; ?></td>
-    <!-- DAYS TO GO / DAYS AFTER -->
+    <!-- DAYS TO GO / DAYS AFTER 
     <td><?php
     $difference_in_second=floor($diff);
     $difference_in_minute=floor($diff/(60));
@@ -161,7 +169,7 @@
     <td ><?php echo $counter;?></td>
     <td><?php echo $event['Title']; ?></td>
     <td><?php echo $event['date']; ?></td>
-    <!-- DAYS TO GO / DAYS AFTER -->
+    <!-- DAYS TO GO / DAYS AFTER 
     <td><?php 
     
     if($difference_in_days>0){  //ie published date >today date (so using later)   
@@ -208,12 +216,87 @@
 <div class="table_section">
 <h1>Ask Questions</h1>
 <form>
-  
+
 </form>
 </div>
 <?php } ?>
+-->
+<h2 class="student_name"><?php echo "Name:" . $_SESSION['username'];?></h2>
+<h2 class="student_regno"><?php echo "Reg No. :" . $_SESSION['password'];?></h2>
+<h2 class="student_batch">
+  <?php echo "Batch :" . $_SESSION['student_batch_name'];  ?>
+</h2>
+<?php  ?>
+<table class="student_table">
+  <thead>
+    <tr>
+      <td>SN</td>
+      <td>Subject</td>
+      <td>Progress Bar</td>
+      <td>Percentage</td>
+      <td>Attendance Score</td>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $sn=1; 
+        $batchname=$_SESSION['student_batch_name'];
+        $sql_select_subject="SELECT * from subject where batchname='$batchname'"; 
+        $result=mysqli_query($conn,$sql_select_subject);
+        if($result){
+          while ($row=mysqli_fetch_assoc($result)) { //Select row from the subject table
+          $subject="subject";
+          $count=1;
+            while($row[$subject.$count] !== null){ //Select the subjects batchname
+              
+              ?>
+     <tr>
+      <td><?php 
+      echo $sn++;?></td>
+      <td><?php echo $row[$subject.$count] ; ?> </td>
 
+      <?php $subject_name=str_replace(" ", "_", strtolower($row[$subject.$count]) );//eg:real_time_system
+      $student_name=$_SESSION['username'];
+        $sql_select_student="SELECT * FROM $subject_name WHERE student_name='$student_name'";
+        $result_student_data=mysqli_query($conn,$sql_select_student);
+        if ($result_student_data) { //subject table exist
+            while ($row_student_data=mysqli_fetch_assoc($result_student_data)) {
+            $present=$row_student_data['present_counter'];
+            $total=$row_student_data['total_attendance'];
+            $percentage=$present/$total*100;
+        if($percentage >= 70){?>
+            <td><progress class="eligible" value="<?php echo $present?>" max="<?php echo $total ?>"><?php echo $percentage ?> </td>
+            <?php } ?>
+            <?php if($percentage < 70){?>
+            <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
+            <?php } ?>
+          </td>
 
+      <td><?php $percentage=$present/$total*100;
+        echo (int)$percentage."%"; 
+
+      ?></td>
+      <td>
+        <?php echo $present ?>/<?php echo $total ?>
+      </td>
+      <?php 
+          }}
+
+          else{
+            ?>
+            <td>No Attendnace Taken</td>
+            <td></td>
+            <td></td>
+            <?php
+          }
+          $count++;
+
+        }
+
+          }}
+      ?>
+      </tr>
+    </tbody>
+  </table>
 
 
 
