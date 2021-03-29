@@ -5,7 +5,7 @@ include_once '../connection.php';
 	$batch_year =$_POST['year'];
 	$name =$batch_program ."_". $batch_year;
 
-//creating student list
+//creating student list foreg:bese_2018
 
 	$sql_create1 = "CREATE TABLE IF NOT EXISTS $name (     
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -18,11 +18,31 @@ include_once '../connection.php';
 	else{
 		echo "Error1";
 	}
+//creating subject table for respective batch
+	$sql_create2 = "CREATE TABLE IF NOT EXISTS subject (     
+  		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		`batchname` varchar(255) NOT NULL,
+		`subject1` varchar(255) NOT NULL,
+  		`subject2` varchar(255) NOT NULL,
+  		`subject3` varchar(255) NOT NULL,
+  		`subject4` varchar(255) NOT NULL,
+  		`subject5` varchar(255) NOT NULL,
+  		`subject6` varchar(255) NOT NULL,
+  		`subject7` varchar(255) NOT NULL,
+ 		`subject8` varchar(255),
+ 		`subject9` varchar(255) ,
+ 		`subject10` varchar(255),
+ 		`subject11` varchar(255) ,
+ 		`subject12` varchar(255) ,
+ 		`subject13` varchar(255) 
+		) ";
+	if($result2=mysqli_query($conn,$sql_create2)){}
+	else{
+		echo  $name .'subjects';
+	}
 
-//creating batch list
-	
 
-//checking duplicate
+//checking duplicate & creating batch list
 	$dup=mysqli_query($conn,"select * from `Batch_list` WHERE batchname='$name'");
 	if(mysqli_num_rows($dup)>0){
 		//echo "Already Created";
@@ -35,16 +55,96 @@ include_once '../connection.php';
     if($result= mysqli_query($conn ,$sql_add_batch)){
     	
     }
-	}
 
    }
+	
+	//Creating at a table that contain all the subjects of the corresponding batch
+	$current_year=date("Y");
+	$fourth_year=$current_year-4;
+	$third_year=$current_year-3;
+	$second_year=$current_year-2;
+	$first_year=$current_year-1;
+	$batchname= array("BESE_".$fourth_year,"bese_".$third_year,"bese_".$second_year,"bese_".$first_year,
+				"bece_".$fourth_year,"bece_".$third_year,"bece_".$second_year,"bece_".$first_year);
+
+	if ($name == $batchname[3]) { //BESE 1st year
+		$sql_add_subject="INSERT INTO `subject` VALUES(1,'$name' ,'Engineering MathematicsI'
+		,'Physics','Communication Technique','Problem Solving Techniques','Fundamentals of IT','Programming in C','Engineering MathematicsII','Logic Circuits','Mathematical Foundation of Computer Science','Engineering Drawing','Object Oriented Programming in C++','Web Technology')";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+
+	if ($name == $batchname[2]) { //BESE 2nd year
+		$sql_add_subject="INSERT INTO `subject` VALUES(2,'$name' ,'Engineering Mathematics III'
+		,'Software Engineering Fundamentals','Microprocessor  Assembly Lang. Pro.','Data Structure and Algorithms','Probability  Queuing Theory','Programming in Java','Numerical Methods','Computer Graphics','Computer Organization  Architecture','Database Management Systems','Object Oriented Design  Modeling through UML',null)";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+	if ($name == $batchname[1]) { //BESE 3rd year
+		$sql_add_subject="INSERT INTO `subject` VALUES(3,'$name' ,'Applied Operating System'
+		,'Simulation  Modeling','Artificial Intelligence  Neural Network','System Programming','Analysis  Design of Algorithm','Elective I','Organization and Management','Multimedia Systems','Computer Networks','Principles of Programming Languages','Engineering Economics','Object Oriented Software Development')";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+	if ($name == $batchname[0]) { //BESE 4th year
+		$sql_add_subject="INSERT INTO `subject` VALUES(4,'$name' ,'Real Time Systems'
+		,'Distributed Systems','Enterprise Application Development','Image Processing and Pattern Recognition','Software Testing,Verification,Validation and Quality Assurance','Elective I','Network Programming','Software Project Management','Elective II',null,null,null)";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+	if ($name == $batchname[7]) { //BECE 1st year
+		$sql_add_subject="INSERT INTO `subject` VALUES(1,'$name' ,'Engineering MathematicsI'
+		,'Chemistry','Communication Technique','Programming in C','Basic Electrical Engineering','Mechanical Workshop','Engineering Mathematics II','Physics','Engineering Drawing','Engineering Drawing','Object Oriented Programming in C++','Thermal Science','Applied Mechanics')";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+	
+	if ($name == $batchname[6]) { //BESE 2nd year
+		$sql_add_subject="INSERT INTO `subject` VALUES(2,'$name' ,'Engineering Mathematics III'
+		,'Data Structure and Algorithm','Electrical Engineering Materials','Network Theory','Electronic Devices','Logic Circuits','Engineering Mathematics IV','Instrumentation','Electronic Circuits','Theory of Computation','Microprocessors',null)";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+
+	if ($name == $batchname[5]) { //BESE 3rd year
+		$sql_add_subject="INSERT INTO `subject` VALUES(3,'$name' ,'Numerical Methods'
+		,'Microprocessor System and Interfacing','Operating System','Computer Graphics','Integrated Digital Electronics,'Probability and Statistics','Simulation and Modeling,'Data Communication','Database Management System','Object Oriented Software Engineering', null , null)";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+
+	if ($name == $batchname[4]) { //BESE 4th year
+		$sql_add_subject="INSERT INTO `subject` VALUES(4,'$name' ,'Engineering Economics'
+		,'Computer Architecture','Digital Signal Processing','Computer Network','Elective I','Organization and Management','Artificial Intelligence','Image Processing  Pattern Recognition','Elective II',null,null,null)";
+		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		else{
+		echo  'error while inserting subject';
+		}
+	}
+
+	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss1.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss2.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -149,6 +249,8 @@ include_once '../connection.php';
 			</tbody>
 		</table>
 	
-	
+	<div>
+		<img class="background" src="../Images/addbatch.jpg" >
+	</div>
 </body>
 </html>

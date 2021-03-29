@@ -1,43 +1,56 @@
+<?php
+	session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Form for Teacher and Admin</title>
+	<title>Login Form</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
 	<div class="databseconnect">
 		<?php
 			include_once'connection.php';
 			$error=null;
 
-			if(isset($_POST['FormSubmit'])){
+			if(isset($_POST['FormSubmit'])) {
+				$username=$_POST['username'];							
+				$password=$_POST['password'];
+			  	$_SESSION['username']=$username;
+			  	$_SESSION['password']=$password;
 
-				if($sql_select="SELECT * FROM adminlist"){
-					$result_admin=mysqli_query($conn,$sql_select);
-					while($row=mysqli_fetch_assoc($result_admin)){
+			  	//IF ADMIN
+					if($sql_select="SELECT * FROM adminlist"){
+						$result_admin=mysqli_query($conn,$sql_select);
+						if($result_admin){ //Checks if adminlist table is present
+						while($row=mysqli_fetch_assoc($result_admin)){
 						$dbusername=$row['Username'];
-						$dbpassword=$row['Password'];								
-						$username=$_POST['username'];							//Check if the user is Admin
-						$password=$_POST['password'];
-					if($username == $dbusername && $password == $dbpassword) {
-						header("Location: 1_admin/Home.php"); 
-					}}
+						$dbpassword=$row['Password'];				//Check if the user is Admin
+						
+							if($username == $dbusername && $password == $dbpassword) {
+							header("Location: 1_admin/Home.php"); }
+					}
 				}
 
+				}
+
+				//IF TEACHER
 				if($sql_select="SELECT * FROM teacherlist"){
 					$result_teacher=mysqli_query($conn,$sql_select);
+					if($result_teacher){
 					while($row=mysqli_fetch_assoc($result_teacher)){
 						$dbusername=$row['Username'];
-						$dbpassword=$row['Password'];
-						$username=$_POST['username'];							//Check if the user is Teacher
-						$password=$_POST['password'];
+						$dbpassword=$row['Password'];			//Check if the user is Teacher	
 					if($username == $dbusername && $password == $dbpassword) {
 						header("Location: 2_teacher/Home.php"); 
-					}}}
+					}}
+				}}
+
+				//IF STUDENT
 					$current_year=date("Y");
 					$fourth_year=$current_year-4;
 					$third_year=$current_year-3;
@@ -48,16 +61,16 @@
 
 				for ($i=0; $i < 8 ; $i++) { 
 					
-				if($sql_select="SELECT * FROM $batchname[$i]"){
+				if($sql_select="SELECT * FROM $batchname[$i]"){ //$batchname[i] will represent all batch names
 					$result_student=mysqli_query($conn,$sql_select);
+					if($result_student){
 					while($row=mysqli_fetch_assoc($result_student)){
 						$dbusername=$row['student_name'];
-						$dbpassword=$row['reg_number'];
-						$username=$_POST['username'];							//Check if the user is Student
-						$password=$_POST['password'];
+						$dbpassword=$row['reg_number'];						//Check if the user is Student
 					if($username == $dbusername && $password == $dbpassword) {
+						$_SESSION['student_batch_name'] =$batchname[$i];
 						header("Location: 3_student/Home.php"); 
-					}}}
+					}}}}
 				}
 
 

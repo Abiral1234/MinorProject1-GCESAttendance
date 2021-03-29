@@ -90,7 +90,7 @@ body{
 .table_section{
     position: relative;
     top: 40px;
-    left: 30vw;
+    left: 0vw;
     width: 69%;
     height: 100vh;
    /* background-color: lightpink; */
@@ -108,6 +108,24 @@ font-weight: bold;
 span{
     font-size: 25px;
 }
+.student_name{
+    position: absolute;
+    margin-left: 16vw;
+    margin-top: 8vh;
+}
+.student_regno{
+    position: absolute;
+    margin-left: 40vw;
+    margin-top: 8vh;
+    width: 500px;
+}
+.student_batch{
+    position: absolute;
+    margin-left: 65vw;
+    margin-top: 8vh;
+    width: 500px;
+}
+
 .table1{
     background-image: linear-gradient(to right, #45B5E9, #10D7E2);
     border-collapse: collapse;
@@ -116,6 +134,19 @@ span{
     min-width: 65vw;
     text-align: left;
     font-size: 25px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    word-wrap: break-word;
+}
+.student_table{
+    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
+    border-collapse: collapse;
+    margin-top: 14vh;
+    margin-left: 15vw;
+    min-width: 60vw;
+    text-align: left;
+    font-size: 30px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);

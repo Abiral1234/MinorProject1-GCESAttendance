@@ -4,12 +4,21 @@ body{
     background: white;
     font-family:sans-serif;
     font-weight: 350;
-     background-image: url("../Images/pattern.jpg");
+     
 }
+
 .navigation{
     width: 80%;
     margin: 0 auto;
 
+}
+.background{
+    position: absolute;
+    top: 20vh;
+    width: 100vw;
+    height: 80vh;
+    z-index: -5;
+    opacity: 0.6;
 }
 
 header{
