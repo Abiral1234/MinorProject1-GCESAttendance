@@ -19,17 +19,25 @@ body{
 
 }
 .label1{
-            position: absolute;
-            top: 80px;
-            left: 840px;
-            font-family: 'poppins',sans-serif;
-        }
+    /* position: absolute;
+    top: 80px;
+    left: 840px; */
+    font-family: 'poppins',sans-serif;
+}
+
+.form_content{
+    display: flex;
+    /* justify-content: space-between;
+    align-content: space-around; */
+    padding:3px;
+    padding-left: 0px;
+}
 
 .batch_select{
-    position: absolute;
+    /* position: absolute; */
     font-weight: normal;
-    top: 95px;
-    left:1090px;
+    /* top: 95px; */
+    /* left:1090px; */
     font-size: 18px;
     padding: 8px 12px;
     color: #333333;
@@ -38,17 +46,33 @@ body{
     cursor: pointer;
     border-radius: 5px;
 }
+
+/* .batch_select > select {
+    padding: 5px;
+    padding-left: 0px;
+} */
+
+/* .Enter_batch{
+    display: flex;
+} */
+
+.form_content{
+    display: flex;
+}
 option{
     font-weight: normal;
 }
 
 .btn1{
-    display: block;
-    position: absolute;
-    left: 1340px;
-    top: 82px;
-    width: 5%;
-    height: 40px;
+    /* display: block;
+    position: absolute; */
+    /* left: 1340px;
+    top: 82px; */
+    /* width: 5%;
+    height: 40px; */
+    /* margin: auto; */
+    margin: 7px;
+    /* margin-top:; */
     border-radius: 5px;
     outline: none;
     border: none;
@@ -58,9 +82,19 @@ option{
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     cursor: pointer;
 }
+
+#invalid{
+    display: none;
+}
+
+.label1 > h2 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
 header{
             background:#00BEFF;
             }
@@ -149,7 +183,7 @@ header::after{
     border-radius: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -185,18 +219,26 @@ span{
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
+
 .container{
-    margin-left: 29em;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+.container > div {
+    margin: 5px;
+    padding: 20px;
+}
+
 .student_table{
-    position: absolute;
+    /* position: absolute;
     left: 850px;
-    top: 140px;
+    top: 140px; */
     border-collapse: collapse;
-    margin: 25px 0;
-    min-width: 560px;
-    text-align: left;
+    /* margin: 25px 0; */
+    /* min-width: 560px; */
+    /* text-align: left; */
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
@@ -243,7 +285,7 @@ input{
 }
 .btn{
     display: block;
-    width: 30%;
+    width: 10em;
     height: 40px;
     border-radius: 25px;
     outline: none;
@@ -260,7 +302,9 @@ input{
 .btn:active{
     background-color: rgba(194, 194, 184, 0.933);
 }
-@media screen and (max-width:1000px){
+
+
+/* @media screen and (max-width:1000px){
     .container{
         margin-left: 20em;
     }
@@ -268,12 +312,16 @@ input{
         width: 43%;
         border-radius: 17px;
     }
-}
-@media screen and (max-width: 700px){
+} */
+
+
+/* @media screen and (max-width: 700px){
     .container{
         margin-left: 7em;
     }
-}
+} */
+
+
 .Alt{
     position: absolute;
     left: 40%;

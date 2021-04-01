@@ -108,7 +108,7 @@ header::after{
     border-radius: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -144,10 +144,11 @@ span, label{
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .batch_table_software{
-    position: absolute;
+    /* position: absolute;
    left:900px;
-   top: 130px;
+   top: 130px; */
     border-collapse: collapse;
     min-width: 250px; 
     text-align: left;
@@ -155,10 +156,11 @@ span, label{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
+
 .batch_table_computer{
-    position: absolute;
+    /* position: absolute;
    left:1200px;
-   top: 130px;
+   top: 130px; */
     border-collapse: collapse;
     min-width: 250px; 
     text-align: left;
@@ -166,6 +168,7 @@ span, label{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
+
 thead tr{
     background-color: #009879;
     color: white;
@@ -184,10 +187,29 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
     border-bottom: 2px solid #00beff;
 }
+
 .container{
-    margin-left: 29em;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+.container > div{
+    margin: 2px;
+    padding: 2px;
+}
+
+.batch_table{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap-reverse;
+}
+
+.batch_table > div {
+    margin: 5px;
+    padding: 5px;
+}
+
 input{
     margin-top: 3px;
 }
@@ -206,7 +228,7 @@ input{
 }
 .btn{
     display: block;
-    width: 30%;
+    width: 10em;
     height: 40px;
     border-radius: 25px;
     outline: none;
@@ -223,7 +245,14 @@ input{
 .btn:active{
     background-color: rgba(194, 194, 184, 0.933);
 }
-@media screen and (max-width:1000px){
+
+@media screen and (max-width:550px){
+    .batch_table{
+        display: none;
+    }
+}
+
+/* @media screen and (max-width:1000px){
     .container{
         margin-left: 20em;
     }
@@ -236,4 +265,4 @@ input{
     .container{
         margin-left: 7em;
     }
-}
+} */

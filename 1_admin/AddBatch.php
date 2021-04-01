@@ -140,117 +140,129 @@ include_once '../connection.php';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss2.css">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss2.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
 
-</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="brand-title">Gces Attendance</div>
+				<a href="#" class="toggle-button">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+				</a>
+				<div class="navbar-links">
+					<ul> 
+						<li><a href="Home.php">Home</a> </li>
+						<li><a href="view.php">View</a> </li>
+						<li><a href="Statistics.php">Statistics</a> </li> 
+						<li><a href="notice.php">Notice</a></li>    			   <!-- nav bar -->
+						<li><a href="../index.php">logout</a> </li>
 
-<body>
-<header>
-      <nav class="navbar">
-        <div class="brand-title">Gces Attendance</div>
-        <a href="#" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
-        <div class="navbar-links">
-            <ul> 
-				<li><a href="Home.php">Home</a> </li>
-				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li> 
-				<li><a href="notice.php">Notice</a></li>    			   <!-- nav bar -->
-				<li><a href="../index.php">logout</a> </li>
-
-			</ul>
-        </div>
-	  </nav>
-</header>
-	
-<script src="Js/navbar.js"></script>
-	<div class="container">
-            
-            <form action="AddBatch.php" name="form1" method="POST">
-			<div class="input program">
-                    <span>Program:</span><br>
-                    <select name="program" id="program" class="d_input">
-                        <option value="BESE" name="program">Bachelor of Software Engineering</option>
-                        <option value="BECE" name="program">Bachelor of Computer Engineering</option>
-                    </select><br>
-                </div>
-                <div class="input year">
-                    <span>Year:</span>
-                    <input type="number" min="<?php echo date("Y")-4;?>" max="<?php echo date("Y")-1;?>" id="year" name="year" class="_dinput"><br>
-                </div>
-                <input type="submit" value="Enter the data" class="btn" name="batch_submit2">
-            </form>
+					</ul>
+				</div>
+			</nav>
+		</header>
 		
-		<script src="../JS/AddBatch.js" type="text/javascript"></script>
+		<script src="Js/navbar.js"></script>
+
+		<div class="container">
+			<div>
+				<form action="AddBatch.php" name="form1" method="POST">
+				<div class="input program">
+						<span>Program:</span><br>
+						<select name="program" id="program" class="d_input">
+							<option value="BESE" name="program">Bachelor of Software Engineering</option>
+							<option value="BECE" name="program">Bachelor of Computer Engineering</option>
+						</select><br>
+					</div>
+					<div class="input year">
+						<span>Year:</span>
+						<input type="number" min="<?php echo date("Y")-4;?>" max="<?php echo date("Y")-1;?>" id="year" name="year" class="_dinput"><br>
+					</div>
+					<input type="submit" value="Enter the data" class="btn" name="batch_submit2">
+				</form>
+			
+				<script src="../JS/AddBatch.js" type="text/javascript"></script>
+			</div>
+
+
+			<div class = "batch_table">
+				
+				<div>
+
+					<table class="batch_table_software">
+						<thead>
+							<tr >	
+								<td >Software</td>
+							</tr>
+						</thead>
+						<tbody>
+						<?php $sql_create3= "CREATE TABLE IF NOT EXISTS `Batch_List` (
+							`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+							`batchname` varchar(255) NOT NULL UNIQUE
+							)"; 
+
+							if($result3=mysqli_query($conn,$sql_create3)){ }
+							else{
+						echo "Error2";
+							} 
+							?>
+							<tr >
+							<?php 
+						$sql_select_batch="SELECT * FROM `batch_list`;";
+						$result_batch=mysqli_query($conn ,$sql_select_batch);
+						while($row= mysqli_fetch_assoc($result_batch)){
+							$batch_name=explode("_",$row['batchname']);
+							$program=$batch_name[0];
+							if($program =="BESE"){
+						?>			
+								<td id="software_data" ><?php echo $row['batchname'] ;?></td>
+							<?php } ?>
+							</tr>
+							<?php  }?>
+						</tbody>
+					</table>
+				</div>
+
+				<div>
+					<table class="batch_table_computer">
+						<thead>
+							<tr >	
+								<td >Computer</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr >
+							<?php 
+						$sql_select_batch="SELECT * FROM `batch_list`;";
+						$result_batch=mysqli_query($conn ,$sql_select_batch);
+						while($row= mysqli_fetch_assoc($result_batch)){
+							$batch_name=explode("_",$row['batchname']);
+							$program=$batch_name[0];
+							if($program =="BECE"){
+						?>			
+								<td id="computer_data" ><?php echo $row['batchname'] ;?></td>
+							<?php } ?>
+							</tr>
+							<?php  }?>
+						</tbody>
+					</table>
+
+				</div>
+
+			</div>
+
 		</div>
 
-	
-			
+		<div>
+			<img class="background" src="../Images/addbatch.jpg" >
+		</div>
 		
-		<table class="batch_table_software">
-			<thead>
-				<tr >	
-					<td >Software</td>
-				</tr>
-			</thead>
-			<tbody>
-			<?php $sql_create3= "CREATE TABLE IF NOT EXISTS `Batch_List` (
-  				`id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  				`batchname` varchar(255) NOT NULL UNIQUE
-  				 )"; 
-
-  				if($result3=mysqli_query($conn,$sql_create3)){ }
-				else{
-			echo "Error2";
-				} 
-				?>
-				<tr >
-				<?php 
-			$sql_select_batch="SELECT * FROM `batch_list`;";
-			$result_batch=mysqli_query($conn ,$sql_select_batch);
-			while($row= mysqli_fetch_assoc($result_batch)){
-				$batch_name=explode("_",$row['batchname']);
-				$program=$batch_name[0];
-				if($program =="BESE"){
-			 ?>			
-					<td id="software_data" ><?php echo $row['batchname'] ;?></td>
-				<?php } ?>
-				</tr>
-				<?php  }?>
-			</tbody>
-		</table>
-
-		<table class="batch_table_computer">
-			<thead>
-				<tr >	
-					<td >Computer</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr >
-				<?php 
-			$sql_select_batch="SELECT * FROM `batch_list`;";
-			$result_batch=mysqli_query($conn ,$sql_select_batch);
-			while($row= mysqli_fetch_assoc($result_batch)){
-				$batch_name=explode("_",$row['batchname']);
-				$program=$batch_name[0];
-				if($program =="BECE"){
-			 ?>			
-					<td id="computer_data" ><?php echo $row['batchname'] ;?></td>
-				<?php } ?>
-				</tr>
-				<?php  }?>
-			</tbody>
-		</table>
-	
-	<div>
-		<img class="background" src="../Images/addbatch.jpg" >
-	</div>
-</body>
+	</body>
 </html>
