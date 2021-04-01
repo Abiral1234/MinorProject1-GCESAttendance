@@ -16,7 +16,7 @@ if(isset($_POST['admin_submit'])){
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../CSS/AddTeacherCss.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/AddTeachercss.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -61,7 +61,7 @@ if(isset($_POST['admin_submit'])){
             </form>
         </div>
         <script src="../JS/addteachervalidate.js" type="text/javascript"></script>
-
+    <div class="teachertable">
         <table class="teacher_table">
             <thead>
                 <tr >   
@@ -95,6 +95,7 @@ if(isset($_POST['admin_submit'])){
             <?php }?>
             </tbody>
         </table>
+     </div>
 
     </body>
 </html>

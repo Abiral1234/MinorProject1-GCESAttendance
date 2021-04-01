@@ -372,60 +372,7 @@ header::after{
     .navbar-links.active {
         display: flex;
     }
-	.contain{
-		margin-top: 4.75rem;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	.contain>div{
-		margin-bottom: 1rem;
-	}
-	.lcontain{
-		margin-left: 0;
-		margin-top: 1rem;
-		justify-content: center;
-		align-items: center;
-	}
-	.lcontain>div{
-		font-size: 16px;
-		margin-bottom: 10px;
-	}
-	.phpclass{
-		margin-left: 0px;
-	}
-	.table1{
-		font-size: 16px;
-		min-width: 400px;
-		text-align: center;
-	}
-	.label1{
-		font-size: 30px;
-		font-weight: 600;
-	}
-	select, option {
-		width: 240px;
-		}
 
-
-	.batch_select{
-		font-size: 20px;
-    	padding: 8px 12px;
-	}
-
-
-	.subject_select{
-		font-size: 20px;
-    	padding: 8px 12px;
-	}
-	.date_class{
-		font-size: 20px;
-    	padding: 8px 12px;
-		width: 240px;
-	}
-	.btn1{
-		width: 100px;
-	}
 }
 @media (max-width: 1200px) and (min-width: 820px) {
 	.navbar-links li a {
@@ -440,41 +387,5 @@ header::after{
 		list-style: none;
 		margin-right: 0px;
 	}
-	.contain{
-		margin-top: 8rem;
-		margin-left: 1.5rem;
-		margin-right: 7rem;
-		display: flex;
-	}
-	.contain>div{
-		margin-right: 2%;
-	}
 
-	.label1{
-		font-size: 22px;
-		font-weight: 600;
-	}
-	select, option {
-		width: 200px;
-		}
-
-
-	.batch_select{
-		font-size: 18px;
-    	padding: 10px 0px;
-	}
-
-
-	.subject_select{
-		font-size: 18px;
-    	padding: 10px 0px;
-	}
-	.date_class{
-		font-size: 18px;
-    	padding: 10px 0px;
-		width: 200px;
-	}
-	.btn1{
-		width: 80px;
-	}
 }

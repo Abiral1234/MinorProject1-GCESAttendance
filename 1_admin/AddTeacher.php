@@ -18,13 +18,14 @@ if(isset($_POST['teacher_submit'])){
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/AddTeacherCss.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/AddTeachercss.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-	<header>
+<div>
+    <header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
@@ -34,16 +35,17 @@ if(isset($_POST['teacher_submit'])){
         </a>
         <div class="navbar-links">
             <ul> 
-                <li><a href="Home.php">Home</a> </li>
-                <li><a href="view.php">View</a> </li>
-                <li><a href="Statistics.php">Statistics</a> </li>                  <!-- nav bar -->
-                <li><a href="notice.php">Notice</a></li>
-                <li><a href="../index.php">logout</a> </li>
+				<li><a href="Home.php">Home</a> </li>
+				<li><a href="view.php">View</a> </li>
+				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
+				<li><a href="notice.php">Notice</a></li>
+				<li><a href="../index.php">logout</a> </li>
 
-            </ul>
+			</ul>
         </div>
-      </nav>
-</header>
+	  </nav>
+    </header>
+</div>
     
 <script src="../Js/navbar.js"></script>
         <div class="container">
@@ -89,7 +91,7 @@ if(isset($_POST['teacher_submit'])){
             </form>
         </div>
         <script src="../JS/addteachervalidate.js" type="text/javascript"></script>
-
+        <div class="teachertable">
         <table class="teacher_table">
             <thead>
                 <tr >   
@@ -125,6 +127,7 @@ if(isset($_POST['teacher_submit'])){
             <?php }?>
             </tbody>
         </table>
+        </div>
 
     </body>
 </html>
