@@ -202,7 +202,7 @@ tbody tr:last-of-type {
 .batch_table{
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
 }
 
 .batch_table > div {
@@ -246,11 +246,12 @@ input{
     background-color: rgba(194, 194, 184, 0.933);
 }
 
-@media screen and (max-width:550px){
+/* @media screen and (max-width:550px){
     .batch_table{
-        display: none;
+        justify-content: unset;
+        
     }
-}
+} */
 
 /* @media screen and (max-width:1000px){
     .container{

@@ -115,6 +115,8 @@
            		   <div class="div">
            		    	<h5>Password</h5>
            		    	<input type="password" id="pass" name="password" class="input">
+						<i  class = "fas fa-eye fa-0.7x" id="show" onclick = "setToggle()"></i>
+						<i class = "fas fa-eye-slash fa-0.7x" id="hide" onclick = 'setToggle()'></i>
             	   </div>
             	</div>
 				<div class="invalid">
