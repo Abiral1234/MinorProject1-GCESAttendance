@@ -169,6 +169,33 @@ form{
 	font-family: 'poppins', sans-serif;
 }
 
+#show{
+	float:right;
+	position: relative;
+	color: #d9d9d9;
+	bottom: -17px;
+	left: -15px;
+	z-index: 2;
+}
+
+.input-div.focus > .div > #show{
+	color: #000000;
+}
+
+#hide{
+	float:right;
+	position: relative;
+	color: #d9d9d9;
+	bottom: -17px;
+	left: -15px;
+	display: none;
+	z-index: 2;
+}
+
+.input-div.focus > .div > #hide{
+	color: #000000;
+}
+
 .input-div.pass{
 	margin-bottom: 4px;
 }
