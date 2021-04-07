@@ -1,0 +1,55 @@
+.upfile{
+	position: absolute;
+    margin-top: -3.5rem;
+    margin-bottom: 2rem;
+    float: left;
+}
+.upimg{
+    margin-left: 23%;
+     }
+
+form{
+	margin-left: 20%;
+}
+ #file-chosen{
+    font-size: 16px;
+  margin-left: 0.3rem;
+  color: red;
+}
+#actual-btn{
+	color: red;
+}
+label {
+    padding: 0.7rem 2rem;
+    border-radius: 20px;
+    outline: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    text-align: center;
+}
+.submitimg{
+	position: absolute;
+    padding: 0.7rem 2rem;
+    display: block;
+    border-radius: 20px;
+    margin-top: -4rem;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #00ac0e, #017518);
+    background-size: 200%;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+#h1examroutine{
+	
+}

@@ -25,13 +25,13 @@
           <span class="bar"></span>
         </a>
         <div class="navbar-links">
-            <ul> 
+          <ul> 
 				<li><a href="Home.php">Attendance</a> </li>
-				<li><a href="view.php">Routine</a> </li>
-				<li><a href="Statistics.php">Study Material</a> </li>     			   <!-- nav bar -->
+				<li><a href="routine.php">Routine</a> </li>
+				<li><a href="notes.php">Notes</a> </li>     			   <!-- nav bar -->
 				<li><a href="notice.php">Notice</a></li>
 				<li><a href="../index.php">logout</a> </li>
-			</ul>
+			   </ul>
         </div>
 	  </nav>
 </header>
@@ -43,11 +43,7 @@
 	<input type="submit" class="sideinput" id="events" name="events" value="events">
 	<label for="events" class="sidebtn0">Events</label>
 
-	<input type="submit" class="sideinput" id="class_time_table" name="class_time_table" value="class_time_table">
-	<label for="class_time_table" class="sidebtn">Class Time Table</label>
-
-	<input type="submit" class="sideinput" id="exam_routine" name="exam_routine" value="exam_routine">
-	<label for="exam_routine" class="sidebtn">Exam Routine</label>
+	
 
 	<input type="submit" class="sideinput" id="study_material" name="study_material" value="study_material">
 	<label for="study_material" class="sidebtn">Study Material</label>

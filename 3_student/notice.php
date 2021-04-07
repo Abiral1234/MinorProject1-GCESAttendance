@@ -61,11 +61,11 @@ error_reporting(0);
         </a>
         <div class="navbar-links">
             <ul> 
-				<li><a href="Home.php">Home</a> </li>
-				<li><a href="view.php">View</a> </li>
-				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
-				<li><a href="notice.php">Notice</a></li>
-				<li><a href="../index.php">logout</a> </li>
+				<li><a href="Home.php">Attendance</a> </li>
+        <li><a href="routine.php">Routine</a> </li>
+        <li><a href="notes.php">Notes</a> </li>              <!-- nav bar -->
+        <li><a href="notice.php">Notice</a></li>
+        <li><a href="../index.php">logout</a> </li>
 			</ul>
         </div>
 	  </nav>
