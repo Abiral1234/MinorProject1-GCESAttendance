@@ -16,7 +16,7 @@
 		<?php
 			include_once'connection.php';
 			$error=null;
-
+			$match=1;
 			if(isset($_POST['FormSubmit'])) {
 				$username=$_POST['username'];							
 				$password=$_POST['password'];
@@ -39,6 +39,7 @@
 				}
 
 				//IF TEACHER
+
 				if($sql_select="SELECT * FROM teacherlist"){
 					$result_teacher=mysqli_query($conn,$sql_select);
 					if($result_teacher){
@@ -71,9 +72,10 @@
 						$_SESSION['student_batch_name'] =$batchname[$i];
 						header("Location: 3_student/Home.php"); 
 					}}}}
+				//If the user is not admin,teacher or student then invalid user
+				
 				}
-
-
+				$match=0;
 			}
 		?>
 	</div>
@@ -120,7 +122,13 @@
             	   </div>
             	</div>
 				<div class="invalid">
-					<p id="invalid2"></p>
+					<p id="invalid2" style="color: red;">
+						<?php
+						if ($match==0) {
+						 	echo "Incorrect Username and Password";
+						 } 
+						?>
+					</p>
 				</div>
             	<input type="submit" class="btn" value="Login" name="FormSubmit">
             </form>

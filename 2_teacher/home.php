@@ -3,6 +3,10 @@ include_once '../connection.php';
 $flag=0;
 $flag1=0;
 $score=0;
+session_start();
+  if (!isset($_SESSION['username'] ) ) {
+      header("Location: ../index"); 
+  }
 
 
 if (isset($_POST['submit'])) { //checks if submit button is clicked

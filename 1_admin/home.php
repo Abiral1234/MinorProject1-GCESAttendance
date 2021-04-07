@@ -1,3 +1,9 @@
+<?php
+session_start();
+  if (!isset($_SESSION['username'] ) ) {
+      header("Location: ../index"); 
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +46,12 @@
 	</div>
 	<div class="button3">
 		<a href="AddAdmin.php" ><button class="btn" >Add Admin</button></a>   <!--Add Buttons -->
+	</div>
+	<div class="button3">
+		<a href="AddRoutine.php" ><button class="btn" >Add Routine</button></a>   <!--Add Buttons -->
+	</div>
+	<div class="button3">
+		<a href="AddNote.php" ><button class="btn" >Add Notes</button></a>   <!--Add Buttons -->
 	</div>
 <script src="../Js/navbar.js"></script>
 

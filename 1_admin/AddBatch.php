@@ -1,11 +1,11 @@
 <?php 
 include_once '../connection.php';
-  	if(isset($_POST['batch_submit2'])){
+if(isset($_POST['batch_submit2'])){
 	$batch_program =$_POST['program'];
 	$batch_year =$_POST['year'];
 	$name =$batch_program ."_". $batch_year;
 
-//creating student list foreg:bese_2018
+	//creating student list foreg:bese_2018
 
 	$sql_create1 = "CREATE TABLE IF NOT EXISTS $name (     
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -18,7 +18,7 @@ include_once '../connection.php';
 	else{
 		echo "Error1";
 	}
-//creating subject table for respective batch
+	//creating subject table for respective batch
 	$sql_create2 = "CREATE TABLE IF NOT EXISTS subject (     
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		`batchname` varchar(255) NOT NULL,
@@ -42,7 +42,7 @@ include_once '../connection.php';
 	}
 
 
-//checking duplicate & creating batch list
+	//checking duplicate & creating batch list
 	$dup=mysqli_query($conn,"select * from `Batch_list` WHERE batchname='$name'");
 	if(mysqli_num_rows($dup)>0){
 		//echo "Already Created";
@@ -64,12 +64,12 @@ include_once '../connection.php';
 	$third_year=$current_year-3;
 	$second_year=$current_year-2;
 	$first_year=$current_year-1;
-	$batchname= array("BESE_".$fourth_year,"bese_".$third_year,"bese_".$second_year,"bese_".$first_year,
-				"bece_".$fourth_year,"bece_".$third_year,"bece_".$second_year,"bece_".$first_year);
+	$batchname= array("BESE_".$fourth_year,"BESE_".$third_year,"BESE_".$second_year,"BESE_".$first_year,
+				"BECE_".$fourth_year,"BECE_".$third_year,"BECE_".$second_year,"BECE_".$first_year);
 
 	if ($name == $batchname[3]) { //BESE 1st year
 		$sql_add_subject="INSERT INTO `subject` VALUES(1,'$name' ,'Engineering MathematicsI'
-		,'Physics','Communication Technique','Problem Solving Techniques','Fundamentals of IT','Programming in C','Engineering MathematicsII','Logic Circuits','Mathematical Foundation of Computer Science','Engineering Drawing','Object Oriented Programming in C++','Web Technology')";
+		,'Physics','Communication Technique','Problem Solving Techniques','Fundamentals of IT','Programming in C','Engineering MathematicsII','Logic Circuits','Mathematical Foundation of Computer Science','Engineering Drawing','Object Oriented Programming in C++','Web Technology',null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
@@ -78,7 +78,7 @@ include_once '../connection.php';
 
 	if ($name == $batchname[2]) { //BESE 2nd year
 		$sql_add_subject="INSERT INTO `subject` VALUES(2,'$name' ,'Engineering Mathematics III'
-		,'Software Engineering Fundamentals','Microprocessor  Assembly Lang. Pro.','Data Structure and Algorithms','Probability  Queuing Theory','Programming in Java','Numerical Methods','Computer Graphics','Computer Organization  Architecture','Database Management Systems','Object Oriented Design  Modeling through UML',null)";
+		,'Software Engineering Fundamentals','Microprocessor  Assembly Lang. Pro.','Data Structure and Algorithms','Probability  Queuing Theory','Programming in Java','Numerical Methods','Computer Graphics','Computer Organization  Architecture','Database Management Systems','Object Oriented Design  Modeling through UML',null,null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
@@ -86,7 +86,7 @@ include_once '../connection.php';
 	}
 	if ($name == $batchname[1]) { //BESE 3rd year
 		$sql_add_subject="INSERT INTO `subject` VALUES(3,'$name' ,'Applied Operating System'
-		,'Simulation  Modeling','Artificial Intelligence  Neural Network','System Programming','Analysis  Design of Algorithm','Elective I','Organization and Management','Multimedia Systems','Computer Networks','Principles of Programming Languages','Engineering Economics','Object Oriented Software Development')";
+		,'Simulation  Modeling','Artificial Intelligence  Neural Network','System Programming','Analysis  Design of Algorithm','Elective I','Organization and Management','Multimedia Systems','Computer Networks','Principles of Programming Languages','Engineering Economics','Object Oriented Software Development',null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
@@ -94,49 +94,51 @@ include_once '../connection.php';
 	}
 	if ($name == $batchname[0]) { //BESE 4th year
 		$sql_add_subject="INSERT INTO `subject` VALUES(4,'$name' ,'Real Time Systems'
-		,'Distributed Systems','Enterprise Application Development','Image Processing and Pattern Recognition','Software Testing,Verification,Validation and Quality Assurance','Elective I','Network Programming','Software Project Management','Elective II',null,null,null)";
+		,'Distributed Systems','Enterprise Application Development','Image Processing and Pattern Recognition','Software Testing,Verification,Validation and Quality Assurance','Elective I','Network Programming','Software Project Management','Elective II',null,null,null,null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
 		}
 	}
 	if ($name == $batchname[7]) { //BECE 1st year
-		$sql_add_subject="INSERT INTO `subject` VALUES(1,'$name' ,'Engineering MathematicsI'
+		$sql_add_subject="INSERT INTO `subject` VALUES(5,'$name' ,'Engineering MathematicsI'
 		,'Chemistry','Communication Technique','Programming in C','Basic Electrical Engineering','Mechanical Workshop','Engineering Mathematics II','Physics','Engineering Drawing','Engineering Drawing','Object Oriented Programming in C++','Thermal Science','Applied Mechanics')";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
-		echo  'error while inserting subject';
+		echo  'error while inserting subject'. $name;
 		}
 	}
 	
-	if ($name == $batchname[6]) { //BESE 2nd year
-		$sql_add_subject="INSERT INTO `subject` VALUES(2,'$name' ,'Engineering Mathematics III'
-		,'Data Structure and Algorithm','Electrical Engineering Materials','Network Theory','Electronic Devices','Logic Circuits','Engineering Mathematics IV','Instrumentation','Electronic Circuits','Theory of Computation','Microprocessors',null)";
+	if ($name == $batchname[6]) { //BECE 2nd year
+		$sql_add_subject="INSERT INTO `subject` VALUES(6,'$name' ,'Engineering Mathematics III'
+		,'Data Structure and Algorithm','Electrical Engineering Materials','Network Theory','Electronic Devices','Logic Circuits','Engineering Mathematics IV','Instrumentation','Electronic Circuits','Theory of Computation','Microprocessors',null,null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
-		echo  'error while inserting subject';
+		echo  'error while inserting subject'. $name;
 		}
 	}
 
-	if ($name == $batchname[5]) { //BESE 3rd year
-		$sql_add_subject="INSERT INTO `subject` VALUES(3,'$name' ,'Numerical Methods'
-		,'Microprocessor System and Interfacing','Operating System','Computer Graphics','Integrated Digital Electronics,'Probability and Statistics','Simulation and Modeling,'Data Communication','Database Management System','Object Oriented Software Engineering', null , null)";
+	if ($name == $batchname[5]) { //BECE 3rd year
+		$sql_add_subject="INSERT INTO `subject` VALUES(7,'$name' ,'Numerical Methods'
+		,'Microprocessor System and Interfacing','Operating System','Computer Graphics','Integrated Digital Electronics',
+		'Probability_and_Statistics','Simulation_and_Modeling','Data Communication','Database Management System','Object Oriented Software Engineering',null,null,null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
-		echo  'error while inserting subject';
+		echo  'error while inserting subject'. $name;
 		}
 	}
 
-	if ($name == $batchname[4]) { //BESE 4th year
-		$sql_add_subject="INSERT INTO `subject` VALUES(4,'$name' ,'Engineering Economics'
-		,'Computer Architecture','Digital Signal Processing','Computer Network','Elective I','Organization and Management','Artificial Intelligence','Image Processing  Pattern Recognition','Elective II',null,null,null)";
+	if ($name == $batchname[4]) { //BECE 4th year
+		$sql_add_subject="INSERT INTO `subject` VALUES(8,'$name' ,'Engineering Economics'
+		,'Computer Architecture','Digital Signal Processing','Computer Network','Elective I','Organization and Management','Artificial Intelligence','Image Processing  Pattern Recognition','Elective II',null,null,null,null)";
 		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
 		else{
-		echo  'error while inserting subject';
+		echo  'error while inserting subject' . $name;
 		}
 	}
 
-	}
+
+}
 ?>
 <!DOCTYPE html>
 <html>
