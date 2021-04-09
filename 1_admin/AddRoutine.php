@@ -17,13 +17,22 @@ include_once'../connection.php';
     else{
       echo "error";
     }
+      //IF Clear IMAGE IS ENTERED
+  if (isset($_POST['clear_class'])) {
+    $sql_delete_image="DELETE FROM `classroutine` WHERE 1";
+    if($result=mysqli_query($conn,$sql_delete_image)){}
+      else{echo "image delete error";}}
+        //IF Clear IMAGE IS ENTERED
+  if (isset($_POST['clear_exam'])) {
+    $sql_delete_image="DELETE FROM `examroutine` WHERE 1";
+    if($result=mysqli_query($conn,$sql_delete_image)){}
+      else{echo "image delete error";}}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../CSS/AddTeacherCss.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/AddRoutine2.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Addroutine.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 </head>
@@ -54,17 +63,15 @@ include_once'../connection.php';
 
 
 <!-- UPLOAD CLASS ROUTINE -->
-
-
-
-<h1>Upload Class Routine</h1>
+<div class="mainsec">
+<div class="routine">
+ <h1>Upload Class Routine</h1>
        <form action="" method="POST" enctype="multipart/form-data">
           <div class="upfile"> 
                         <input type="file" id="actual-btn" name="uploadfile" hidden/>
 
                         <!--custom upload button -->
                         <label for="actual-btn">Choose File</label>
-
                         <!-- name of file chosen -->
                         <span id="file-chosen">No file chosen</span>
             </div>
@@ -106,15 +113,13 @@ include_once'../connection.php';
         echo "<a href='$imageurl'><img src='$imageurl' width='860px' height='600px'/><a>";
 
         } ?>
-
-
-
+</div>
 
 <!-- UPLOAD EXAM ROUTINE -->
 
 
 <div class="exam_routine">
-<h1 id="h1examroutine">Upload Exam Routine</h1>
+  <h1 id="h1examroutine">Upload Exam Routine</h1>
        <form action="" method="POST" enctype="multipart/form-data">
           <div class="upfile"> 
                         <input type="file" id="actual-btn2" name="uploadfile" hidden/>
@@ -164,6 +169,19 @@ include_once'../connection.php';
 
         } ?>
 
+</div>
+<div class="pannel">
+      <div class="clrclassbtn">
+        <form action="AddRoutine.php" method="POST">
+        <input class="btn_red" id="addbtn2" type="submit" name="clear_class" value="Clear Class Routine"> <!--Image delte button-->
+        </form>
+      </div>
+      <div class="clrexambtn">
+        <form action="AddRoutine.php" method="POST">
+        <input class="btn_red" id="addbtn3" type="submit" name="clear_exam" value="Clear Exam Routine">
+        </form>
+      </div>
+</div>
 </div>
 
 

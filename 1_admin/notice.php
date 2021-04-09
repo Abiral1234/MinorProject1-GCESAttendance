@@ -255,7 +255,7 @@ error_reporting(0);
               $difference_in_days=floor($diff/(60*60*24));
               if($difference_in_days == 0){ //ie today
               ?>
-            <tr style="background: #add8e6;">
+            <tr>
               <td  ><?php echo $counter;?></td>
               <td><?php echo $event['Title']; ?></td>
               <td><?php echo $event['date']; ?></td>
