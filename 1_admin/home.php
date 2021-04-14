@@ -8,9 +8,10 @@ session_start();
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/admin_homepage_css2.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/admin_image.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/admin_homepage_css6.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/admin_image4.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../CSS/css/all.css">
 </head>
 <body>
 	
@@ -36,23 +37,45 @@ session_start();
 	
 		
 	<div class="button1">
-		<a href="AddBatch.php" ><button class="btn">Add Batch</button> </a>
+		<a href="AddBatch.php" >
+			<button class="btn"> <i class="fas fa-school" ></i> Add Batch</button> </a>
 	</div>	
+
+
 	<div class="button2">
-		<a href="AddStudent.php" ><button class="btn" >Add Student</button></a> 
+		<a href="AddStudent.php" >
+			<button class="btn" ><i class="fas fa-user-friends"></i> Add Student</button>
+		</a> 
 	</div>
+
+
 	<div class="button3">
-		<a href="AddTeacher.php" ><button class="btn" >Add Teacher</button></a>   <!--Add Buttons -->
+		<a href="AddTeacher.php" >
+			<button class="btn" ><i class="fas fa-chalkboard-teacher"></i> Add Teacher</button>
+		</a>   
 	</div>
+
+
+	<div class="button2">
+		<a href="AddAdmin.php" >
+			<button class="btn" ><i class="fas fa-user-shield"></i> Add Admin</button>
+		</a>   
+	</div>
+
+
 	<div class="button3">
-		<a href="AddAdmin.php" ><button class="btn" >Add Admin</button></a>   <!--Add Buttons -->
+		<a href="AddRoutine.php" >
+			<button class="btn" ><i class="fas fa-calendar-alt"></i> Add Routine</button>
+		</a> 
+
 	</div>
+
+
 	<div class="button3">
-		<a href="AddRoutine.php" ><button class="btn" >Add Routine</button></a>   <!--Add Buttons -->
+		<a href="AddNote.php" ><button class="btn" > <i class="fas fa-file-alt"></i> Add Notes</button>
+		</a>   
 	</div>
-	<div class="button3">
-		<a href="AddNote.php" ><button class="btn" >Add Notes</button></a>   <!--Add Buttons -->
-	</div>
+
 <script src="../Js/navbar.js"></script>
 
 <div class="svg">
