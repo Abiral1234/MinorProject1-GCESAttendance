@@ -1,0 +1,70 @@
+body{
+	
+}
+.uploadFileSection{
+	width: 70vw;
+	text-align: center;
+	margin-left: 15vw;
+	border: 3px solid rgb(50, 50, 50);
+	background-color: rgba(0,10,250,0.5);
+	border-radius: 20px;
+	border-color: solid black;
+}
+.batch_and_subject_name{
+	height: 6vh;
+	border-radius: 20px;
+	text-align: center;
+	align-items: center;
+	line-height: 10px;
+	margin-top: 10px;
+	color: white;
+}
+.uploadSection{
+	align-items: center;
+	background-color: rgb(220,220,220,1);
+}
+
+.upfile{
+	position: relative;
+   text-align: center;
+
+}
+label {
+    padding: 0.4rem;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    outline: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+#file-chosen{
+   font-size: 16px;
+  margin-left: 0.3rem;
+}
+
+.submitfile{
+	position: relative;
+	 padding: 0.4rem;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    outline: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    text-align: center;
+  
+}

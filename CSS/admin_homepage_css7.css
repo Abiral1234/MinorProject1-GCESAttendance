@@ -159,15 +159,19 @@ header::after{
 
 .button1{
 	text-align: center;
-	margin-top: 150px;
+
+	margin-top: 10px;
 }
 .button2{
 	text-align: center;
-	margin: 40px;
+	
+	margin: 13px;
 }
 .button3{
 	text-align: center;
-	margin-top: 40px;
+
+	margin-top: 10px;
+	
 }
 
 

@@ -23,7 +23,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../CSS/AddNote.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style type="text/css">
-     a{
+      a{
         text-decoration: none;
         color: black;
       }
@@ -39,6 +39,7 @@ session_start();
       }
       .uploaded_files:nth-of-type(odd) {
     background-color: #ffffff;}
+
 
      
     </style>
@@ -128,11 +129,11 @@ session_start();
         </a>
         <div class="navbar-links">
             <ul> 
-              <li><a href="Home.php">Attendance</a> </li>
-        <li><a href="routine.php">Routine</a> </li>
-        <li><a href="notes.php">Notes</a> </li>              <!-- nav bar -->
-        <li><a href="notice.php">Notice</a></li>
-        <li><a href="../index.php">logout</a> </li>
+                <li><a href="Home.php">Home</a> </li>
+                <li><a href="view.php">View</a> </li>
+                <li><a href="Statistics.php">Statistics</a> </li>                  <!-- nav bar -->
+                <li><a href="notice.php">Notice</a></li>
+                <li><a href="../index.php">logout</a> </li>
 
             </ul>
         </div>
@@ -173,11 +174,9 @@ session_start();
 
 
 <?php if (isset($_POST['batch_submit']) || isset($_POST['submit1'] ) ) {
-  if ($_POST['batch_name1']!="No batch selected" && $_POST['selected_subject_name']!="No subject selected" &&$_POST['selected_subject_name']!="Not selected" ) {
+  if ($_POST['batch_name1']!="No batch selected" && $_POST['selected_subject_name']!="No subject selected" && $_POST['selected_subject_name']!="Not selected" ) {
 
   ?>
-
-
 
 <!-- Shows the Selected batch name and subject name -->
 <form action="" method="POST" enctype="multipart/form-data">
@@ -195,7 +194,29 @@ session_start();
       </span>
   </div>
 
- 
+ <!--Upload button to add new file -->
+
+
+  <div class="uploadSection">
+      
+          <div class="upfile"> 
+                        <input type="file" id="actual-btn" name="uploadfile" hidden/>
+
+                        <!--custom upload button -->
+                        <label for="actual-btn">Choose File</label>
+
+                        <!-- name of file chosen -->
+                        <span id="file-chosen">No file chosen</span>
+
+
+                      <!--TO SEND BATCH NAME AND SUBJECT NAME AGAIN IN THE FORM -->
+                      <select style="display: none;" name="batch_name1"><option> <?php echo $_POST['batch_name1']; ?></option></select>
+
+                       <select style="display: none;" name="selected_subject_name"><option> <?php echo $_POST['selected_subject_name']; ?></option></select>
+
+                        <input type="submit" value="Upload File" class="submitfile" name="submit1">
+              </div>
+</div>
  </form>
             
     <script>
@@ -234,8 +255,7 @@ session_start();
           $filename0=str_replace('../Notes/', '', $fileurl);
           
 
-        echo "<div class='uploaded_files' ><a  href='$fileurl'><h2 class='filename'>$count, $filename0 
-        </h2></div> ";
+        echo "<div class='uploaded_files' ><a  href='$fileurl'><h2 class='filename'>$count, $filename0 </h2></div> ";
         $count++;
         
         } ?>

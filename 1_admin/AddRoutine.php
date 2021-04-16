@@ -32,7 +32,8 @@ include_once'../connection.php';
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../Css/Addroutine.css">
+   
+    <link rel="stylesheet" type="text/css" href="../Css/AddRoutine2.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 </head>

@@ -1,13 +1,13 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 body{
-	margin: 0;
-	font-family: sans-serif;
-	font-weight: 350;
-	height: 100%;
-	width: 100%;
-	background-color: #dddddd50;
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 350;
+    height: 100%;
+    width: 100%;
+    background-color: #dddddd50;
 }
 .mainsec{
     width: 75%;
@@ -107,17 +107,17 @@ img{
 }
 
 header{
-	position: fixed;
-	width: 100%;
-	background:#00BEFF;
-	z-index: 1;
-	top: 0px;
+    position: fixed;
+    width: 100%;
+    background:#00BEFF;
+    z-index: 1;
+    top: 0px;
 }
 header::after{
-			content: '';
-			display: table;
-			clear: both;
-		}
+            content: '';
+            display: table;
+            clear: both;
+        }
 .navbar {
     display: flex;
     position: relative;
@@ -161,22 +161,22 @@ header::after{
     font-size: 25px;
 }
 .navbar-links li::before{
-			content: '';
-			display: block;
-			height: 5px;
-			background-color: white;
-			bottom: 0 ;
-			width: 0% ;
-			transition: all ease-in-out 250ms;
-			font-style: bold;
-		}
+            content: '';
+            display: block;
+            height: 5px;
+            background-color: white;
+            bottom: 0 ;
+            width: 0% ;
+            transition: all ease-in-out 250ms;
+            font-style: bold;
+        }
 .navbar-links li:hover::before{
-			width: 100%;
-			background-color: white;
-		}
-		.navbar-links li:hover{
-			background-color:#319fff;
-		}
+            width: 100%;
+            background-color: white;
+        }
+        .navbar-links li:hover{
+            background-color:#319fff;
+        }
 
 .toggle-button {
     position: absolute;
@@ -197,18 +197,18 @@ header::after{
 }
 
 @media (max-width: 1200px) and (min-width: 820px) {
-	.navbar-links li a {
-		display: block;
-		text-decoration: none;
-		text-transform: uppercase;
-		color: white;
-		padding: 1.2rem;
-		font-size: 22px;
-	}
-	.navbar-links li {
-		list-style: none;
-		margin-right: 0px;
-	}
+    .navbar-links li a {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        padding: 1.2rem;
+        font-size: 22px;
+    }
+    .navbar-links li {
+        list-style: none;
+        margin-right: 0px;
+    }
     .mainsec{
 
         margin-left: 5rem;

@@ -1,12 +1,13 @@
 .svg{
 	position: absolute;
 	background-size: cover;
-	width: 70vw;
-	height: 100vh;
-	margin-left: 10vw;
+	width: 37vw;
+	height: 80vh;
+	margin-top: 15px;
+	margin-left: 15vw;
 	z-index: -50;
 	top: 5vh;
-	opacity: 0.6;
+	opacity: 0.8;
 }
 
 /*absent status*/
