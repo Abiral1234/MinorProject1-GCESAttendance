@@ -20,13 +20,7 @@ body{
 .image1{
     z-index: -2;
 }
-.nav{
-		background-color: #00beff;
-		width: 100%;
-		height: 11vh;
-		line-height: 11vh;
-		text-align: center;
-	}
+
 .select_button{
         display: grid;
 		width: 100%;	
@@ -108,7 +102,20 @@ font-weight: bold;
 span{
     font-size: 25px;
 }
-.student_name{
+.student_information{
+    position: absolute;
+    background-color: green;
+    text-align: left;
+    left: 10vw;
+    top: 5vh;
+    line-height: 20px;
+    border-radius: 20px;
+    background-color: #dbedf3;
+    width: 80vw;
+    z-index: -10;
+    padding-left: 10px;
+    }
+/*.student_name{
     position: absolute;
     margin-left: 16vw;
     margin-top: 8vh;
@@ -124,9 +131,10 @@ span{
     margin-left: 65vw;
     margin-top: 8vh;
     width: 500px;
-}
+}*/
 
 .table1{
+    position: absolute;
     background-image: linear-gradient(to right, #45B5E9, #10D7E2);
     border-collapse: collapse;
     margin-top: 2vh;
@@ -140,17 +148,19 @@ span{
     word-wrap: break-word;
 }
 .student_table{
+    position: absolute;
     background-image: linear-gradient(to right, #45B5E9, #10D7E2);
     border-collapse: collapse;
-    margin-top: 14vh;
-    margin-left: 15vw;
+    margin-top: 30vh;
+    margin-left: 10vw;
     min-width: 60vw;
     text-align: left;
-    font-size: 30px;
+    font-size: 2vw;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
     word-wrap: break-word;
+    z-index: -20;
 }
 thead tr{
     background-image: linear-gradient(to right, #6197EE, #10D7E2);
@@ -247,83 +257,7 @@ input[type="radio"]:checked + .absent_class{
    
     }
 
-.navbar {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #00BEFF;
-    color: white;
-}
 
-.brand-title {
-    font-size: 2rem;
-    margin: .5rem;
-    align-content: center;
-    text-transform: uppercase;
-}
-
-.navbar-links {
-    height: 100%;
-    right: 30px;
-    /*margin-right: 30px;*/
-}
-
-.navbar-links ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-
-}
-
-.navbar-links li {
-    list-style: none;
-    margin-right: 40px;
-}
-
-.navbar-links li a {
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    padding: 1.65rem;
-    font-size: 25px;
-}
-.navbar-links li::before{
-			content: '';
-			display: block;
-			height: 5px;
-			background-color: white;
-			bottom: 0 ;
-			width: 0% ;
-			transition: all ease-in-out 250ms;
-			font-style: bold;
-		}
-.navbar-links li:hover::before{
-			width: 100%;
-			background-color: white;
-}
-.navbar-links li:hover{
-			background-color:#319fff;
-		}
-
-.toggle-button {
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-}
 @media (max-width: 1180px){ 
     .table1{
     font-size: 28px;
@@ -337,37 +271,7 @@ input[type="radio"]:checked + .absent_class{
 input[type="radio"]:checked + .absent_class{
     font-size: 28px;  
 }
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .toggle-button {
-        display: flex;
-    }
-
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links ul li {
-        text-align: center;
-    }
-
-    .navbar-links ul li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-
+    
 }
 @media (max-width: 800px) {
     .select_menu_span{
@@ -411,6 +315,11 @@ input[type="radio"]:checked + .absent_class{
 }
 input[type="radio"]:checked + .absent_class{
     font-size: 25px;  
+}
+.student_table{ 
+  margin-left: 10px;
+  width: 20vw; 
+  font-size: 15px;
 }
 
 }

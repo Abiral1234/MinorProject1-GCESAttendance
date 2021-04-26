@@ -1,0 +1,162 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: white;
+    font-family:sans-serif;
+    font-weight: 350;
+     
+}
+
+
+.background{
+    position: absolute;
+    z-index: -5;
+    opacity: 0.7;
+}
+img{
+    position: absolute;
+    width: 100%;
+margin-top: -28vh;
+}
+
+
+
+span, label{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.batch_table_software{
+    /* position: absolute;
+   left:900px;
+   top: 130px; */
+    border-collapse: collapse;
+    min-width: 250px; 
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.batch_table_computer{
+    /* position: absolute;
+   left:1200px;
+   top: 130px; */
+    border-collapse: collapse;
+    min-width: 250px; 
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+thead tr{
+    background-color: #009879;
+    color: white;
+    height: 20px;
+    font-weight: bold;
+}
+td{
+    padding: 12px 15px;
+}
+tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #FFFFFF;
+    }
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.form-container{
+    background-color: #dbedf3;
+    border-radius: 20px;
+}
+
+.container > div{
+    margin: 10px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.batch_table{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.batch_table > div {
+    margin: 5px;
+    padding: 5px;
+}
+
+input{
+    margin-top: 3px;
+}
+.input > input, select{
+    position: relative;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0.1rem 0.7rem;
+    color: #000;
+    border-bottom: 2px solid #756f6f;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: 7% 93%;
+}
+.btn{
+    display: block;
+    width: 10em;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #00beff, #00beff);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.btn:active{
+    background-color: rgba(194, 194, 184, 0.933);
+}
+
+@media (max-width: 1300px) {
+   
+}
+
+ @media screen and (max-width:550px){
+    .batch_table{
+        justify-content: unset;
+        
+    }
+    img{
+        margin-top: -40vh;
+    }
+} 
+
+/* @media screen and (max-width:1000px){
+    .container{
+        margin-left: 20em;
+    }
+    .btn{
+        width: 43%;
+        border-radius: 17px;
+    }
+}
+@media screen and (max-width: 700px){
+    .container{
+        margin-left: 7em;
+    }
+} */

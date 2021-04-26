@@ -1,19 +1,20 @@
 <?php
-include_once '../connection.php';
+include_once '../connection.php'
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../CSS/Viewcss2.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/Student_home1.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/image2.css">
-  <link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title></title>
+   
+    <link rel="stylesheet" type="text/css" href="../Css/AddRoutine3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
+
 </head>
+
 <body>
-<div>
+
 <header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendance</div>
@@ -24,40 +25,71 @@ include_once '../connection.php';
         </a>
         <div class="navbar-links">
             <ul> 
-				<li><a href="Home.php">Attendance</a> </li>
-				<li><a href="routine.php">Routine</a> </li>
-				<li><a href="notes.php">Notes</a> </li>     			   <!-- nav bar -->
-				<li><a href="notice.php">Notice</a></li>
-				<li><a href="../index.php">logout</a> </li>
-			</ul>
+                <li><a href="Home.php">Attendance</a> </li>
+                <li><a href="routine.php">Routine</a> </li>
+                <li><a href="notes.php">Notes</a> </li>              <!-- nav bar -->
+                <li><a href="notice.php">Notice</a></li>
+                <li><a href="../index.php">logout</a> </li>
+
+            </ul>
         </div>
-	  </nav>
+      </nav>
 </header>
+
+
+
+<!-- UPLOAD CLASS ROUTINE -->
+<div class="mainsec">
+<div class="routine">
+ <h1>Class Routine</h1>            
+  
+        <?php
+        $sql_select_image="SELECT * FROM `classroutine` ORDER BY datetime desc LIMIT 1  ;";
+        $result2=mysqli_query($conn,$sql_select_image);
+        while($row=mysqli_fetch_assoc($result2)){ 
+          $imageurl = $row['imageurl'];
+          $datetime0=$row['datetime'];
+
+        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
+
+        } ?>
 </div>
-<div class="sidebutton">
-	<form action="routine.php" method="POST">
-	<input type="submit" class="sideinput" id="class_time_table" name="class_time_table" value="class_time_table">
-	<label for="class_time_table" class="sidebtn">Class Time Table</label>
 
-	<input type="submit" class="sideinput" id="exam_routine" name="exam_routine" value="exam_routine">
-	<label for="exam_routine" class="sidebtn">Exam Routine</label>
-	</form>
+<!-- UPLOAD EXAM ROUTINE -->
+
+
+<div class="exam_routine">
+  <h1 id="h1examroutine" style="color: black;">Upload Exam Routine</h1>
+       
+        <?php
+        if (isset($_POST['submit'])) {
+        $filename=$_FILES["uploadfile"]["name"];
+        $tempname=$_FILES["uploadfile"]["tmp_name"];
+        $folder="../RoutineImage/".$filename;
+        move_uploaded_file( $tempname ,$folder );
+        $datetime=date("Y-m-d H:i:s");
+        $sql_insert_image="INSERT INTO examroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
+        $result=mysqli_query($conn,$sql_insert_image);
+
+        }
+        ?>
+        <?php
+        $sql_select_image="SELECT * FROM `examroutine` ORDER BY datetime desc LIMIT 1  ;";
+        $result2=mysqli_query($conn,$sql_select_image);
+        while($row=mysqli_fetch_assoc($result2)){ 
+          $imageurl = $row['imageurl'];
+          $datetime0=$row['datetime'];
+
+        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
+
+        } ?>
+
 </div>
 
-<?php if (isset($_POST['class_time_table'])) { ?>
-<div class="table_section">
-<h1>Class Time</h1>
-
 </div>
-<?php } ?>
 
-
-<?php if (isset($_POST['exam_routine'])) { ?>
-<div class="table_section">
-<h1>Exam Routine</h1>
-</div>
-<?php } ?>
 
 <script src="../Js/navbar.js"></script>
-		</body>
+        
+    </body>
 </html>

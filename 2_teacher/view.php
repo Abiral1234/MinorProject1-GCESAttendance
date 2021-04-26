@@ -6,7 +6,8 @@ include_once '../connection.php';
 <head>
 	<title>Calender</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../CSS/Viewcss2.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/Viewcss.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 
 	<script type="text/javascript">	
 		var pair; 	

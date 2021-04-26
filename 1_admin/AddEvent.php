@@ -4,6 +4,7 @@
 <head>
 	<title>Events</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/AddEvent.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 </head>
 <body>
 <nav class="navbar">

@@ -33,8 +33,10 @@ include_once'../connection.php';
 <head>
     <title></title>
    
-    <link rel="stylesheet" type="text/css" href="../Css/AddRoutine2.css">
+    <link rel="stylesheet" type="text/css" href="../Css/AddRoutine3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 
 </head>
 
@@ -111,7 +113,7 @@ include_once'../connection.php';
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
 
-        echo "<a href='$imageurl'><img src='$imageurl' width='860px' height='600px'/><a>";
+        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
 
         } ?>
 </div>
@@ -120,7 +122,7 @@ include_once'../connection.php';
 
 
 <div class="exam_routine">
-  <h1 id="h1examroutine">Upload Exam Routine</h1>
+  <h1 id="h1examroutine" style="color: black;">Upload Exam Routine</h1>
        <form action="" method="POST" enctype="multipart/form-data">
           <div class="upfile"> 
                         <input type="file" id="actual-btn2" name="uploadfile" hidden/>
@@ -166,7 +168,7 @@ include_once'../connection.php';
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
 
-        echo "<a href='$imageurl'><img src='$imageurl' width='860px' height='600px'/><a>";
+        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
 
         } ?>
 

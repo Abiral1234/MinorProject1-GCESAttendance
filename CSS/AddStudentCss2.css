@@ -6,11 +6,12 @@ body{
 
 .background{
     position: absolute;
-    top: 20vh;
-    width: 100vw;
-    height: 80vh;
-    z-index: -5;
-    opacity: 0.6;
+    width: 50%;
+    z-index: -10;
+    margin-left: 48%;
+    margin-top: 15vh;
+    opacity: 0.5;
+
 }
 
 .navigation{
@@ -194,11 +195,18 @@ span{
     justify-content: center;
     flex-wrap: wrap;
 }
-
-.container > div {
-    margin: 5px;
-    padding: 20px;
+.form-container{
+    background-color: #dbedf3;
+    border-radius: 20px;
 }
+
+.container > div{
+    margin: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
 
 .student_table{
     /* position: absolute;
@@ -320,6 +328,26 @@ label {
     font-size: 16px;
   margin-left: 0.3rem;
 }
+
+@media (max-width: 1200px) and (min-width: 820px) {
+	.navbar-links li a {
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: white;
+		padding: 1.2rem;
+		font-size: 22px;
+	}
+	.navbar-links li {
+		list-style: none;
+		margin-right: 0px;
+	}
+    .background{
+    margin-top: 30vh;
+}
+
+
+}
 @media (max-width: 820px) {
     .navbar {
         flex-direction: column;
@@ -351,20 +379,14 @@ label {
     .navbar-links.active {
         display: flex;
     }
+      .background{
+    margin-top: 40vh;
+}
 
 }
-@media (max-width: 1200px) and (min-width: 820px) {
-	.navbar-links li a {
-		display: block;
-		text-decoration: none;
-		text-transform: uppercase;
-		color: white;
-		padding: 1.2rem;
-		font-size: 22px;
-	}
-	.navbar-links li {
-		list-style: none;
-		margin-right: 0px;
-	}
+@media (max-width: 780px) {
+    img{
+        display: none;
+    }
 
 }

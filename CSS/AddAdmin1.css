@@ -7,11 +7,19 @@ body{
     background: white;
     font-family:sans-serif;
     font-weight: 350;
-     background-image: url("../Images/pattern.jpg");
     font-weight: 350;
     height: 100%;
     width: 100%;
 }
+.adminsvg{
+  position: absolute;
+    width: 60%;
+    z-index: -10;
+    margin-top:-12%;
+    margin-left: 38%; 
+    opacity: 0.7;
+}
+
 header{
 	position: fixed;
 	width: 100%;
@@ -110,7 +118,9 @@ span, label{
     width: 80%;
     margin-left: 15%;
     margin-top: 7rem;
+
 }
+
 .teachertable{
     position: absolute;
     top: 10rem;
@@ -126,7 +136,7 @@ span, label{
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 thead tr{
-    background-color: #009879;
+    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
     color: white;
     height: 20px;
     font-weight: bold;
@@ -140,9 +150,14 @@ tbody tr{
 tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;}
 
+tbody tr:nth-of-type(odd) {
+    background-color: white;}
+
 tbody tr:last-of-type {
     border-bottom: 2px solid #00beff;
 }
+
+
 input{
     margin-top: 3px;
 }
@@ -188,6 +203,33 @@ input{
 .btn:active{
     background-color: rgba(194, 194, 184, 0.933);
 }
+
+@media (max-width: 1200px) and (min-width: 820px) {
+	.navbar-links li a {
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: white;
+		padding: 1.2rem;
+		font-size: 22px;
+	}
+	.navbar-links li {
+		list-style: none;
+		margin-right: 0px;
+	}
+    #teachersvg{
+    margin-top:-60%;}
+
+}
+@media (max-width: 900px) {
+    .adminsvg{
+    width: 80%;
+    margin-top:-12%;
+    margin-left: 38%; 
+    
+}
+
+}
 @media (max-width: 820px) {
     .navbar {
         flex-direction: column;
@@ -227,27 +269,28 @@ input{
     .teacher_table{
         width: auto;
         min-width: 10%;
+
     }
     .container {
         width: 100%;
         margin-left: 3%;
         margin-top: 7rem;
     }
+    #teachersvg{
+    margin-top:-90%;}
+
+    .adminsvg{
+    width: 80%;
+    margin-top:-20%;
+    margin-left: 38%; 
+    
+}
 
 }
-@media (max-width: 1200px) and (min-width: 820px) {
-	.navbar-links li a {
-		display: block;
-		text-decoration: none;
-		text-transform: uppercase;
-		color: white;
-		padding: 1.2rem;
-		font-size: 22px;
-	}
-	.navbar-links li {
-		list-style: none;
-		margin-right: 0px;
-	}
-
+@media (max-width: 630px) {
+   .adminsvg{
+    width: 100%;
+    margin-top:-20%;
+    margin-left: 10%; }
 }
 	

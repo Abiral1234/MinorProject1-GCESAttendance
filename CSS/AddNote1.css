@@ -1,14 +1,19 @@
 body{
 	
 }
+svg{
+    width: 80%;
+}
 .uploadFileSection{
 	width: 70vw;
 	text-align: center;
 	margin-left: 15vw;
-	border: 3px solid rgb(50, 50, 50);
-	background-color: rgba(0,10,250,0.5);
+	border: 1px solid rgb(50, 50, 50);
+	background-color: #00beff;
 	border-radius: 20px;
 	border-color: solid black;
+    background-image: linear-gradient(to left, #45B5E9, #10D7E2);
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .batch_and_subject_name{
 	height: 6vh;
@@ -18,10 +23,12 @@ body{
 	line-height: 10px;
 	margin-top: 10px;
 	color: white;
+
 }
 .uploadSection{
 	align-items: center;
-	background-color: rgb(220,220,220,1);
+	background-color: #ebfaff;
+     background-image: linear-gradient(to left, #FFFFFF , #FFF0F5);
 }
 
 .upfile{
@@ -67,4 +74,40 @@ label {
     cursor: pointer;
     text-align: center;
   
+}
+@media (max-width: 570px){
+    span{
+        font-size: 16px;
+    }
+    label{
+         font-size: 16px;
+    }
+    .submitfile{
+        font-size: 16px;
+    }
+
+}
+@media (max-width: 500px){
+    span{
+        font-size: 14px;
+    }
+    label{
+         font-size: 14px;
+    }
+    .submitfile{
+        font-size: 14px;
+    }
+
+}
+@media (max-width: 440px){
+    span{
+        font-size: 10px;
+    }
+    label{
+         font-size: 10px;
+    }
+    .submitfile{
+        font-size: 10px;
+    }
+
 }

@@ -21,9 +21,10 @@
     <head>
         <title>Add Student</title>
       
-        <link rel="stylesheet" href="../CSS/AddStudentCss1.css" >
+        <link rel="stylesheet" href="../CSS/AddStudentCss2.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
     </head>
 
     <body>
@@ -52,12 +53,12 @@
 
 
        <div>
-            <img class="background" src="../Images/addstudent.jpg" >
+            <img class="background" src="../Images/students.jpg" >
         </div>
 
         <div class="container">
 
-            <div>
+            <div class="form-container">
 
                 <p id="invalid"></p>
                 <form action="AddStudent.php" name="form1" method="POST">
@@ -151,7 +152,7 @@
             <script src="../JS/addvalidate1.js" type="text/javascript"></script> 
 
 
-            <div>
+            <div class="showstudent_table">
                 <div class="Enter_batch">
 
                     <div class="label1" >

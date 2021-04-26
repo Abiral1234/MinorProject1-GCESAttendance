@@ -186,7 +186,16 @@ textarea{
     margin: 1rem 0;
     cursor: pointer;
 } */
-
+.notices_images{
+    background-color: #d5d5d5;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    width: 65vw;
+    border-radius: 10px;
+}
 .notice_text{
     color: black;
 }
@@ -413,6 +422,9 @@ header::after{
     .btn,.btn_red{
         font-size: 0.8rem;
     }
+    .notices_images{
+    width: 80vw;
+}
     
 }
 

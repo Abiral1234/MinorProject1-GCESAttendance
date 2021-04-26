@@ -4,6 +4,7 @@
 <head>
   <title>Notices</title>
   <link rel="stylesheet" type="text/css" href="../CSS/AddNotice.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 </head>
 <body>
 <nav class="navbar">

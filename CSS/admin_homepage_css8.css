@@ -1,17 +1,8 @@
-
-*{
-    box-sizing: border-box;
-}
 body{
-    padding: 0;
-    margin: 0;
-    background: white;
-    font-family:sans-serif;
-    font-weight: 350;
-     background-image: url("../Images/pattern.jpg");
-    font-weight: 350;
-    height: 100%;
-    width: 100%;
+	margin: 0;
+	font-family:sans-serif;
+	font-weight: 350;
+	z-index: 2;
 }
 .background_image{
 	background: url("../Images/white.jpg");
@@ -39,18 +30,22 @@ img{
 	width: 1000px;
 	height: 1000px;
 }
-header{
-	/* position: fixed; */
-	width: 100%;
-	background:#00BEFF;
-	z-index: 1;
-	top: 0px;
+
+.navigation{
+	width: 80%;
+	margin: 0 auto;
+
 }
+header{
+			background:#00BEFF;
+			}
+
 header::after{
 			content: '';
 			display: table;
 			clear: both;
 		}
+
 .navbar {
     display: flex;
     position: relative;
@@ -94,22 +89,22 @@ header::after{
     font-size: 25px;
 }
 .navbar-links li::before{
-			content: '';
-			display: block;
-			height: 5px;
-			background-color: white;
-			bottom: 0 ;
-			width: 0% ;
-			transition: all ease-in-out 250ms;
-			font-style: bold;
-		}
+            content: '';
+            display: block;
+            height: 5px;
+            background-color: white;
+            bottom: 0 ;
+            width: 0% ;
+            transition: all ease-in-out 250ms;
+            font-style: bold;
+        }
 .navbar-links li:hover::before{
-			width: 100%;
-			background-color: white;
-		}
-		.navbar-links li:hover{
-			background-color:#319fff;
-		}
+            width: 100%;
+            background-color: white;
+        }
+        .navbar-links li:hover{
+            background-color:#319fff;
+        }
 
 .toggle-button {
     position: absolute;
@@ -122,6 +117,13 @@ header::after{
     height: 21px;
 }
 
+
+.attendance_fail{
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
 .toggle-button .bar {
     height: 3px;
     width: 100%;
@@ -129,11 +131,7 @@ header::after{
     border-radius: 10px;
 }
 
-span, label{
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-}
-@media (max-width: 820px) {
+@media (max-width: 1180px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -164,25 +162,79 @@ span, label{
     .navbar-links.active {
         display: flex;
     }
-
-}
-@media (max-width: 1200px) and (min-width: 820px) {
-	.navbar-links li a {
-		display: block;
-		text-decoration: none;
-		text-transform: uppercase;
-		color: white;
-		padding: 1.2rem;
-		font-size: 22px;
-	}
-	.navbar-links li {
-		list-style: none;
-		margin-right: 0px;
-	}
-
 }
 
+@media screen and (max-width: 1257px){
+    .background_image{
+        height: 100%;
+        width: 100%;
+    }
+}
 
+@media screen and (max-width: 1180px){
+    .table1{
+        font-size: 22px;
+    }
+
+    #userInput{
+        font-size: 17px;
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .table1{
+        font-size: 18px;
+    }
+
+    /* #userInput{
+        font-size: 14px;
+        width: 230px;
+    } */
+
+    .batchinfo{
+        /* display: flex; */
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 25px;
+    }
+}
+
+@media screen and (max-width: 570px){
+    .table1{
+        font-size: 15px;
+    }
+    #userInput{
+        font-size: 14px;
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .container{
+        flex-direction: column;
+        height: 100px;
+    }
+    
+    h1{
+        /* margin-block-start: 2em; */
+        margin-block-end: 0px;
+        margin-top: 0in;
+    }
+}
+
+
+@media screen and (max-width: 620px){
+    .container{
+        height: auto;
+        padding-left: 25px;
+        align-items: flex-start;
+    }
+
+    select, option {
+        width: 190px;
+    }
+  }
 
 .button1{
 	text-align: center;
@@ -227,6 +279,8 @@ span, label{
 	background-position: right;
 }
 
+
+}
 #add_txt{
 	position: absolute;
 	
@@ -237,7 +291,6 @@ a{
 	color: white;
 
 }
-
 
 
 

@@ -144,9 +144,11 @@ if(isset($_POST['batch_submit2'])){
 <html>
 	<head>
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss2.css">
+		
+		<link rel="stylesheet" type="text/css" href="../CSS/AddBatchCss5.css">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 	</head>
 
 	<body>
@@ -171,10 +173,9 @@ if(isset($_POST['batch_submit2'])){
 			</nav>
 		</header>
 		
-		<script src="Js/navbar.js"></script>
 
 		<div class="container">
-			<div>
+			<div class="form-container">
 				<form action="AddBatch.php" name="form1" method="POST">
 				<div class="input program">
 						<span>Program:</span><br>
@@ -265,6 +266,7 @@ if(isset($_POST['batch_submit2'])){
 		<div>
 			<img class="background" src="../Images/addbatch.jpg" >
 		</div>
-		
+
+<script src="../Js/navbar.js"></script>
 	</body>
 </html>

@@ -48,7 +48,9 @@ error_reporting(0);
 <html>
 <head>
 	<title></title>
-  <link rel="stylesheet" type="text/css" href="../Css/noticestudent.css">
+  <link rel="stylesheet" type="text/css" href="../Css/noticestudent1.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
+
 </head>
 <body>
 <header><!-- NAvigation BAR -->

@@ -4,12 +4,12 @@
 <html>
 <head>
 
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
   <link rel="stylesheet" type="text/css" href="../CSS/chart1.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script type="text/javascript"> 
     var pair;   
@@ -185,12 +185,12 @@
       <table class="table1" id="table1">
         <thead>
           <tr>
-            <th onclick="sortTable(0)">Roll No.<i class="fa fa-sort" style="font-size:24px"></i></th>
-            <th onclick="sortTable(1)">Student Name<i class="fa fa-sort" style="font-size:24px"></i></th>
-            <th>Progress Bar</th>
-            <th onclick="sortTable(3)">Percentage<i class="fa fa-sort" style="font-size:24px"></i></th>
-            <th>Attendance Score</i></th>
-          </tr>
+          <th onclick="sortTable(0)">Roll No.<i class="fa fa-sort" style="font-size:24px"></i></th>
+          <th onclick="sortTable(1)">Student Name<i class="fa fa-sort" style="font-size:24px"></i></th>
+          <th>Progress Bar</th>
+          <th onclick="sortTable(3)">Percentage<i class="fa fa-sort" style="font-size:24px"></i></th>
+          <th>Attendance Score</th>
+        </tr>
         </thead>
         <?php 
           while ($row=mysqli_fetch_assoc($result)) {
@@ -201,10 +201,10 @@
         <tr>
           <td><?php echo $row['id']?></td>
           <td><?php echo $row['student_name']?></td>
-          <?php if($percentage >= 70){?>
+          <?php if($percentage >= 80){?>
             <td><progress class="eligible" value="<?php echo $present?>" max="<?php echo $total ?>"><?php echo $percentage ?> </td>
             <?php } ?>
-            <?php if($percentage < 70){?>
+            <?php if($percentage < 80){?>
             <td><progress class="ineligible" value="<?php echo $present?>" max="<?php echo $total ?>" > </td>
             <?php } ?>
 

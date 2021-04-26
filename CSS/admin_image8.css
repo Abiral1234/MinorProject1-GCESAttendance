@@ -1,21 +1,39 @@
-.svg{
+.svgClass{
 	position: absolute;
-	background-size: cover;
-	width: 37vw;
-	height: 80vh;
-	margin-top: 15px;
-	margin-left: 15vw;
+	background-size: cover;	
+	margin-left: 18vw;
+	height: 81vh;
+	width: 70vw;
 	z-index: -50;
-	top: 5vh;
-	opacity: 0.8;
+	top: 18vh;
+	opacity:0.7;
+	padding:0px;
 }
 
-/*absent status*/
+@media (max-width: 800px) {
+	.svgClass{
+		width: 80vw;
+		top: 20vh;
+		margin-left: 10vh;
+	}
+	
+}
+@media (max-width: 672px) { 
+		.svgClass{
+		width: 90vw;
+		top: 15vh;
+		margin-left: 0vh;
+	}
+
+}
+
+
+/*
 .st0{fill:#F5F5F5;	
 }
 .st1{opacity:0.1;enable-background:new    ;}
 
-/*present status */
+/*present status 
 .st2{fill:#F5F5F5;
 	animation: st2 3s infinite;
 }
@@ -27,10 +45,10 @@
 
 .st3{fill:none;stroke:#FFFFFF;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
 .st4{opacity:0.4;}
-/*small eclipse */
+small eclipse 
 .st5{opacity:0.3;enable-background:new    ;}
 
-/*large eclipse */
+large eclipse 
 .st6{opacity:0.3;fill:#F5F5F5;enable-background:new    ;
 animation: st6 3s infinite;}
 @keyframes st6{
@@ -41,7 +59,7 @@ animation: st6 3s infinite;}
 
 .st7{opacity:0.1;fill:#FFFFFF;enable-background:new    ;}
 .st8{opacity:0.5;}
-/*green particle */
+/*green particle
 .st9{fill:#47E6B1;
 	animation: st9 10s infinite;}
 @keyframes st9{
@@ -49,7 +67,7 @@ animation: st6 3s infinite;}
 	50%{ transform: translateX(20%);  }
 	100%{ transform: translateX(0%);}
 }		
-/* blue  particle*/
+/* blue  particle
 .st10{opacity:0.5;fill:#4D8AF0;enable-background:new    ;
 	animation: st10 10s infinite;
 	}
@@ -58,7 +76,7 @@ animation: st6 3s infinite;}
 	50%{ transform: translateY(20%);  }
 	100%{ transform: translateY(0%);}
 }	
-/* orange particle */
+/* orange particle 
 .st11{opacity:0.5;fill:#F55F44;enable-background:new    ;
 animation: st11 10s infinite;}
 @keyframes st11{
@@ -69,7 +87,7 @@ animation: st11 10s infinite;}
 .st12{opacity:0.5;fill:#47E6B1;enable-background:new    ;}
 .st13{fill:#6C63FF;}
 .st14{fill:#FFB9B9;}
-/* clicking hand*/
+/* clicking hand
 .st014{fill:#FFB9B9;
 	animation: st014 3s infinite;
 }
@@ -107,4 +125,4 @@ animation: st11 10s infinite;}
 }
 
 
-}
+} */

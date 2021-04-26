@@ -48,7 +48,8 @@ error_reporting(0);
 <html>
 <head>
 	<title></title>
-  <link rel="stylesheet" type="text/css" href="../Css/NoticeStyle6.css">
+  <link rel="stylesheet" type="text/css" href="../Css/NoticeStyle7.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 </head>
 <body>
 <header><!-- NAvigation BAR -->
@@ -118,58 +119,8 @@ error_reporting(0);
                 <input  class="btn1" type="submit" name="batch_submit" value="Enter"  >
         </form> -->
 <div class="mainsec">                 
-        <form action="" method="POST" enctype="multipart/form-data">
-          <div class="upfile"> 
-                        <input type="file" id="actual-btn" name="uploadfile" hidden/>
-
-                        <!--custom upload button -->
-                        <label for="actual-btn">Choose File</label>
-
-                        <!-- name of file chosen -->
-                        <span id="file-chosen">No file chosen</span>
-            </div>
-            <div class="upimg">
-                        <input type="submit" value="Upload Image" class="submitimg" name="submit">
-              </div>
-          </form>
-     
-            
-    <script>
-       const actualBtn = document.getElementById('actual-btn');
-
-        const fileChosen = document.getElementById('file-chosen');
-
-        actualBtn.addEventListener('change', function(){
-        fileChosen.textContent = this.files[0].name
-        })
-        </script>  
-        <?php
-        if (isset($_POST['submit'])) {
-        $filename=$_FILES["uploadfile"]["name"];
-        $tempname=$_FILES["uploadfile"]["tmp_name"];
-        $folder="../UploadedImage/".$filename;
-        move_uploaded_file( $tempname ,$folder );
-        $datetime=date("Y-m-d H:i:s");
-        $sql_insert_image="INSERT INTO notice (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($conn,$sql_insert_image);
-
-        }
-        ?>
-        <?php
-        $sql_select_image="SELECT * FROM `notice` ORDER BY datetime desc  ;";
-        $result2=mysqli_query($conn,$sql_select_image);
-        while($row=mysqli_fetch_assoc($result2)){ 
-          $imageurl = $row['imageurl'];
-          $datetime0=$row['datetime'];
-
-        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
-
-        } ?>
-
-
-
           <!-- Notice Table -->
-          <h4 class="notice_text">NOTICE BOARD:</h4>
+          <h4 class="notice_text">RECENT NOTICE :</h4>
           <div>
           <table class="table1">
             <thead>
@@ -293,6 +244,57 @@ error_reporting(0);
           </tbody>
           </table>
           </div>
+
+</div>
+<div class="notices_images">
+  <h2 class="notice_text">NOTICE BOARD:</h2>
+<form action="" method="POST" enctype="multipart/form-data">
+          <div class="upfile"> 
+                        <input type="file" id="actual-btn" name="uploadfile" hidden/>
+
+                        <!--custom upload button -->
+                        <label for="actual-btn">Choose File</label>
+
+                        <!-- name of file chosen -->
+                        <span id="file-chosen">No file chosen</span>
+            </div>
+            <div class="upimg">
+                        <input type="submit" value="Upload Image" class="submitimg" name="submit">
+              </div>
+          </form>
+     
+            
+    <script>
+       const actualBtn = document.getElementById('actual-btn');
+
+        const fileChosen = document.getElementById('file-chosen');
+
+        actualBtn.addEventListener('change', function(){
+        fileChosen.textContent = this.files[0].name
+        })
+        </script>  
+        <?php
+        if (isset($_POST['submit'])) {
+        $filename=$_FILES["uploadfile"]["name"];
+        $tempname=$_FILES["uploadfile"]["tmp_name"];
+        $folder="../UploadedImage/".$filename;
+        move_uploaded_file( $tempname ,$folder );
+        $datetime=date("Y-m-d H:i:s");
+        $sql_insert_image="INSERT INTO notice (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
+        $result=mysqli_query($conn,$sql_insert_image);
+
+        }
+        ?>
+        <?php
+        $sql_select_image="SELECT * FROM `notice` ORDER BY datetime desc  ;";
+        $result2=mysqli_query($conn,$sql_select_image);
+        while($row=mysqli_fetch_assoc($result2)){ 
+          $imageurl = $row['imageurl'];
+          $datetime0=$row['datetime'];
+
+        echo "<a href='$imageurl'><img src='$imageurl' width='50%' height='50%'/><a>";
+
+        } ?>
 </div>
 
 <script src="../Js/navbar.js"></script>

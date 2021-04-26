@@ -8,10 +8,12 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/Student_home1.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/Student_home.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/image2.css">
   <link rel="stylesheet" type="text/css" href="../CSS/StatisticsCss3.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
 <body>
@@ -217,12 +219,12 @@
 </div>
 <?php } ?>
 -->
-<h2 class="student_name"><?php echo "Name:" . $_SESSION['username'];?></h2>
-<h2 class="student_regno"><?php echo "Reg No. :" . $_SESSION['password'];?></h2>
-<h2 class="student_batch">
-  <?php echo "Batch :" . $_SESSION['student_batch_name'];  ?>
-</h2>
+<div class="student_information">
+    <h2 class="student_name"><?php echo "Name:" . $_SESSION['username'];?></h2>
+    <h2 class="student_regno"><?php echo "Reg No. :" . $_SESSION['password'];?></h2>
+    <h2 class="student_batch"><?php echo "Batch :" . $_SESSION['student_batch_name'];  ?></h2>
 <?php  ?>
+</div>
 <table class="student_table">
   <thead>
     <tr>

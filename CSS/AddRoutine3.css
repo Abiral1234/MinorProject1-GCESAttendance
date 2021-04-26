@@ -17,6 +17,20 @@ body{
     flex-direction: column;
 
 }
+.routine{
+    background-color: #dbedf3;
+    padding: 2vw;
+    border-radius: 20px;
+    width: 60vw;
+}
+.exam_routine{
+    background-color: #dbedf3;
+    padding: 2vw;
+    margin-top: 4vh;
+    border-radius: 20px;
+    width: 60vw;
+
+}
 .upfile{
     margin-top: 0.7rem;
     margin-bottom: 2rem;
@@ -81,7 +95,7 @@ a{
 
 .btn_red{
     display: block; 
-    border-radius: 5px;
+    border-radius: 20px;
     outline: none;
     border: none;
     background-image: linear-gradient(to right, #ff0000, #ff0000);
