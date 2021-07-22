@@ -36,24 +36,28 @@ A user can interact with the website as:
 
 ## 2. Teacher
 
-- ### Login
+ ####  A, Login
 
 > To log in as a teacher, enter your **Full Name** in Username field and your **Password** in the password field. 
 
-- ### Home Page
+####  B, Home Page
     Here Teacher takes Attendance of the student of the respective batch for their subject.
+    
 ![Home Page](/DocumentationImage/Teacher/home.JPG)
 
-- ### View Page
+#### C, View Page
     Here Teacher can find the student who were absent at a particular date.
+    
 ![Home Page](/DocumentationImage/Teacher/view.JPG)
 
-- ### Statistics Page
+#### D, Statistics Page
     Here Teacher can find the attendance score and percentage of the student.
+    
 ![Home Page](/DocumentationImage/Teacher/Statistics.JPG)
 
-- ### Notice Page
- Here Teacher can add notice/event for a particular batch.
+#### E, Notice Page
+    Here Teacher can add notice/event for a particular batch.
+    
 ![Home Page](/DocumentationImage/Teacher/notice.JPG)
 
 
@@ -61,7 +65,7 @@ A user can interact with the website as:
 
 - ### Login
 
-> To log in as a admin, enter your **Full Name** in Username field and your **Password** in the password field. 
+      To log in as a admin, enter your Full Name in Username field and your Password in the password field. 
 
 - ### Home Page
 
