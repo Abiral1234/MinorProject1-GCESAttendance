@@ -31,6 +31,8 @@ A user can interact with the website as:
       
       
    *Snippet:* 
+   
+   
     <img src="/DocumentationImage/Student/Home.JPG" width="800">
 
 
