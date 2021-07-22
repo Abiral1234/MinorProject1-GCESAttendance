@@ -23,11 +23,11 @@ A user can interact with the website as:
 
       i. Here, You can see your attendance record in the home page.
 
-      ii. You can view your class/exam routine by clicking on the **Routine** Button
+      ii. You can view your class/exam routine by clicking on the Routine Button
    
-      iii. You can find your notes for respective subject by clicking on the **Notes** Button
+      iii. You can find your notes for respective subject by clicking on the Notes Button
 
-      iv. You can view latest Notice and Event by clicking on the **Notice** Button
+      iv. You can view latest Notice and Event by clicking on the Notice Button
       
       
    *Snippet:* 
