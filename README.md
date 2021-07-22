@@ -34,9 +34,46 @@ A user can interact with the website as:
 
 - ### Login
 
-> To log in as a student, enter your **Full Name** in Username field and your **Password** in the password field. 
+> To log in as a teacher, enter your **Full Name** in Username field and your **Password** in the password field. 
 
 - ### Home Page
+    Here Teacher takes Attendance of the student of the respective batch for their subject.
+![Home Page](/DocumentationImage/Teacher/home.JPG)
+
+- ### View Page
+    Here Teacher can find the student who were absent at a particular date.
+![Home Page](/DocumentationImage/Teacher/view.JPG)
+
+- ### Statistics Page
+    Here Teacher can find the attendance score and percentage of the student.
+![Home Page](/DocumentationImage/Teacher/Statistics.JPG)
+
+- ### Notice Page
+ Here Teacher can add notice/event for a particular batch.
+![Home Page](/DocumentationImage/Teacher/notice.JPG)
+
+
+## 3. Admin
+
+- ### Login
+
+> To log in as a admin, enter your **Full Name** in Username field and your **Password** in the password field. 
+
+- ### Home Page
+
+      Here Admin can add Batch, Student, Teacher, Admin, Routines and Notes.
+
+![Home Page](/DocumentationImage/Admin/home.JPG)
+![Home Page](/DocumentationImage/Admin/addBatch.JPG)
+![Home Page](/DocumentationImage/Admin/addStudent.JPG)
+![Home Page](/DocumentationImage/Admin/addTeacher.JPG)
+![Home Page](/DocumentationImage/Admin/addAdmin.JPG)
+![Home Page](/DocumentationImage/Admin/addRoutine.JPG)
+![Home Page](/DocumentationImage/Admin/addNote.JPG)
+
+
+
+
 
 
 
