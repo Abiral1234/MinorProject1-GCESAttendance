@@ -9,7 +9,7 @@ A user can interact with the website as:
 
 ### 1. Student
 
-> To log in as a student, the student enters his Full Name in the Username field and his registration number in the password field. 
+> To log in as a student, enters your **Full Name** in Username field and your **Registration Number** in the password field. 
 
 ![Home Page](/Images/addstd.jpg)
 
