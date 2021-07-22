@@ -9,9 +9,9 @@ A user can interact with the website as:
 
 ## 1. Student
 
-- ### Login
+ ####   A, Login
 
-> To log in as a student, enter your **Full Name** in Username field and your **Registration Number** in the password field. 
+      To log in as a student, enter your Full Name in Username field and your Registration Number in the password field. 
 
   *Snippet:* 
   
@@ -19,17 +19,20 @@ A user can interact with the website as:
  
  
 
-- ### Home Page
+####   B, Home Page
 
-> a. Here, You can see your attendance record in the home page.
-> 
-> b. You can view your class/exam routine by clicking on the **Routine** Button
->
-> c. You can find your notes for respective subject by clicking on the **Notes** Button
-> 
-> d. You can view latest Notice and Event by clicking on the **Notice** Button
+      i. Here, You can see your attendance record in the home page.
 
-![Home Page](/DocumentationImage/Student/Home.JPG)
+      ii. You can view your class/exam routine by clicking on the **Routine** Button
+   
+      iii. You can find your notes for respective subject by clicking on the **Notes** Button
+
+      iv. You can view latest Notice and Event by clicking on the **Notice** Button
+      
+      
+   *Snippet:* 
+    <img src="/DocumentationImage/Student/Home.JPG" width="800">
+
 
 ## 2. Teacher
 
@@ -71,6 +74,10 @@ A user can interact with the website as:
 ![Home Page](/DocumentationImage/Admin/addAdmin.JPG)
 ![Home Page](/DocumentationImage/Admin/addRoutine.JPG)
 ![Home Page](/DocumentationImage/Admin/addNote.JPG)
+
+
+
+----------------------------------XXXXXX-------------------------------------
 
 
 
