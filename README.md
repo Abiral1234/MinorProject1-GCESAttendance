@@ -14,7 +14,7 @@ A user can interact with the website as:
 > To log in as a student, enter your **Full Name** in Username field and your **Registration Number** in the password field. 
 
   *Snippet:* 
-   ![Login Page](/DocumentationImage/login.JPG)
+   ![Login Page](/DocumentationImage/login.JPG )
  
  
 
