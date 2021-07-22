@@ -9,11 +9,26 @@ A user can interact with the website as:
 
 ## 1. Student
 
-####     a, Login
+- ### Login
 
 > To log in as a student, enters your **Full Name** in Username field and your **Registration Number** in the password field. 
 
-![Login Page](/DocumentationImage/login.JPG)
+    Snippet: 
+   ![Login Page](/DocumentationImage/login.JPG)
+ 
+ 
+
+- ### Home Page
+
+> Here You can see your attendance record in the home page.
+> 
+> You can view your class/exam routine by clicking on the **Routine** Button
+>
+> You can find your notes for respective subject by clicking on the **Notes** Button
+> 
+> You can view latest Notice and Event by clicking on the **Notice** Button
+
+![Home Page](/DocumentationImage/Student/Home.JPG)
 
 
 
