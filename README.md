@@ -74,16 +74,23 @@ A user can interact with the website as:
       Here Admin can add Batch, Student, Teacher, Admin, Routines and Notes.
 
 ![Home Page](/DocumentationImage/Admin/home.JPG)
+
+#### Add Batch Page:
 ![Home Page](/DocumentationImage/Admin/addBatch.JPG)
+#### Add Student Page:
 ![Home Page](/DocumentationImage/Admin/addStudent.JPG)
+#### Add Teacher Page:
 ![Home Page](/DocumentationImage/Admin/addTeacher.JPG)
+#### Add Admin Page:
 ![Home Page](/DocumentationImage/Admin/addAdmin.JPG)
+#### Add Routine Page:
 ![Home Page](/DocumentationImage/Admin/addRoutine.JPG)
+#### Add Note Page:
 ![Home Page](/DocumentationImage/Admin/addNote.JPG)
 
 
 
-----------------------------------XXXXXX-------------------------------------
+---------------------------------------------XXXXXXXXXXXX-----------------------------------------------
 
 
 
