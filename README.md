@@ -7,11 +7,13 @@ A user can interact with the website as:
 2. Teacher
 3. Admin
 
-### 1. Student
+## 1. Student
+
+####     a, Login
 
 > To log in as a student, enters your **Full Name** in Username field and your **Registration Number** in the password field. 
 
-![Home Page](/Images/addstd.jpg)
+![Login Page](/DocumentationImage/login.JPG)
 
 
 
