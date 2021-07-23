@@ -11,23 +11,23 @@ A user can interact with the website as:
 
  ####   A, Login
 
-      To log in as a student, enter your Full Name in Username field and your Registration Number in the password field. 
+> To log in as a student, enter your Full Name in **Username** field and your **Registration Number** in the password field. 
 
   *Snippet:* 
   
-   <img src="/DocumentationImage/login.JPG" width="800">
+   <img src="/DocumentationImage/login.JPG" width="700">
  
  
 
 ####   B, Home Page
 
-      i. Here, You can see your attendance record in the home page.
-
-      ii. You can view your class/exam routine by clicking on the Routine Button
-   
-      iii. You can find your notes for respective subject by clicking on the Notes Button
-
-      iv. You can view latest Notice and Event by clicking on the Notice Button
+> i. Here, You can see your attendance record in the home page.
+>
+> ii. You can view your class/exam routine by clicking on the Routine Button
+> 
+> iii. You can find your notes for respective subject by clicking on the Notes Button
+>
+> iv. You can view latest Notice and Event by clicking on the Notice Button
       
       
    *Snippet:* 
@@ -43,22 +43,22 @@ A user can interact with the website as:
 > To log in as a teacher, enter your **Full Name** in Username field and your **Password** in the password field. 
 
 ####  B, Home Page
-    Here Teacher takes Attendance of the student of the respective batch for their subject.
+> Here Teacher takes Attendance of the student of the respective batch for their subject.
     
 ![Home Page](/DocumentationImage/Teacher/home.JPG)
 
 #### C, View Page
-    Here Teacher can find the student who were absent at a particular date.
+> Here Teacher can find the student who were absent at a particular date.
     
 ![Home Page](/DocumentationImage/Teacher/view.JPG)
 
 #### D, Statistics Page
-    Here Teacher can find the attendance score and percentage of the student.
+> Here Teacher can find the attendance score and percentage of the student.
     
 ![Home Page](/DocumentationImage/Teacher/Statistics.JPG)
 
 #### E, Notice Page
-    Here Teacher can add notice/event for a particular batch.
+> Here Teacher can add notice/event for a particular batch.
     
 ![Home Page](/DocumentationImage/Teacher/notice.JPG)
 
@@ -67,11 +67,11 @@ A user can interact with the website as:
 
 - ### Login
 
-      To log in as a admin, enter your Full Name in Username field and your Password in the password field. 
+> To log in as a admin, enter your Full Name in Username field and your Password in the password field. 
 
 - ### Home Page
 
-      Here Admin can add Batch, Student, Teacher, Admin, Routines and Notes.
+> Here Admin can add Batch, Student, Teacher, Admin, Routines and Notes.
 
 ![Home Page](/DocumentationImage/Admin/home.JPG)
 
