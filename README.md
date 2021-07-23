@@ -67,7 +67,7 @@ A user can interact with the website as:
 
 - ### Login
 
-> To log in as a admin, enter your Full Name in Username field and your Password in the password field. 
+> To log in as a admin, enter your **Full Name** in Username field and your **Password** in the password field. 
 
 - ### Home Page
 
