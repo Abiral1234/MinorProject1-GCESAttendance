@@ -3,7 +3,7 @@
 }
 body {
   padding: 0;
-  margin: 0;
+  margin: 0px;
   background: white;
   font-family: sans-serif;
   font-weight: 350;
@@ -242,8 +242,8 @@ select {
 }
 @media (max-width: 900px) {
   .adminsvg {
-    width: 80%;
-    margin-top: -12%;
+    /* width: 80%; */
+    /* margin-top: -120%; */
     margin-left: 38%;
   }
 }
@@ -293,19 +293,20 @@ select {
     margin-top: 7rem;
   }
   #teachersvg {
-    margin-top: -90%;
+    margin-top: -9%;
   }
 
   .adminsvg {
-    width: 80%;
+    /* width: 80%; */
     margin-top: -20%;
     margin-left: 38%;
   }
 }
 @media (max-width: 630px) {
   .adminsvg {
-    width: 100%;
-    margin-top: -20%;
-    margin-left: 10%;
+    /* width: 100%; */
+    /* margin-top: -70%;
+    margin-left: 10%; */
+    display: none;
   }
 }
