@@ -1,6 +1,18 @@
 <?php
 	session_start();
-
+	include_once 'connection.php';
+	$sql_create = "CREATE TABLE IF NOT EXISTS AdminList (
+            `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            `Username` varchar(255) NOT NULL,
+            `Password` varchar(255) NOT NULL
+            ) ";
+            if($result1=mysqli_query($connect_to_list_database,$sql_create)){ }
+            else{
+             echo "Error";
+            }
+    $sql_insert="INSERT INTO adminlist(id,Username ,Password ) VALUES(1,'admin','admin1234')";
+    if($result2=mysqli_query($connect_to_list_database,$sql_insert)){ }
+   
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,8 +36,9 @@
 			  	$_SESSION['password']=$password;
 
 			  	//IF ADMIN
+			  	
 					if($sql_select="SELECT * FROM adminlist"){
-						$result_admin=mysqli_query($conn,$sql_select);
+						$result_admin=mysqli_query($connect_to_list_database,$sql_select);
 						if($result_admin){ //Checks if adminlist table is present
 						while($row=mysqli_fetch_assoc($result_admin)){
 						$dbusername=$row['Username'];
@@ -41,7 +54,7 @@
 				//IF TEACHER
 
 				if($sql_select="SELECT * FROM teacherlist"){
-					$result_teacher=mysqli_query($conn,$sql_select);
+					$result_teacher=mysqli_query($connect_to_list_database,$sql_select);
 					if($result_teacher){
 					while($row=mysqli_fetch_assoc($result_teacher)){
 						$dbusername=$row['Username'];
@@ -53,21 +66,24 @@
 
 				//IF STUDENT
 					$current_year=date("Y");
-					$fourth_year=$current_year-4;
-					$third_year=$current_year-3;
-					$second_year=$current_year-2;
-					$first_year=$current_year-1;
-					$batchname= array("bese_".$fourth_year,"bese_".$third_year,"bese_".$second_year,"bese_".$first_year,
-						"bece_".$fourth_year,"bece_".$third_year,"bece_".$second_year,"bece_".$first_year);
+					$fourth_year=$current_year-3;
+					$third_year=$current_year-2;
+					$second_year=$current_year-1;
+					$first_year=$current_year;
+					$batchname= array("BESE_".$fourth_year,"BESE_".$third_year,"BESE_".$second_year,"BESE_".$first_year,
+						"BECE_".$fourth_year,"BECE_".$third_year,"BECE_".$second_year,"BECE_".$first_year);
 
 				for ($i=0; $i < 8 ; $i++) { 
-					
-				if($sql_select="SELECT * FROM $batchname[$i]"){ //$batchname[i] will represent all batch names
-					$result_student=mysqli_query($conn,$sql_select);
+					$tabelname = $batchname[$i]."_student_list";
+				if($sql_select="SELECT * FROM $tabelname"){ //$batchname[i] will represent all batch names
+					$result_student=mysqli_query($connection[$batchname[$i]],$sql_select);
 					if($result_student){
 					while($row=mysqli_fetch_assoc($result_student)){
 						$dbusername=$row['student_name'];
-						$dbpassword=$row['reg_number'];						//Check if the user is Student
+						$dbpassword=$row['reg_number'];						
+
+					//Check if the user is Student
+					
 					if($username == $dbusername && $password == $dbpassword) {
 						$_SESSION['student_batch_name'] =$batchname[$i];
 						header("Location: 3_student/Home.php"); 

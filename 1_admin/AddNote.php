@@ -8,7 +8,7 @@ session_start();
     `subject` varchar(255) NOT NULL,
     `fileurl` varchar(255) NOT NULL,
     `datetime` datetime NOT NULL  )";
-  if($result=mysqli_query($conn,$sql_create)){}
+  if($result=mysqli_query($connect_to_extra_database ,$sql_create)){}
     else{
       echo "error";
     }
@@ -138,7 +138,7 @@ session_start();
             <ul> 
                 <li><a href="Home.php">Home</a> </li>
                 <li><a href="view.php">View</a> </li>
-                <li><a href="Statistics.php">Statistics</a> </li>                  <!-- nav bar -->
+                <li><a href="Statistics.php">Statistics</a> </li><!-- nav bar -->
                 <li><a href="notice.php">Notice</a></li>
                 <li><a href="../index.php">logout</a> </li>
 
@@ -157,7 +157,7 @@ session_start();
           <option  selected value="No batch selected" >Choose Your Batch</option> 
           <?php 
             $sql_select_batch="SELECT * FROM `batch_list`;";
-            $result_batch=mysqli_query($conn ,$sql_select_batch);
+            $result_batch=mysqli_query($connect_to_list_database,$sql_select_batch);
             while($row= mysqli_fetch_assoc($result_batch)){         
             ?>
           <option required value="<?php echo $row['batchname'] ;?>" name="option_value" >
@@ -245,15 +245,17 @@ session_start();
         $batch = $_POST['batch_name1'];
         $subject = $_POST['selected_subject_name'];
         $sql_insert_image="INSERT INTO notes (batchname,subject,fileurl,datetime) VAlUES('$batch','$subject','$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($conn,$sql_insert_image);
+        $result=mysqli_query($connect_to_extra_database ,$sql_insert_image);
 
         }
         ?>
         <?php
         $batch = $_POST['batch_name1'];
         $subject = $_POST['selected_subject_name'];
-        $sql_select_image="SELECT * FROM `notes`  WHERE batchname='$batch' && subject='$subject' ORDER BY datetime desc";
-        $result2=mysqli_query($conn,$sql_select_image);
+        echo $batch;
+        echo $subject;
+        $sql_select_image="SELECT * FROM notes  WHERE batchname='$batch' && subject='$subject' ORDER BY datetime desc";
+        $result2=mysqli_query($connect_to_extra_database ,$sql_select_image);
         echo "<h2>Files:</h2>";
         $count=1;
         while($row=mysqli_fetch_assoc($result2)){ 

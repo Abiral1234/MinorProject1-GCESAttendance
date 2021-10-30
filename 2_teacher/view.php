@@ -126,7 +126,7 @@ include_once '../connection.php';
 							<option  selected value="No batch selected" >Choose Your Batch</option> 
 							<?php 
 								$sql_select_batch="SELECT * FROM `batch_list`;";
-								$result_batch=mysqli_query($conn ,$sql_select_batch);
+								$result_batch=mysqli_query($connect_to_list_database,$sql_select_batch);
 								while($row= mysqli_fetch_assoc($result_batch)){         
 							?>
 							<option required value="<?php echo $row['batchname']?>" name="option_value" >
@@ -173,7 +173,8 @@ include_once '../connection.php';
 		<?php 
 			if (isset($_POST['batch_submit'])) {
 
-				
+				$table_name=$_POST['batch_name1'];
+
 				$subject_name =$_POST['selected_subject_name'];
 				$subject_name_withoutspace= str_replace(" ", "_", $subject_name);
 				$attendance_record_name=$subject_name_withoutspace ."_attendance_record";//attendance_record_table_name
@@ -185,14 +186,11 @@ include_once '../connection.php';
   				`roll_number` varchar(255) NOT NULL,
   				`attendance_status` varchar(255) NOT NULL,
   				`date` date NOT NULL )";
-  				$result2=mysqli_query($conn,$sql_create2);
-
-
-				$table_name=$_POST['batch_name1'];
+  				$result2=mysqli_query($connection[$table_name],$sql_create2);
 				$picked_date=$_POST['selected_date'];
 				if($table_name !="No batch selected" && $subject_name!="Not selected"){
 				$sql_date="SELECT distinct date FROM $attendance_record_name ;";
-				$result_date=mysqli_query($conn ,$sql_date);
+				$result_date=mysqli_query($connection[$table_name],$sql_date);
 				while($row_date= mysqli_fetch_assoc($result_date)){ 
 					$counter=0;
 				$database_date=$row_date['date'];
@@ -211,7 +209,7 @@ include_once '../connection.php';
 			
 
 			$sql="SELECT * FROM $attendance_record_name Where date='$picked_date'";
-			$result=mysqli_query($conn ,$sql);
+			$result=mysqli_query($connection[$table_name] ,$sql);
 			$serial_number=0;
 			$counter=0;
 			while($row= mysqli_fetch_assoc($result)){

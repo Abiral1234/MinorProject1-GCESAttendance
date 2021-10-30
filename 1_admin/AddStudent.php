@@ -7,10 +7,12 @@
     $reg_number =$_POST['reg'];
     $gender =$_POST['Gender'];
     $batch =$_POST['selected_batch'];
+
+    $table_name0 = $batch."_student_list";
     
-    $sql="INSERT INTO $batch (student_name ,roll_number,reg_number,gender)
+    $sql="INSERT INTO $table_name0 (student_name ,roll_number,reg_number,gender)
     VALUES('$student_name' , '$roll_number','$reg_number','$gender') ";
-    $result= mysqli_query($conn ,$sql);
+    $result= mysqli_query($connection[$batch] ,$sql);
 
 }
  ?>
@@ -73,7 +75,7 @@
                             <option  selected value="No batch selected" >Choose a batch</option>
                             <?php 
                                 $sql_select_batch="SELECT * FROM `batch_list`;";
-                                $result_batch=mysqli_query($conn ,$sql_select_batch);
+                                $result_batch=mysqli_query($connect_to_list_database,$sql_select_batch);
                                 while($row= mysqli_fetch_assoc($result_batch)){ 
                                 $batch_no=0;         
                             ?>
@@ -131,9 +133,10 @@
                                     $filename = $_FILES['file']['name']; //print filename eg:bece_2018.csv
                                     $filename_withoutextension = basename($filename,".csv"); 
                                     //eg:remove extension from file name
-
-                                    $insert = "INSERT INTO $filename_withoutextension (student_name,roll_number,reg_number,gender)values('".$col[0]."','".$col[1]."','".$col[2]."','".$col[3]."')";
-                                    mysqli_query($conn,$insert);
+                                    $student_list = $filename_withoutextension."_student_list";
+                                    $insert = 
+                                    "INSERT INTO $student_list(student_name,roll_number,reg_number,gender)values('".$col[0]."','".$col[1]."','".$col[2]."','".$col[3]."')";
+                                    mysqli_query($connection[$filename_withoutextension],$insert);
 
 
                                 }
@@ -168,7 +171,7 @@
                                     <option  selected value="No batch selected" >Choose Your Batch</option> 
                                     <?php 
                                         $sql_select_batch="SELECT * FROM `batch_list`;";
-                                        $result_batch=mysqli_query($conn ,$sql_select_batch);
+                                        $result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
                                         while($row= mysqli_fetch_assoc($result_batch)){         
                                     ?>
                                     <option required value="<?php echo $row['batchname']?>" name="option_value" >
@@ -203,9 +206,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php         
-                                $sql="SELECT * FROM $table_name";
-                                $result=mysqli_query($conn ,$sql);
+                            <?php
+                                $table_name2=$table_name."_student_list";         
+                                $sql="SELECT * FROM $table_name2";
+                                $result=mysqli_query($connection[$table_name] ,$sql);
                                 $serial_number=0;
                                 $counter=0;
                                 while($row= mysqli_fetch_assoc($result)){

@@ -4,6 +4,7 @@
 <head>
 	<title>Events</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/AddEvent.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 </head>
 <body>
 <nav class="navbar">
@@ -56,7 +57,7 @@
 	$time= $_POST['time'];
 	echo $time;
 	$sql_insert_event="INSERT INTO `upcoming_event`(title,date) VALUES('$title','$date')";
-	$result=mysqli_query($conn,$sql_insert_event);
+	$result=mysqli_query($connect_to_extra_database,$sql_insert_event);
 
 	}
 ?>
