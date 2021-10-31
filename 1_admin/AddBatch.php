@@ -4,20 +4,22 @@ if(isset($_POST['batch_submit2'])){
 	$batch_program =$_POST['program'];
 	$batch_year =$_POST['year'];
 	$name =$batch_program ."_". $batch_year;
-
+	$batch_name =$batch_program ."_". $batch_year;
+	$student_list = $name."_student_list";
 	//creating student list foreg:bese_2018
 
-	$sql_create1 = "CREATE TABLE IF NOT EXISTS $name (     
+	$sql_create1 = "CREATE TABLE IF NOT EXISTS $student_list (     
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		`student_name` varchar(255) NOT NULL,
   		 `roll_number` int(11) NOT NULL,
  		 `reg_number` int(15) NOT NULL UNIQUE,
  		 `gender` varchar(255) NOT NULL
 		) ";
-	if($result1=mysqli_query($conn,$sql_create1)){}
+	if($result1=mysqli_query($connection[$batch_name],$sql_create1)){}
 	else{
 		echo "Error1";
 	}
+
 	//creating subject table for respective batch
 	$sql_create2 = "CREATE TABLE IF NOT EXISTS subject (     
   		`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -36,14 +38,14 @@ if(isset($_POST['batch_submit2'])){
  		`subject12` varchar(255) ,
  		`subject13` varchar(255) 
 		) ";
-	if($result2=mysqli_query($conn,$sql_create2)){}
+	if($result2=mysqli_query($connect_to_subjects_database ,$sql_create2)){}
 	else{
 		echo  $name .'subjects';
 	}
 
 
 	//checking duplicate & creating batch list
-	$dup=mysqli_query($conn,"select * from `Batch_list` WHERE batchname='$name'");
+	$dup=mysqli_query($connect_to_list_database,"select * from `Batch_list` WHERE batchname='$name'");
 	if(mysqli_num_rows($dup)>0){
 		//echo "Already Created";
 	}
@@ -52,7 +54,7 @@ if(isset($_POST['batch_submit2'])){
 	$sql_add_batch="INSERT  INTO `batch_list`(batchname)
     VALUES('$name') ";
 
-    if($result= mysqli_query($conn ,$sql_add_batch)){
+    if($result= mysqli_query($connect_to_list_database ,$sql_add_batch)){
     	
     }
 
@@ -70,7 +72,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[3]) { //BESE 1st year
 		$sql_add_subject="INSERT INTO `subject` VALUES(1,'$name' ,'Engineering MathematicsI'
 		,'Physics','Communication Technique','Problem Solving Techniques','Fundamentals of IT','Programming in C','Engineering MathematicsII','Logic Circuits','Mathematical Foundation of Computer Science','Engineering Drawing','Object Oriented Programming in C++','Web Technology',null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
 		}
@@ -79,7 +81,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[2]) { //BESE 2nd year
 		$sql_add_subject="INSERT INTO `subject` VALUES(2,'$name' ,'Engineering Mathematics III'
 		,'Software Engineering Fundamentals','Microprocessor  Assembly Lang. Pro.','Data Structure and Algorithms','Probability  Queuing Theory','Programming in Java','Numerical Methods','Computer Graphics','Computer Organization  Architecture','Database Management Systems','Object Oriented Design  Modeling through UML',null,null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
 		}
@@ -87,7 +89,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[1]) { //BESE 3rd year
 		$sql_add_subject="INSERT INTO `subject` VALUES(3,'$name' ,'Applied Operating System'
 		,'Simulation  Modeling','Artificial Intelligence  Neural Network','System Programming','Analysis  Design of Algorithm','Elective I','Organization and Management','Multimedia Systems','Computer Networks','Principles of Programming Languages','Engineering Economics','Object Oriented Software Development',null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
 		}
@@ -95,7 +97,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[0]) { //BESE 4th year
 		$sql_add_subject="INSERT INTO `subject` VALUES(4,'$name' ,'Real Time Systems'
 		,'Distributed Systems','Enterprise Application Development','Image Processing and Pattern Recognition','Software Testing,Verification,Validation and Quality Assurance','Elective I','Network Programming','Software Project Management','Elective II',null,null,null,null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject';
 		}
@@ -103,7 +105,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[7]) { //BECE 1st year
 		$sql_add_subject="INSERT INTO `subject` VALUES(5,'$name' ,'Engineering MathematicsI'
 		,'Chemistry','Communication Technique','Programming in C','Basic Electrical Engineering','Mechanical Workshop','Engineering Mathematics II','Physics','Engineering Drawing','Engineering Drawing','Object Oriented Programming in C++','Thermal Science','Applied Mechanics')";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject'. $name;
 		}
@@ -112,7 +114,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[6]) { //BECE 2nd year
 		$sql_add_subject="INSERT INTO `subject` VALUES(6,'$name' ,'Engineering Mathematics III'
 		,'Data Structure and Algorithm','Electrical Engineering Materials','Network Theory','Electronic Devices','Logic Circuits','Engineering Mathematics IV','Instrumentation','Electronic Circuits','Theory of Computation','Microprocessors',null,null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject'. $name;
 		}
@@ -122,7 +124,7 @@ if(isset($_POST['batch_submit2'])){
 		$sql_add_subject="INSERT INTO `subject` VALUES(7,'$name' ,'Numerical Methods'
 		,'Microprocessor System and Interfacing','Operating System','Computer Graphics','Integrated Digital Electronics',
 		'Probability_and_Statistics','Simulation_and_Modeling','Data Communication','Database Management System','Object Oriented Software Engineering',null,null,null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject'. $name;
 		}
@@ -131,7 +133,7 @@ if(isset($_POST['batch_submit2'])){
 	if ($name == $batchname[4]) { //BECE 4th year
 		$sql_add_subject="INSERT INTO `subject` VALUES(8,'$name' ,'Engineering Economics'
 		,'Computer Architecture','Digital Signal Processing','Computer Network','Elective I','Organization and Management','Artificial Intelligence','Image Processing  Pattern Recognition','Elective II',null,null,null,null)";
-		if($result_subject=mysqli_query($conn,$sql_add_subject)){}
+		if($result_subject=mysqli_query($connect_to_subjects_database,$sql_add_subject)){}
 		else{
 		echo  'error while inserting subject' . $name;
 		}
@@ -186,7 +188,7 @@ if(isset($_POST['batch_submit2'])){
 					</div>
 					<div class="input year">
 						<span>Year:</span>
-						<input type="number" min="<?php echo date("Y")-4;?>" max="<?php echo date("Y")-1;?>" id="year" name="year" class="_dinput"><br>
+						<input type="number" min="<?php echo date("Y")-3;?>" max="<?php echo date("Y");?>" id="year" name="year" class="_dinput"><br>
 					</div>
 					<input type="submit" value="Enter the data" class="btn" name="batch_submit2">
 				</form>
@@ -211,7 +213,7 @@ if(isset($_POST['batch_submit2'])){
 							`batchname` varchar(255) NOT NULL UNIQUE
 							)"; 
 
-							if($result3=mysqli_query($conn,$sql_create3)){ }
+							if($result3=mysqli_query($connect_to_list_database,$sql_create3)){ }
 							else{
 						echo "Error2";
 							} 
@@ -219,7 +221,7 @@ if(isset($_POST['batch_submit2'])){
 							<tr >
 							<?php 
 						$sql_select_batch="SELECT * FROM `batch_list`;";
-						$result_batch=mysqli_query($conn ,$sql_select_batch);
+						$result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){
 							$batch_name=explode("_",$row['batchname']);
 							$program=$batch_name[0];
@@ -244,7 +246,7 @@ if(isset($_POST['batch_submit2'])){
 							<tr >
 							<?php 
 						$sql_select_batch="SELECT * FROM `batch_list`;";
-						$result_batch=mysqli_query($conn ,$sql_select_batch);
+						$result_batch=mysqli_query($connect_to_list_database,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){
 							$batch_name=explode("_",$row['batchname']);
 							$program=$batch_name[0];

@@ -4,7 +4,7 @@ error_reporting(0);
     `id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `imageurl` varchar(255) NOT NULL,
     `datetime` datetime NOT NULL  )";
-  if($result=mysqli_query($conn,$sql_create)){}
+  if($result=mysqli_query($connect_to_extra_database,$sql_create)){}
     else{
       echo "error";
     }
@@ -14,7 +14,7 @@ error_reporting(0);
     `detail` varchar(1000) ,
     `datetime` datetime NOT NULL,
     `date` date NOT NULL  )";
-  if($result2=mysqli_query($conn,$sql_create_textnotice)){}
+  if($result2=mysqli_query($connect_to_extra_database,$sql_create_textnotice)){}
     else{
       echo "error";
     }
@@ -22,24 +22,24 @@ error_reporting(0);
     `id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `Title` varchar(400) ,
     `date` date NOT NULL  )";
-  if($result2=mysqli_query($conn,$sql_create_upcoming_event)){}
+  if($result2=mysqli_query($connect_to_extra_database,$sql_create_upcoming_event)){}
     else{
       echo "error";
     }
   //IF Clear IMAGE IS ENTERED
   if (isset($_POST['clear_image'])) {
     $sql_delete_image="DELETE FROM `notice` WHERE 1";
-    if($result=mysqli_query($conn,$sql_delete_image)){}
+    if($result=mysqli_query($connect_to_extra_database,$sql_delete_image)){}
       else{echo "image delete error";}}
   //IF CLear Notice IS ENTERED
   if (isset($_POST['clear_notice'])) {
     $sql_delete_notice="DELETE FROM `text_notice` WHERE 1";
-    if($result=mysqli_query($conn,$sql_delete_notice)){}
+    if($result=mysqli_query($connect_to_extra_database,$sql_delete_notice)){}
       else{echo "notice delete error";}}
  //IF CLear Notice IS ENTERED
   if (isset($_POST['clear_event'])) {
     $sql_delete_event="DELETE FROM `upcoming_event` WHERE 1";
-    if($result=mysqli_query($conn,$sql_delete_event)){}
+    if($result=mysqli_query($connect_to_extra_database,$sql_delete_event)){}
       else{echo "event delete error";}}
 ?>
 
@@ -47,7 +47,8 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="../Css/NoticeStyle7.css">
   <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 </head>
@@ -62,14 +63,14 @@ error_reporting(0);
         </a>
         <div class="navbar-links">
             <ul> 
-        <li><a href="Home.php">Home</a> </li>
-        <li><a href="view.php">View</a> </li>
-        <li><a href="Statistics.php">Statistics</a> </li>              <!-- nav bar -->
-        <li><a href="notice.php">Notice</a></li>
-        <li><a href="../index.php">logout</a> </li>
-      </ul>
+				<li><a href="Home.php">Home</a> </li>
+				<li><a href="view.php">View</a> </li>
+				<li><a href="Statistics.php">Statistics</a> </li>     			   <!-- nav bar -->
+				<li><a href="notice.php">Notice</a></li>
+				<li><a href="../index.php">logout</a> </li>
+			</ul>
         </div>
-    </nav>
+	  </nav>
 </header>
  <div class="pannel">
       <div class="noticebtn">
@@ -106,7 +107,7 @@ error_reporting(0);
                     <option  selected value="No batch selected" >Choose Your Batch</option> 
                     <?php 
                         $sql_select_batch="SELECT * FROM `batch_list`;";
-                        $result_batch=mysqli_query($conn ,$sql_select_batch);
+                        $result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
                         while($row= mysqli_fetch_assoc($result_batch)){         
                     ?>
                     <option required value="<?php echo $row['batchname']?>" name="option_value" >
@@ -136,7 +137,7 @@ error_reporting(0);
               <?php 
               $counter=0;
               $sql_select_text="SELECT * from `text_notice` ORDER BY datetime desc ";
-              $result_text=mysqli_query($conn,$sql_select_text);
+              $result_text=mysqli_query($connect_to_extra_database,$sql_select_text);
               while($text_row=mysqli_fetch_assoc($result_text)) { 
                 $counter++;
                 $todaydate=date("Y-m-d H:i:s");
@@ -195,7 +196,7 @@ error_reporting(0);
               <?php 
               $counter=0;
               $sql_select_text="SELECT * from `upcoming_event` ORDER BY date desc ";
-              $result_text=mysqli_query($conn,$sql_select_text);
+              $result_text=mysqli_query($connect_to_extra_database,$sql_select_text);
               while($event=mysqli_fetch_assoc($result_text)) { 
               $counter++;
               $todaydate=date("Y-m-d");
@@ -281,13 +282,13 @@ error_reporting(0);
         move_uploaded_file( $tempname ,$folder );
         $datetime=date("Y-m-d H:i:s");
         $sql_insert_image="INSERT INTO notice (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($conn,$sql_insert_image);
+        $result=mysqli_query($connect_to_extra_database,$sql_insert_image);
 
         }
         ?>
         <?php
         $sql_select_image="SELECT * FROM `notice` ORDER BY datetime desc  ;";
-        $result2=mysqli_query($conn,$sql_select_image);
+        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
         while($row=mysqli_fetch_assoc($result2)){ 
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];

@@ -1,0 +1,4 @@
+Q1,BESE and BECE may have same subject that means same table name.
+   How do you separate between them?
+
+Q2,If two student and teacher have same name and password.

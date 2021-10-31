@@ -46,7 +46,7 @@
 <option  selected value="No batch selected" >Choose Your Batch</option> 
 <?php 
     $sql_select_batch="SELECT * FROM `batch_list`;";
-    $result_batch=mysqli_query($conn ,$sql_select_batch);
+    $result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
     while($row= mysqli_fetch_assoc($result_batch)){         
 ?>
 <option required value="<?php echo $row['batchname']?>" name="option_value" >
@@ -66,7 +66,7 @@ if (isset($_POST['text_submit'])) {
   $datetime1=date("Y-m-d H:i:s");
   $date=date("Y-m-d");
   $sql_insert_textnotice="INSERT INTO `text_notice`(subject,detail,datetime,date) VALUES('$subject','$detail','$datetime1','$date')";
-  if($result=mysqli_query($conn , $sql_insert_textnotice)){}
+  if($result=mysqli_query($connect_to_extra_database , $sql_insert_textnotice)){}
     else{echo "cannot import";}
 }
 ?>

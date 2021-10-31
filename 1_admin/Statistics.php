@@ -125,7 +125,7 @@
                     <option  selected value="No batch selected" >Choose Your Batch</option> 
                       <?php 
                       $sql_select_batch="SELECT * FROM `batch_list`;";
-                      $result_batch=mysqli_query($conn ,$sql_select_batch);
+                      $result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
                       while($row= mysqli_fetch_assoc($result_batch)){         
                       ?>
                     <option required value="<?php echo $row['batchname']?>" name="option_value" >
@@ -164,10 +164,11 @@
         
 
     <?php if (isset($_POST['batch_submit'])) { 
+      $batchname= $_POST['batch_name1'];
       $subject_name =$_POST['selected_subject_name'];
       $subject_name_withoutspace= str_replace(" ", "_", $subject_name);
       $sql_connect=" SELECT * FROM  $subject_name_withoutspace ";
-      $result=mysqli_query($conn,$sql_connect);
+      $result=mysqli_query($connection[$batchname],$sql_connect);
       if ($result != NULL) {
     ?>
     

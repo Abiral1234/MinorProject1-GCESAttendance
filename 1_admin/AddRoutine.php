@@ -4,7 +4,7 @@ include_once'../connection.php';
     `id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `imageurl` varchar(255) NOT NULL,
     `datetime` datetime NOT NULL  )";
-  if($result=mysqli_query($conn,$sql_create)){}
+  if($result=mysqli_query($connect_to_extra_database ,$sql_create)){}
     else{
       echo "error";
     }
@@ -13,19 +13,19 @@ include_once'../connection.php';
     `id` int(11)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `imageurl` varchar(255) NOT NULL,
     `datetime` datetime NOT NULL  )";
-  if($result=mysqli_query($conn,$sql_create)){}
+  if($result=mysqli_query($connect_to_extra_database,$sql_create)){}
     else{
       echo "error";
     }
       //IF Clear IMAGE IS ENTERED
   if (isset($_POST['clear_class'])) {
     $sql_delete_image="DELETE FROM `classroutine` WHERE 1";
-    if($result=mysqli_query($conn,$sql_delete_image)){}
+    if($result=mysqli_query($connect_to_extra_database,$sql_delete_image)){}
       else{echo "image delete error";}}
         //IF Clear IMAGE IS ENTERED
   if (isset($_POST['clear_exam'])) {
     $sql_delete_image="DELETE FROM `examroutine` WHERE 1";
-    if($result=mysqli_query($conn,$sql_delete_image)){}
+    if($result=mysqli_query($connect_to_extra_database ,$sql_delete_image)){}
       else{echo "image delete error";}}
 ?>
 <!DOCTYPE html>
@@ -102,13 +102,13 @@ include_once'../connection.php';
         move_uploaded_file( $tempname ,$folder );
         $datetime=date("Y-m-d H:i:s");
         $sql_insert_image="INSERT INTO classroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($conn,$sql_insert_image);
+        $result=mysqli_query($connect_to_extra_database ,$sql_insert_image);
 
         }
         ?>
         <?php
         $sql_select_image="SELECT * FROM `classroutine` ORDER BY datetime desc LIMIT 1  ;";
-        $result2=mysqli_query($conn,$sql_select_image);
+        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
         while($row=mysqli_fetch_assoc($result2)){ 
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
@@ -157,13 +157,13 @@ include_once'../connection.php';
         move_uploaded_file( $tempname ,$folder );
         $datetime=date("Y-m-d H:i:s");
         $sql_insert_image="INSERT INTO examroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($conn,$sql_insert_image);
+        $result=mysqli_query($connect_to_extra_database,$sql_insert_image);
 
         }
         ?>
         <?php
         $sql_select_image="SELECT * FROM `examroutine` ORDER BY datetime desc LIMIT 1  ;";
-        $result2=mysqli_query($conn,$sql_select_image);
+        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
         while($row=mysqli_fetch_assoc($result2)){ 
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];

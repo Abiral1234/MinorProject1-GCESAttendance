@@ -237,9 +237,9 @@
   </thead>
   <tbody>
     <?php $sn=1; 
-        $batchname=$_SESSION['student_batch_name'];
+        $batchname=$_SESSION['student_batch_name'];//BSES_2018
         $sql_select_subject="SELECT * from subject where batchname='$batchname'"; 
-        $result=mysqli_query($conn,$sql_select_subject);
+        $result=mysqli_query($connect_to_subjects_database,$sql_select_subject);
         if($result){
           while ($row=mysqli_fetch_assoc($result)) { //Select row from the subject table
           $subject="subject";
@@ -255,7 +255,7 @@
       <?php $subject_name=str_replace(" ", "_", strtolower($row[$subject.$count]) );//eg:real_time_system
       $student_name=$_SESSION['username'];
         $sql_select_student="SELECT * FROM $subject_name WHERE student_name='$student_name'";
-        $result_student_data=mysqli_query($conn,$sql_select_student);
+        $result_student_data=mysqli_query($connection[$batchname],$sql_select_student);
         if ($result_student_data) { //subject table exist
             while ($row_student_data=mysqli_fetch_assoc($result_student_data)) {
             $present=$row_student_data['present_counter'];

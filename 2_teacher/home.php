@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
   	`roll_number` varchar(255) NOT NULL,
   	`attendance_status` varchar(255) NOT NULL,
   	`date` date NOT NULL )"; 
-  	$result2=mysqli_query($conn,$sql_create2);
+  	$result2=mysqli_query($connection[$batchname2],$sql_create2);
 
   	//create table with subject name only to add all student in it and update their score
   	$sql_create1 = "CREATE TABLE IF NOT EXISTS $subject (     
@@ -31,16 +31,17 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
  		 `present_counter` int(12),
          `total_attendance` int(12) 
 		) ";
-	if($result1=mysqli_query($conn,$sql_create1)){}
+	if($result1=mysqli_query($connection[$batchname2],$sql_create1)){}
 	else{
 		echo "Error1";
 	}
 
 	//Transfering Student name from their batch table to subject table 
+	$batch_table=$batchname2."_student_list";
 	$sql_transfer="INSERT INTO $subject(student_name,roll_number,reg_number,gender,present_counter,total_attendance)
 	SELECT student_name,roll_number,reg_number,gender,0,0
-	FROM $batchname2 " ;
-	if($result_transfer=mysqli_query($conn,$sql_transfer)){}
+	FROM $batch_table " ;
+	if($result_transfer=mysqli_query($connection[$batchname2],$sql_transfer)){}
 	else{
 		//If there is already data in the subject table name the data wont be transferred again
 	}
@@ -69,7 +70,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				$date=date("Y-m-d");
 				$attendance_table= strtolower ($attendance_sheet);
 				$sql="INSERT INTO $attendance_table (id ,student_name ,roll_number ,attendance_status , date) VALUES(0,'$student_name','$roll_no','$attendance_status', '$date')";
-				$result=mysqli_query($conn,$sql);
+				$result=mysqli_query($connection[$batchname2],$sql);
 		
 				if($result){
 				$flag=1;
@@ -86,14 +87,14 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 				$student_name=$_POST['student_name'][$id];
 				$sql_plus="SELECT * FROM $subject WHERE student_name = '$student_name'";
-				$result_counter=mysqli_query($conn,$sql_plus);
+				$result_counter=mysqli_query($connection[$batchname2],$sql_plus);
 				$row_counter= mysqli_fetch_assoc($result_counter);
 				$prev_counter=$row_counter['present_counter'];
 				$update_counter=$prev_counter+1;
 				$sql_update="UPDATE $subject
 				SET present_counter=$update_counter
 				WHERE student_name = '$student_name'";
-				$update_result=mysqli_query($conn,$sql_update);
+				$update_result=mysqli_query($connection[$batchname2],$sql_update);
 				}
 
 			//add total attendance taken
@@ -103,7 +104,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 
 				$student_name=$_POST['student_name'][$id];
 				$sql_plus="SELECT * FROM $subject WHERE student_name = '$student_name'";
-				$result_counter=mysqli_query($conn,$sql_plus);
+				$result_counter=mysqli_query($connection[$batchname2],$sql_plus);
 
 				$row_counter= mysqli_fetch_assoc($result_counter);
 				$prev_counter=$row_counter['total_attendance'];
@@ -111,7 +112,7 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 				$sql_update="UPDATE $subject
 				SET total_attendance=$update_counter
 				WHERE student_name = '$student_name'";
-				$update_result=mysqli_query($conn,$sql_update);
+				$update_result=mysqli_query($connection[$batchname2],$sql_update);
 				}
 		}
 		}
@@ -231,7 +232,7 @@ NoAttendance:
 					<option  selected value="No batch selected" >Choose Your Batch</option> 
 					<?php 
 						$sql_select_batch="SELECT * FROM `batch_list`;";
-						$result_batch=mysqli_query($conn ,$sql_select_batch);
+						$result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){         
 		   			?>
 					<option required value="<?php echo $row['batchname'] ;?>" name="option_value" >
@@ -304,9 +305,9 @@ NoAttendance:
 						<input type="hidden" name="table_name" value=<?php echo $table_name; ?>>
 						<input type="hidden" name="subject_name" value=<?php echo $subject_name_withoutspace; ?> >
 					<?php 
-						
-						$sql="SELECT * FROM $table_name order by student_name asc";
-						$result=mysqli_query($conn ,$sql);
+						$table_name2=$table_name."_student_list";
+						$sql="SELECT * FROM $table_name2 order by student_name asc";
+						$result=mysqli_query($connection[$table_name] ,$sql);
 						$serial_number=0;
 						$counter=0;
 						while($row= mysqli_fetch_assoc($result)){

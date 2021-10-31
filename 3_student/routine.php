@@ -6,7 +6,7 @@ include_once '../connection.php'
 <head>
     <title></title>
    
-    <link rel="stylesheet" type="text/css" href="../Css/AddRoutine3.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/AddRoutine3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
@@ -27,7 +27,7 @@ include_once '../connection.php'
             <ul> 
                 <li><a href="Home.php">Attendance</a> </li>
                 <li><a href="routine.php">Routine</a> </li>
-                <li><a href="notes.php">Notes</a> </li>              <!-- nav bar -->
+                <li><a href="notes.php">Notes</a> </li>        <!-- nav bar -->
                 <li><a href="notice.php">Notice</a></li>
                 <li><a href="../index.php">logout</a> </li>
 
@@ -45,7 +45,7 @@ include_once '../connection.php'
   
         <?php
         $sql_select_image="SELECT * FROM `classroutine` ORDER BY datetime desc LIMIT 1  ;";
-        $result2=mysqli_query($conn,$sql_select_image);
+        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
         while($row=mysqli_fetch_assoc($result2)){ 
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
@@ -69,13 +69,13 @@ include_once '../connection.php'
         move_uploaded_file( $tempname ,$folder );
         $datetime=date("Y-m-d H:i:s");
         $sql_insert_image="INSERT INTO examroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($conn,$sql_insert_image);
+        $result=mysqli_query($connect_to_extra_database,$sql_insert_image);
 
         }
         ?>
         <?php
         $sql_select_image="SELECT * FROM `examroutine` ORDER BY datetime desc LIMIT 1  ;";
-        $result2=mysqli_query($conn,$sql_select_image);
+        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
         while($row=mysqli_fetch_assoc($result2)){ 
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
