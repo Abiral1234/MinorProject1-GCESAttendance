@@ -212,9 +212,6 @@ thead tr{
     height: 60px;
     font-weight: bold;
 }
-td{
-    padding: 12px 15px;
-}
 tbody tr{
     border-bottom: 1px solid #dddddd;
 }

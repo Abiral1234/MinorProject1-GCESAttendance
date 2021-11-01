@@ -1,447 +1,471 @@
 body{
-		margin: 0px;
-		padding: 0px;
-		font-family: sans-serif;  
-        z-index: 10;
-	}
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;  
+    z-index: 10;
+}
 .background_image{
-    background: url("../Images/white.jpg");
-    width: 1000px;
-    height: 1000px;
-    background-size: cover;
-    position: fixed;
-    right: 0px;
-    left: 0px;
-    z-index: -3;
+background: url("../Images/white.jpg");
+width: 1000px;
+height: 1000px;
+background-size: cover;
+position: fixed;
+right: 0px;
+left: 0px;
+z-index: -3;
 }
 .name12{
-    color: red;
+color: red;
 }
 .image1{
-    z-index: -2;
+z-index: -2;
 }
 
 .select_button{
-        display: grid;
-		width: 100%;	
-		text-align: center;
-		align-items: center;
-        z-index: 20;
+    display: grid;
+    width: 100%;	
+    text-align: center;
+    align-items: center;
+    z-index: 20;
 
-	}
+}
 
 .sideinput{
-    display: none;
+display: none;
 }
 
 .sidebtn0{
-    display: block;
-    position: relative;
-    left:10vw;
-    top:60px;
-    margin-bottom: 5px;
-    width: 150px;
-    height: 80px;
-    border-radius: 5px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 80px;
-    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
-    background-size: 100%;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
+display: block;
+position: relative;
+left:10vw;
+top:60px;
+margin-bottom: 5px;
+width: 150px;
+height: 80px;
+border-radius: 5px;
+font-size: 20px;
+text-align: center;
+line-height: 80px;
+background-image: linear-gradient(to right, #45B5E9, #10D7E2);
+background-size: 100%;
+color: white;
+font-family: 'Poppins', sans-serif;
+text-transform: uppercase;
+cursor: pointer;
 }
 .sidebtn{
-    display: flex;
-    position: relative;
-    left:10vw;
-    top:60px;
-    margin-bottom: 5px;
-    width: 150px;
-    height: 80px;
-    border-radius: 5px;
-    font-size: 20px;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
-    background-size: 100%;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
+display: flex;
+position: relative;
+left:10vw;
+top:60px;
+margin-bottom: 5px;
+width: 150px;
+height: 80px;
+border-radius: 5px;
+font-size: 20px;
+align-items: center;
+text-align: center;
+background-image: linear-gradient(to right, #45B5E9, #10D7E2);
+background-size: 100%;
+color: white;
+font-family: 'Poppins', sans-serif;
+text-transform: uppercase;
+cursor: pointer;
 }
 .sidebutton{
-    position: absolute;
-    top: 87px;
-    left: 0vw;
-    width: 30vw;
-    height: 100vh;
-    align-items: center;
-   /* background-color: lightblue; */
+position: absolute;
+top: 87px;
+left: 0vw;
+width: 30vw;
+height: 100vh;
+align-items: center;
+/* background-color: lightblue; */
 }
 .table_section{
-    position: relative;
-    top: 40px;
-    left: 0vw;
-    width: 69%;
-    height: 100vh;
-   /* background-color: lightpink; */
+position: relative;
+top: 40px;
+left: 0vw;
+width: 69%;
+height: 100vh;
+/* background-color: lightpink; */
 }
 .date{
-		/*background-color: lightgreen;  */
-		width: 100%;
-		text-align: center;
-	}
+    /*background-color: lightgreen;  */
+    width: 100%;
+    text-align: center;
+}
 .day ,.date1{
-    font-size: 25px;
+font-size: 25px;
 }
 font-weight: bold;
 }
 span{
-    font-size: 25px;
+font-size: 25px;
 }
 .student_information{
-    position: absolute;
-    background-color: green;
-    text-align: left;
-    left: 10vw;
-    top: 5vh;
-    line-height: 20px;
-    border-radius: 20px;
-    background-color: #dbedf3;
-    width: 80vw;
-    z-index: -10;
-    padding-left: 10px;
-    }
+position: absolute;
+background-color: green;
+text-align: left;
+left: 10vw;
+top: 5vh;
+line-height: 20px;
+border-radius: 20px;
+background-color: #dbedf3;
+width: 80vw;
+z-index: -10;
+padding-left: 10px;
+}
 /*.student_name{
-    position: absolute;
-    margin-left: 16vw;
-    margin-top: 8vh;
+position: absolute;
+margin-left: 16vw;
+margin-top: 8vh;
 }
 .student_regno{
-    position: absolute;
-    margin-left: 40vw;
-    margin-top: 8vh;
-    width: 500px;
+position: absolute;
+margin-left: 40vw;
+margin-top: 8vh;
+width: 500px;
 }
 .student_batch{
-    position: absolute;
-    margin-left: 65vw;
-    margin-top: 8vh;
-    width: 500px;
+position: absolute;
+margin-left: 65vw;
+margin-top: 8vh;
+width: 500px;
 }*/
 
 .table1{
-    position: absolute;
-    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
-    border-collapse: collapse;
-    margin-top: 2vh;
-    margin-left: 0vw;
-    min-width: 65vw;
-    text-align: left;
-    font-size: 25px;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    word-wrap: break-word;
+position: absolute;
+background-image: linear-gradient(to right, #45B5E9, #10D7E2);
+border-collapse: collapse;
+margin-top: 2vh;
+margin-left: 0vw;
+min-width: 65vw;
+text-align: left;
+font-size: 25px;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0,0,0,0.15);
+word-wrap: break-word;
 }
 .student_table{
-    position: absolute;
-    background-image: linear-gradient(to right, #45B5E9, #10D7E2);
-    border-collapse: collapse;
-    margin-top: 30vh;
-    margin-left: 10vw;
-    min-width: 60vw;
-    text-align: left;
-    font-size: 2vw;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    word-wrap: break-word;
-    z-index: -20;
+position: absolute;
+background-image: linear-gradient(to right, #45B5E9, #10D7E2);
+border-collapse: collapse;
+margin-top: 30vh;
+margin-left: 10vw;
+min-width: 80vw;
+text-align: left;
+font-size: 1.4vw;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0,0,0,0.15);
+word-wrap: break-word;
+z-index: -20;
 }
 thead tr{
-    background-image: linear-gradient(to right, #6197EE, #10D7E2);
-    background-color: #009879;
-    color: white;
-    height: 4vh;
-    font-weight: bold;
+background-image: linear-gradient(to right, #6197EE, #10D7E2);
+background-color: #009879;
+color: white;
+height: 4vh;
+font-weight: bold;
 }
 td{
-    
-    padding: 12px 15px;
+
+padding: 12px 15px;
 }
 tbody tr{
-    border-bottom: 1px solid #dddddd;
+border-bottom: 1px solid #dddddd;
 }
 tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;}
+background-color: #f3f3f3;}
 
 tbody tr:nth-of-type(odd) {
-    background-color: #FFFFFF;}
+background-color: #FFFFFF;}
 
 tbody tr:last-of-type {
-    border-bottom: 2px solid #00beff;
+border-bottom: 2px solid #00beff;
 }
 select, option { width: 240px; }
 
 input[type="radio"]{
-    display: none;
+display: none;
 }
 .present_class{
-    font-family: poppins;
-    font-size: 30px;
-    position: relative;
-    color: #009879;
-    border:2px solid #009879;
-    border-radius: 5px;
-    padding: 4px 20px;
-    align-items: center;   
-    box-shadow: 5px 5px #aaaaaa;
-    opacity: 80%;
+font-family: poppins;
+font-size: 30px;
+position: relative;
+color: #009879;
+border:2px solid #009879;
+border-radius: 5px;
+padding: 4px 20px;
+align-items: center;   
+box-shadow: 5px 5px #aaaaaa;
+opacity: 80%;
 
 }
 input[type="radio"]:checked + .present_class{
-    background-color: #009879;
-    color: white;
-    box-shadow: 2px 2px  #aaaaaa;
-    opacity: 100%;
+background-color: #009879;
+color: white;
+box-shadow: 2px 2px  #aaaaaa;
+opacity: 100%;
 }
 .absent_class{
-    font-family: poppins;
-    font-size: 30px;
-    position: relative;
-    color: #ff2626;
-    border:2px solid #ff2626;
-    border-radius: 5px;
-    padding: 4px 20px;
-    align-items: center;  
-    box-shadow: 5px 5px #aaaaaa;
-    opacity: 80%;
+font-family: poppins;
+font-size: 30px;
+position: relative;
+color: #ff2626;
+border:2px solid #ff2626;
+border-radius: 5px;
+padding: 4px 20px;
+align-items: center;  
+box-shadow: 5px 5px #aaaaaa;
+opacity: 80%;
 }
 input[type="radio"]:checked + .absent_class{
-    font-family: poppins;
-    font-size: 30px;
-    background-color: #ff2626;
-    color: white;
-    box-shadow: 2px 2px  #aaaaaa;
-    opacity: 100%;   
+font-family: poppins;
+font-size: 30px;
+background-color: #ff2626;
+color: white;
+box-shadow: 2px 2px  #aaaaaa;
+opacity: 100%;   
 }
 
 .btn{
-    display: block;
-    position: absolute;
-    left: 10vw;
-    width: 100px;
-    height: 40px;
-    margin-left: 10vw;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, #A1FF8B, #3F93FF);
-    background-size: 200%;
-    color: white;
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    margin: 1rem 0;
-    cursor: pointer;
+display: block;
+position: absolute;
+left: 10vw;
+width: 100px;
+height: 40px;
+margin-left: 10vw;
+border-radius: 5px;
+outline: none;
+border: none;
+background-image: linear-gradient(to right, #A1FF8B, #3F93FF);
+background-size: 200%;
+color: white;
+font-size: 1.2rem;
+font-family: 'Poppins', sans-serif;
+text-transform: uppercase;
+margin: 1rem 0;
+cursor: pointer;
 }
 .submit{
 
-    text-decoration: none;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-   
-    }
+text-decoration: none;
+color: #fff;
+font-family: 'Poppins', sans-serif;
+
+}
 
 
 @media (max-width: 1180px){ 
-    .table1{
-    font-size: 28px;
+.table1{
+font-size: 28px;
 }
 .present_class{   
-    font-size: 28px;
+font-size: 28px;
 }
 .absent_class{
-    font-size: 28px;
+font-size: 28px;
 }
 input[type="radio"]:checked + .absent_class{
-    font-size: 28px;  
+font-size: 28px;  
 }
-    
+
 }
 @media (max-width: 800px) {
-    .select_menu_span{
-        font-size: 23px;
-    }
-    .select_button{
-        position: relative;
-        margin-top: 10px;
-       
-    }
-    .batch_select{
-        font-size: 16px;
-    }
-    .subject_select{
-        font-size: 15px;
-    }
-    .day ,.date1{
-    font-size: 20px;
-    }
-    #batch_name, #subject_name{
-    font-size: 20px;
+.select_menu_span{
+    font-size: 23px;
 }
-    .attendance_status{
-    font-size: 25px;
+.select_button{
+    position: relative;
+    margin-top: 10px;
+   
 }
 .batch_select{
-    width: 190px;
+    font-size: 16px;
+}
+.subject_select{
+    font-size: 15px;
+}
+.day ,.date1{
+font-size: 20px;
+}
+#batch_name, #subject_name{
+font-size: 20px;
+}
+.attendance_status{
+font-size: 25px;
+}
+.batch_select{
+width: 190px;
 }
 
 .subject_select{
-    width: 190px;
+width: 190px;
 }
 .table1{
-    font-size: 23px;
+font-size: 23px;
 }
 .present_class{   
-    font-size: 25px;
+font-size: 25px;
 }
 .absent_class{
-    font-size: 25px;
+font-size: 25px;
 }
 input[type="radio"]:checked + .absent_class{
-    font-size: 25px;  
+font-size: 25px;  
 }
 .student_table{ 
-  margin-left: 10px;
-  width: 20vw; 
-  font-size: 15px;
-}
 
+width: 20vw; 
+font-size: 13px;
+}
+td{
+padding: 6px 7.5px;
+}
+.student_information{
+top: 2vh;
+width: 70vh;
+}
 }
 @media (max-width: 672px) {
 .select_menu_span{
-        margin-left: 4vw; 
-        display: block;
-    }
+    margin-left: 4vw; 
+    display: block;
+}
 .select_button{
-        position: relative;
-        text-align: left;
-        align-items: left;
-    }
-.batch_select{
-        margin-left: 4vw;
-        font-size: 15px;
-    }
-.subject_select{
-        font-size: 14px;
-    }
-.date{
-        text-align: left;
-    }
-.day ,.date1{
-    margin-left: 4vw;
-    font-size: 18px;
-    }
-#batch_name, #subject_name{
-    margin-left: 4vw;
+    position: relative;
     text-align: left;
-    font-size: 18px;
-    }
+    align-items: left;
+}
+.batch_select{
+    margin-left: 4vw;
+    font-size: 15px;
+}
+.subject_select{
+    font-size: 14px;
+}
+.date{
+    text-align: left;
+}
+.day ,.date1{
+margin-left: 4vw;
+font-size: 18px;
+}
+#batch_name, #subject_name{
+margin-left: 4vw;
+text-align: left;
+font-size: 18px;
+}
 .enterbutton{
-    width: 60px;
-    height: 40px;
-    font-size: 16px;
+width: 60px;
+height: 40px;
+font-size: 16px;
 }
 .attendance_status{
-    font-size: 18px;
+font-size: 18px;
 }
 .table1{
-    font-size: 14px;
-    margin-left: 4vw;
-    min-width: 80vw;
+font-size: 14px;
+margin-left: 4vw;
+min-width: 80vw;
 }
+
 .present_class{   
-    font-size: 12px;
+font-size: 12px;
 }
 .absent_class{
-    font-size: 12px;
+font-size: 12px;
 }
 input[type="radio"]:checked + .absent_class{
-    font-size: 12px;  
+font-size: 12px;  
 }
 .btn{ 
-    left: 4vw;
+left: 4vw;
 }
+td{
+padding: 3px 3.5px;
+}
+.student_information{
+top: 1vh;
+line-height: 20px;
+border-radius: 20px;
+width: 80vw;
+left: 5vw;
+padding-left:50px;
+font-size: 12px;
+}
+.student_table{ 
+    margin-top: 22vh;
+    left: 5vw;
+    margin-left: 0vh;
+  }
 }
 
 @media (max-width: 420px) {
-    .brand-title {
-    font-size: 25px;
-    }
-  .select_menu_span{
-      text-align: left;
-    }
-    .select_button{
-        position: relative;
-        text-align: left;
-        align-items: left;
-    }
-    .batch_select{
-        font-size: 12px;
-    }
-    .subject_select{
-        font-size: 12px;
-    }
-     .enterbutton{
-        margin-left: 4vw;
-        width: 60px;
-        font-size: 16px;
+.brand-title {
+font-size: 25px;
 }
-.date{
-       position: relative;
-       margin-top: -55px;
-       margin-left: 80px;
-       width: 200px;
-
-    }
-.attendance_status{
-    font-size: 18px;
+.select_menu_span{
+  text-align: left;
+}
+.select_button{
+    position: relative;
+    text-align: left;
+    align-items: left;
 }
 .batch_select{
-    width: 160px;
+    font-size: 12px;
+}
+.subject_select{
+    font-size: 12px;
+}
+ .enterbutton{
+    margin-left: 4vw;
+    width: 60px;
+    font-size: 16px;
+}
+.date{
+   position: relative;
+   margin-top: -55px;
+   margin-left: 80px;
+   width: 200px;
+
+}
+.attendance_status{
+font-size: 18px;
+}
+.batch_select{
+width: 160px;
 }
 
 .subject_select{
-    width: 160px;
+width: 160px;
 }
 .attendance_status{
-    font-size: 14px;
+font-size: 14px;
 }
 td{
-    padding: 12px 5px;
+padding: 1px 1.5px;
 }
 .table1{
-    font-size: 12px;
-    margin-left: 2vw;
-    min-width: 80vw;
+font-size: 12px;
+margin-left: 2vw;
+min-width: 80vw;
 }
 .present_class{   
-    font-size: 14px;
+font-size: 14px;
 }
 .absent_class{
-    font-size: 14px;
+font-size: 14px;
 }
 input[type="radio"]:checked + .absent_class{
-    font-size: 14px;  
+font-size: 14px;  
 }
 .btn{ 
-    left: 2vw;
-    
+left: 2vw;
+
 }
 }
 
@@ -449,82 +473,82 @@ input[type="radio"]:checked + .absent_class{
 @media (max-width: 320px) {
 
 .batch_select{
-        font-size: 10px;
-    }
-    .subject_select{
-        font-size: 10px;
-    }
-        .attendance_status{
-    font-size: 16px;
+    font-size: 10px;
+}
+.subject_select{
+    font-size: 10px;
+}
+    .attendance_status{
+font-size: 16px;
 }
 .batch_select{
-    width: 140px;
+width: 140px;
 }
 
 .subject_select{
-    width: 140px;
+width: 140px;
 }
 .attendance_status{
-    font-size: 14px;
+font-size: 14px;
 }
 td{
-    padding: 12px 2px;
+padding: 12px 2px;
 }
 .table1{
-    
-    font-size: 10px;
-    margin-left: 2vw;
-    min-width: 80vw;
+
+font-size: 10px;
+margin-left: 2vw;
+min-width: 80vw;
 }
 .present_class{   
-    font-size: 12px;
+font-size: 12px;
 }
 .absent_class{
-    font-size: 12px;
+font-size: 12px;
 }
 input[type="radio"]:checked + .absent_class{
-    font-size: 12px;  
+font-size: 12px;  
 }
 }
 
 @media (max-width: 280px) {
 .brand-title {
-    font-size: 20px;
-    }
+font-size: 20px;
+}
 .batch_select{
-        font-size:8px;
-    }
-    .subject_select{
-        font-size: 8px;
-    }
+    font-size:8px;
+}
+.subject_select{
+    font-size: 8px;
+}
 .batch_select{
-    width: 120px;
+width: 120px;
 }
 
 .subject_select{
-    width: 120px;
+width: 120px;
 }
 td{
-    padding: 12px 2px;
+padding: 12px 2px;
 }
 .table1{
-    font-size: 8px;
-    margin-left: 2vw;
-    min-width: 80vw;
+font-size: 8px;
+margin-left: 2vw;
+min-width: 80vw;
 }
 .present_class{   
-    font-size: 10px;
+font-size: 10px;
 }
 .absent_class{
-    font-size: 10px;
+font-size: 10px;
 }
 input[type="radio"]:checked + .absent_class{
-    font-size: 10px;  
+font-size: 10px;  
 }
 .btn{ 
-    left: 1vw;
-    font-size: 14px;
-    width: 80px;
-    height: 25px;
+left: 1vw;
+font-size: 14px;
+width: 80px;
+height: 25px;
 }
 }
