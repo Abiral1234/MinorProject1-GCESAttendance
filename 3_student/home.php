@@ -220,12 +220,13 @@
 <?php } ?>
 -->
 <div class="student_information">
-    <h2 class="student_name"><?php echo "Name:" . $_SESSION['username'];?></h2>
-    <h2 class="student_regno"><?php echo "Reg No. :" . $_SESSION['password'];?></h2>
-    <h2 class="student_batch"><?php echo "Batch :" . $_SESSION['student_batch_name'];  ?></h2>
+    <h3 class="student_name"><?php echo "Name:" . $_SESSION['username'];?></h3>
+    <h3 class="student_regno"><?php echo "Reg No. :" . $_SESSION['password'];?></h3>
+    <h3 class="student_batch"><?php echo "Batch :" . $_SESSION['student_batch_name'];  ?></h3>
 <?php  ?>
 </div>
-<table class="student_table">
+<div class="table_data">
+  <table class="student_table">
   <thead>
     <tr>
       <td>SN</td>
@@ -296,9 +297,9 @@
     </tbody>
   </table>
 
+</div>
 
-
-<script src="../Js/navbar.js"></script>
+ <script src="../Js/navbar.js"></script>
 <div class="svg">
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->

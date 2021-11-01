@@ -49,11 +49,12 @@ error_reporting(0);
 <head>
 	<title></title>
   <link rel="stylesheet" type="text/css" href="../Css/noticestudent1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 
 </head>
 <body>
-<header><!-- NAvigation BAR -->
+<header>
       <nav class="navbar">
         <div class="brand-title">Gces Attendance</div>
         <a href="#" class="toggle-button">
@@ -63,14 +64,14 @@ error_reporting(0);
         </a>
         <div class="navbar-links">
             <ul> 
-				<li><a href="Home.php">Attendance</a> </li>
-        <li><a href="routine.php">Routine</a> </li>
-        <li><a href="notes.php">Notes</a> </li>              <!-- nav bar -->
-        <li><a href="notice.php">Notice</a></li>
-        <li><a href="../index.php">logout</a> </li>
-			</ul>
+              <li><a href="Home.php">Attendance</a> </li>
+              <li><a href="routine.php">Routine</a> </li>
+              <li><a href="notes.php">Notes</a> </li>              <!-- nav bar -->
+              <li><a href="notice.php">Notice</a></li>
+              <li><a href="../index.php">logout</a> </li>
+            </ul>
         </div>
-	  </nav>
+      </nav>
 </header>
       <!--  <div class="label1" >
             <h2>View Notice of:<h2>
