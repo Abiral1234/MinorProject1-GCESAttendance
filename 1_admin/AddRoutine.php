@@ -67,112 +67,127 @@ include_once'../connection.php';
 
 <!-- UPLOAD CLASS ROUTINE -->
 <div class="mainsec">
-<div class="routine">
- <h1>Upload Class Routine</h1>
-       <form action="" method="POST" enctype="multipart/form-data">
-          <div class="upfile"> 
-                        <input type="file" id="actual-btn" name="uploadfile" hidden/>
+<div class="routinesec">
+  <div class="routine">
+  <h1>Upload Class Routine</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+          <div class="uploadbutton">
+            <div class="upfile"> 
+                          <input type="file" id="actual-btn" name="uploadfile" hidden/>
 
-                        <!--custom upload button -->
-                        <label for="actual-btn">Choose File</label>
-                        <!-- name of file chosen -->
-                        <span id="file-chosen">No file chosen</span>
+                          <!--custom upload button -->
+                          <label for="actual-btn">Choose File</label>
+                          <!-- name of file chosen -->
+                          <span id="file-chosen">No file chosen</span>
             </div>
+
             <div class="upimg">
-                        <input type="submit" value="Upload Image" class="submitimg" name="submit1">
-              </div>
-          </form>
 
-     
-            
-    <script>
-       const actualBtn = document.getElementById('actual-btn');
+              <input type="submit" value="Upload Image" class="submitimg" name="submit1">
 
-        const fileChosen = document.getElementById('file-chosen');
-
-        actualBtn.addEventListener('change', function(){
-        fileChosen.textContent = this.files[0].name
-        })
-    </script>  
-        <?php
-        if (isset($_POST['submit1'])) {
-        $filename=$_FILES["uploadfile"]["name"];
-        $tempname=$_FILES["uploadfile"]["tmp_name"];
-        $folder="../RoutineImage/".$filename;
-        move_uploaded_file( $tempname ,$folder );
-        $datetime=date("Y-m-d H:i:s");
-        $sql_insert_image="INSERT INTO classroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($connect_to_extra_database ,$sql_insert_image);
-
-        }
-        ?>
-        <?php
-        $sql_select_image="SELECT * FROM `classroutine` ORDER BY datetime desc LIMIT 1  ;";
-        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
-        while($row=mysqli_fetch_assoc($result2)){ 
-          $imageurl = $row['imageurl'];
-          $datetime0=$row['datetime'];
-
-        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
-
-        } ?>
-</div>
-
-<!-- UPLOAD EXAM ROUTINE -->
-
-
-<div class="exam_routine">
-  <h1 id="h1examroutine" style="color: black;">Upload Exam Routine</h1>
-       <form action="" method="POST" enctype="multipart/form-data">
-          <div class="upfile"> 
-                        <input type="file" id="actual-btn2" name="uploadfile" hidden/>
-
-                        <!--custom upload button -->
-                        <label for="actual-btn2">Choose File</label>
-
-                        <!-- name of file chosen -->
-                        <span id="file-chosen2">No file chosen</span>
             </div>
-            <div class="upimg">
-                        <input type="submit" value="Upload Image" class="submitimg" name="submit">
-              </div>
+
+          </div>
+
         </form>
 
-     
-            
-    <script>
-       const actualBtn = document.getElementById('actual-btn2');
+      
+              
+      <script>
+        const actualBtn = document.getElementById('actual-btn');
 
-        const fileChosen = document.getElementById('file-chosen2');
+          const fileChosen = document.getElementById('file-chosen');
 
-        actualBtn.addEventListener('change', function(){
-        fileChosen.textContent = this.files[0].name
-        })
-    </script>  
-        <?php
-        if (isset($_POST['submit'])) {
-        $filename=$_FILES["uploadfile"]["name"];
-        $tempname=$_FILES["uploadfile"]["tmp_name"];
-        $folder="../RoutineImage/".$filename;
-        move_uploaded_file( $tempname ,$folder );
-        $datetime=date("Y-m-d H:i:s");
-        $sql_insert_image="INSERT INTO examroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
-        $result=mysqli_query($connect_to_extra_database,$sql_insert_image);
+          actualBtn.addEventListener('change', function(){
+          fileChosen.textContent = this.files[0].name
+          })
+      </script>  
+          <?php
+          if (isset($_POST['submit1'])) {
+          $filename=$_FILES["uploadfile"]["name"];
+          $tempname=$_FILES["uploadfile"]["tmp_name"];
+          $folder="../RoutineImage/".$filename;
+          move_uploaded_file( $tempname ,$folder );
+          $datetime=date("Y-m-d H:i:s");
+          $sql_insert_image="INSERT INTO classroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
+          $result=mysqli_query($connect_to_extra_database ,$sql_insert_image);
 
-        }
-        ?>
-        <?php
-        $sql_select_image="SELECT * FROM `examroutine` ORDER BY datetime desc LIMIT 1  ;";
-        $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
-        while($row=mysqli_fetch_assoc($result2)){ 
-          $imageurl = $row['imageurl'];
-          $datetime0=$row['datetime'];
+          }
+          ?>
+          <?php
+          $sql_select_image="SELECT * FROM `classroutine` ORDER BY datetime desc LIMIT 1  ;";
+          $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
+          while($row=mysqli_fetch_assoc($result2)){ 
+            $imageurl = $row['imageurl'];
+            $datetime0=$row['datetime'];
 
-        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
+          echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
 
-        } ?>
+          } ?>
+  </div>
 
+  <!-- UPLOAD EXAM ROUTINE -->
+
+
+  <div class="exam_routine">
+    <h1 id="h1examroutine" style="color: black;">Upload Exam Routine</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+          <div class="uploadbutton">
+
+            <div class="upfile"> 
+
+              <input type="file" id="actual-btn2" name="uploadfile" hidden/>
+              <!--custom upload button -->
+              <label for="actual-btn2">Choose File</label>
+              <!-- name of file chosen -->
+              <span id="file-chosen2">No file chosen</span>
+
+            </div>
+
+            <div class="upimg">
+              
+              <input type="submit" value="Upload Image" class="submitimg" name="submit">
+            </div>
+          </div>
+        </form>
+
+      
+              
+      <script>
+        const actualBtn = document.getElementById('actual-btn2');
+
+          const fileChosen = document.getElementById('file-chosen2');
+
+          actualBtn.addEventListener('change', function(){
+          fileChosen.textContent = this.files[0].name
+          })
+      </script>  
+          <?php
+          if (isset($_POST['submit'])) {
+          $filename=$_FILES["uploadfile"]["name"];
+          $tempname=$_FILES["uploadfile"]["tmp_name"];
+          $folder="../RoutineImage/".$filename;
+          move_uploaded_file( $tempname ,$folder );
+          $datetime=date("Y-m-d H:i:s");
+          $sql_insert_image="INSERT INTO examroutine (imageurl,datetime) VAlUES('$folder','$datetime') ";  //to move image to our folder and pass our url to database 
+          $result=mysqli_query($connect_to_extra_database,$sql_insert_image);
+
+          }
+          ?>
+          <?php
+          $sql_select_image="SELECT * FROM `examroutine` ORDER BY datetime desc LIMIT 1  ;";
+          $result2=mysqli_query($connect_to_extra_database,$sql_select_image);
+          while($row=mysqli_fetch_assoc($result2)){ 
+            $imageurl = $row['imageurl'];
+            $datetime0=$row['datetime'];
+
+          echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
+
+          } ?>
+
+  </div>
 </div>
+
 <div class="pannel">
       <div class="clrclassbtn">
         <form action="AddRoutine.php" method="POST">
