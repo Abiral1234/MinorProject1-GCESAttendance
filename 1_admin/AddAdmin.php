@@ -5,7 +5,7 @@ if(isset($_POST['admin_submit'])){
     $username=$_POST['username'];
     $password=$_POST['pword'];
     $sql_insert="INSERT INTO adminlist(Username ,Password ) VALUES('$username','$password')";
-    if($result2=mysqli_query($conn,$sql_insert)){ }
+    if($result2=mysqli_query($connect_to_list_database,$sql_insert)){ }
     else{
         echo "Error";
     }
@@ -79,13 +79,13 @@ if(isset($_POST['admin_submit'])){
                 `Username` varchar(255) NOT NULL,
                 `Password` varchar(255) NOT NULL
                 ) ";
-                if($result1=mysqli_query($conn,$sql_create)){ }
+                if($result1=mysqli_query($connect_to_list_database,$sql_create)){ }
                 else{
                 echo "Error";
                 }
     
                     $sql_select="SELECT * FROM Adminlist";
-                    $result3=mysqli_query($conn,$sql_select);
+                    $result3=mysqli_query($connect_to_list_database,$sql_select);
                     $serial_number=0;
                     while ($row=mysqli_fetch_assoc($result3)) {
                         $serial_number++;
