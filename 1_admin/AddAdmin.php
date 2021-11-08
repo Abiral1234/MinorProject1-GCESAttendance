@@ -4,7 +4,12 @@ include_once'../connection.php';
 if(isset($_POST['admin_submit'])){
     $username=$_POST['username'];
     $password=$_POST['pword'];
-    $sql_insert="INSERT INTO adminlist(Username ,Password ) VALUES('$username','$password')";
+
+     //CRYPT BLOWFISH ALGORITHM
+    
+    $encrypt_password = password_hash($password, PASSWORD_BCRYPT);
+
+    $sql_insert="INSERT INTO adminlist(Username ,Password ) VALUES('$username','$encrypt_password')";
     if($result2=mysqli_query($connect_to_list_database,$sql_insert)){ }
     else{
         echo "Error";
