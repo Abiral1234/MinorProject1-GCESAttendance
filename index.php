@@ -44,8 +44,12 @@
 						$dbusername=$row['Username'];
 						$dbpassword=$row['Password'];				//Check if the user is Admin
 						
-							if($username == $dbusername && $password == $dbpassword) {
-							header("Location: 1_admin/Home.php"); }
+							if($username == $dbusername ) {
+								
+							if(password_verify($password, $dbpassword)){
+										header("Location: 1_admin/Home");
+									}
+								 }
 					}
 				}
 
@@ -59,8 +63,11 @@
 					while($row=mysqli_fetch_assoc($result_teacher)){
 						$dbusername=$row['Username'];
 						$dbpassword=$row['Password'];			//Check if the user is Teacher	
-					if($username == $dbusername && $password == $dbpassword) {
-						header("Location: 2_teacher/Home.php"); 
+					if($username == $dbusername) {
+						if (password_verify($password, $dbpassword)) {
+							header("Location: 2_teacher/Home.php"); 
+						}
+						
 					}}
 				}}
 

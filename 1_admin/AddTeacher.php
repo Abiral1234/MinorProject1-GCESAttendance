@@ -6,12 +6,13 @@ if(isset($_POST['teacher_submit'])){
     $last_name=$_POST['last_name'];
     $username=$_POST['username'];
     $password=$_POST['pword'];
-    $sql_insert="INSERT INTO teacherlist (first_name ,last_name ,Username ,Password ) VALUES('$first_name','$last_name','$username','$password')";
+    $encrypt_password = password_hash($password, PASSWORD_BCRYPT);
+    $sql_insert="INSERT INTO teacherlist (first_name ,last_name ,Username ,Password ) VALUES('$first_name','$last_name','$username',
+    '$encrypt_password')";
     if($result2=mysqli_query($connect_to_list_database,$sql_insert)){ }
     else{
         echo "Error";
     }
-
 }
 ?>
 <!DOCTYPE html>
