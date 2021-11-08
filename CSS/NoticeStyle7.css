@@ -379,9 +379,9 @@ header::after{
         display: flex;
     }
     .pannel{
-        position: fixed;
-        left: 14rem;
-        top: 8rem;
+        position: relative;
+        left: 250px;
+        top: 5rem;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -389,23 +389,23 @@ header::after{
     }
     .mainsec{
         width: 75%;
-        margin-top: 12rem;
         margin-left: 1rem;
+        margin-top: 5.5rem;
     }
     label {
         padding: 0.5rem 1rem;
     }
     .submitimg{
         padding: 0.5rem 1rem;
-        margin-left: -9rem;
+        margin-left: -7rem;
     }
     .table1{
         max-width: 85%;
-        min-width: 30rem;
+        min-width: 34rem;
     }   
     .table2{
         width: 85%;
-        min-width: 30rem;
+        min-width: 34rem;
     }
     td{
         word-wrap: break-word;
@@ -423,7 +423,7 @@ header::after{
         font-size: 0.8rem;
     }
     .notices_images{
-    width: 80vw;
+    width: 120vw;
 }
     
 }

@@ -444,12 +444,15 @@ tbody tr:last-of-type {
     }
 
     .btn1{
-        margin-left: 5px;
-        width: 60px;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 0px;
+        width: 100px;
         font-size: 16px;
-        /* margin-top: 0px; */
     }
-
+    .batchinfo{
+        margin-top: 60px;
+    }
 
     .batch_select{
         font-size: 15px;
