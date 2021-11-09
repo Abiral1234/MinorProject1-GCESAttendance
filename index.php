@@ -49,7 +49,7 @@
 							if($username == $dbusername ) {
 								
 							if(password_verify($password, $dbpassword)){
-										header("Location: 1_admin/Home");
+										header("Location: 1_admin/home.php");
 									}
 								 }
 					}
@@ -95,7 +95,7 @@
 					
 					if($username == $dbusername && $password == $dbpassword) {
 						$_SESSION['student_batch_name'] =$batchname[$i];
-						header("Location: 3_student/Home.php"); 
+						header("Location: 3_student/home.php"); 
 					}}}}
 				//If the user is not admin,teacher or student then invalid user
 				

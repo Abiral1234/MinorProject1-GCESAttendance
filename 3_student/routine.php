@@ -59,7 +59,7 @@ include_once '../connection.php'
 
 
 <div class="exam_routine">
-  <h1 id="h1examroutine" style="color: black;">Upload Exam Routine</h1>
+  <h1 id="h1examroutine" style="color: black;">Exam Routine</h1>
        
         <?php
         if (isset($_POST['submit'])) {
