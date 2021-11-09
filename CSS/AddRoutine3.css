@@ -129,7 +129,7 @@ a {
   color: white;
 }
 
-span {
+.upfile > span {
   display: inline-block;
 }
 
