@@ -150,7 +150,7 @@
 					<p id="invalid2" style="color: red;">
 						<?php
 						if ($match==0) {
-						 	echo "Incorrect Username and Password";
+						 	echo "Username or Password Incorrect";
 						 } 
 						?>
 					</p>

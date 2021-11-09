@@ -68,7 +68,7 @@ if(isset($_POST['admin_submit'])){
                 <input type="submit" value="Enter the data" name="admin_submit"class="btn">
             </form>
         </div>
-        <script src="../JS/addteachervalidate.js" type="text/javascript"></script>
+        <script src="../JS/addadminvalidate.js" type="text/javascript"></script>
         <div class="teachertable">
             <table class="teacher_table">
                 <thead>
