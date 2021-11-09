@@ -252,8 +252,6 @@ session_start();
         <?php
         $batch = $_POST['batch_name1'];
         $subject = $_POST['selected_subject_name'];
-        echo $batch;
-        echo $subject;
         $sql_select_image="SELECT * FROM notes  WHERE batchname='$batch' && subject='$subject' ORDER BY datetime desc";
         $result2=mysqli_query($connect_to_extra_database ,$sql_select_image);
         echo "<h2>Files:</h2>";

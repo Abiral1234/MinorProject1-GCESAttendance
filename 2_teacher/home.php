@@ -47,15 +47,15 @@ if (isset($_POST['submit'])) { //checks if submit button is clicked
 	}
 
 
-  	/* $sql_date_duplicate="SELECT DISTINCT date FROM $attendance_sheet";//check if the attendance is takentoday
-  	$result_date=mysqli_query($conn ,$sql_date_duplicate);
+  	 $sql_date_duplicate="SELECT DISTINCT date FROM $attendance_sheet";//check if the attendance is takentoday
+  	$result_date=mysqli_query($connection[$batchname2] ,$sql_date_duplicate);
 	if(isset($result_date)){
 	while($row_date= mysqli_fetch_assoc($result_date)){
 		if($row_date['date'] == date("Y-m-d")){
 			$flag1=3;
 			goto NoAttendance;
 		}
-	}} */
+	}} 
 	
 	
 
