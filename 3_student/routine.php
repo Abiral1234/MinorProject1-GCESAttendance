@@ -80,7 +80,7 @@ include_once '../connection.php'
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
 
-        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height='100%'/><a>";
+        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height= auto/><a>";
 
         } ?>
 
