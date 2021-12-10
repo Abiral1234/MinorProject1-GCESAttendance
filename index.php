@@ -12,7 +12,7 @@
             }
      $encyrpt_password = password_hash('admin1234', PASSWORD_BCRYPT);
 
-    $sql_insert="INSERT INTO adminlist(id,Username ,Password ) VALUES(1,'admin','$encyrpt_password')";
+    $sql_insert="INSERT INTO AdminList(id,Username ,Password ) VALUES(1,'admin','$encyrpt_password')";
     if($result2=mysqli_query($connect_to_list_database,$sql_insert)){ }
    
 ?>
