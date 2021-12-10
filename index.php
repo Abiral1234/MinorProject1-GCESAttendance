@@ -39,7 +39,7 @@
 
 			  	//IF ADMIN
 			  	
-					if($sql_select="SELECT * FROM adminlist"){
+					if($sql_select="SELECT * FROM AdminList"){
 						$result_admin=mysqli_query($connect_to_list_database,$sql_select);
 						if($result_admin){ //Checks if adminlist table is present
 						while($row=mysqli_fetch_assoc($result_admin)){
