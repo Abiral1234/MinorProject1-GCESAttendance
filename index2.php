@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Second Index Page</title>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="Css/style1.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
