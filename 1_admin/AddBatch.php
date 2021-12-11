@@ -51,7 +51,7 @@ if(isset($_POST['batch_submit2'])){
 	}
 
 	else{
-	$sql_add_batch="INSERT  INTO `batch_list`(batchname)
+	$sql_add_batch="INSERT  INTO `Batch_List`(batchname)
     VALUES('$name') ";
 
     if($result= mysqli_query($connect_to_list_database ,$sql_add_batch)){
@@ -220,7 +220,7 @@ if(isset($_POST['batch_submit2'])){
 							?>
 							<tr >
 							<?php 
-						$sql_select_batch="SELECT * FROM `batch_list`;";
+						$sql_select_batch="SELECT * FROM `Batch_List`;";
 						$result_batch=mysqli_query($connect_to_list_database ,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){
 							$batch_name=explode("_",$row['batchname']);
@@ -245,7 +245,7 @@ if(isset($_POST['batch_submit2'])){
 						<tbody>
 							<tr >
 							<?php 
-						$sql_select_batch="SELECT * FROM `batch_list`;";
+						$sql_select_batch="SELECT * FROM `Batch_List`;";
 						$result_batch=mysqli_query($connect_to_list_database,$sql_select_batch);
 						while($row= mysqli_fetch_assoc($result_batch)){
 							$batch_name=explode("_",$row['batchname']);
