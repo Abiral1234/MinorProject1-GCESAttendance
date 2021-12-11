@@ -28,6 +28,6 @@
 				</div>
 			</nav>
 		</header>
-		<script src="../Js/navbar.js"></script>
+		<script src="../JS/navbar.js"></script>
 	</body>
 </html>

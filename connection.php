@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'Gces@54321');
 
 
 //to make connection with localhost mysql

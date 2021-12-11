@@ -106,7 +106,7 @@ include_once '../connection.php';
 </header>
 </div>
 	
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
 
 <!-- Date picker and batch/subject selector in a form -->
 
@@ -227,6 +227,6 @@ include_once '../connection.php';
 		<?php }  } } } ?>
 		</div>
 		
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
 		</body>
 </html>

@@ -49,7 +49,7 @@ if(isset($_POST['teacher_submit'])){
             </header>
         </div>
             
-        <script src="../Js/navbar.js"></script>
+        <script src="../JS/navbar.js"></script>
 
         <div class = "pagebody">
             <div class="container">

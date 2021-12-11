@@ -49,7 +49,7 @@ error_reporting(0);
 <head>
 	<title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" type="text/css" href="../Css/NoticeStyle7.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/NoticeStyle7.css">
   <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
 </head>
 <body>
@@ -330,7 +330,7 @@ error_reporting(0);
  
 
 
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
 
 </body>
 </html>

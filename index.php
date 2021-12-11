@@ -20,7 +20,7 @@
 <html>
 <head>
 	<title>Login Form</title>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="CSS/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -110,8 +110,8 @@
 				<img id="background" src="Images/login.svg">
 			</div>
 			<p id="description">Gandaki College of Engineering and Science (GCES) is located in Pokhara. 
-			Founded in 1998 and offically inaguratd i 1999 this college has always been driven
-			by mission of becoming an international centre of acdemic excellence with it's motto
+			Founded in 1998 and offically inaugurated in 1999 this college has always been driven
+			by mission of becoming an international centre of academic excellence with it's motto
 			"Knowledge, Character, and Service".
 			</p>
 		</div>
@@ -159,6 +159,6 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="JS/login.js"></script>
 </body>
 </html>

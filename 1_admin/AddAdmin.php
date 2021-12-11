@@ -9,7 +9,7 @@ if(isset($_POST['admin_submit'])){
     
     $encrypt_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $sql_insert="INSERT INTO adminlist(Username ,Password ) VALUES('$username','$encrypt_password')";
+    $sql_insert="INSERT INTO AdminList(Username ,Password ) VALUES('$username','$encrypt_password')";
     if($result2=mysqli_query($connect_to_list_database,$sql_insert)){ }
     else{
         echo "Error";
@@ -50,7 +50,7 @@ if(isset($_POST['admin_submit'])){
       </nav>
     </header>
     
-    <script src="../Js/navbar.js"></script>
+    <script src="../JS/navbar.js"></script>
     <div class = "pagebody">
         <div class="container">
             <p id="invalid"></p>
@@ -62,7 +62,7 @@ if(isset($_POST['admin_submit'])){
                 </div>
                 <div class="input password">
                     <span>Password</span>
-                    <input type="password" id="pword" name="pword" class="_dinput" placeholder="Must be longer than 6"><br>
+                    <input type="password" id="pword" name="pword" class="_dinput" placeholder="Must be longer than 8"><br>
                 </div>
               
                 <input type="submit" value="Enter the data" name="admin_submit"class="btn">

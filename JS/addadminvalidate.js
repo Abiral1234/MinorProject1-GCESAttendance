@@ -1,7 +1,7 @@
 document.form1.addEventListener( "submit", function(event){
     var user = document.getElementById("username").value;
     var pwd = document.getElementById("pword").value;
-    if(user == "" || pwd == "" || pwd.length<6){
+    if(user == "" || pwd == "" || pwd.length<8){
         text = "Invalid Username or Password";
         event.preventDefault();
     }

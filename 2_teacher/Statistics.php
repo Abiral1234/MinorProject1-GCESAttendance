@@ -297,7 +297,7 @@
   <!-- Down Path -->
   <path class="path" d="M489.65157,715.72047h-265a1,1,0,0,1,0-2h265a1,1,0,0,1,0,2Z" transform="translate(-213.54528 -184.27953)" fill="#3f3d56"/>
   </svg>
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
 <script src="../JS/Statistics.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-  
-<?php include_once '../connection.php';
+  <?php include_once '../connection.php';
 
     if (isset($_POST['student_submit'])) {
     $student_name =$_POST['name'];
@@ -23,7 +22,7 @@
     <head>
         <title>Add Student</title>
       
-        <link rel="stylesheet" href="../CSS/AddStudentCss2.css" >
+        <link rel="stylesheet" href="../CSS/AddStudentCss3.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="../CSS/nav.css">

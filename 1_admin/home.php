@@ -78,7 +78,7 @@ session_start();
 		</a>   
 	</div>
 
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
 
 <div class="svg">
 <?xml version="1.0" encoding="utf-8"?>

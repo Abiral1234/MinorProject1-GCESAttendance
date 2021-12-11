@@ -80,7 +80,7 @@ include_once '../connection.php'
           $imageurl = $row['imageurl'];
           $datetime0=$row['datetime'];
 
-        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height= auto/><a>";
+        echo "<a href='$imageurl'><img src='$imageurl' width='100%' height=auto/><a>";
 
         } ?>
 
@@ -89,7 +89,7 @@ include_once '../connection.php'
 </div>
 
 
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
         
     </body>
 </html>

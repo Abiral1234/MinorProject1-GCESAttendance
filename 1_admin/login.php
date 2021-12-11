@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Login Form for Teacher and Admin</title>
-	<link rel="stylesheet" type="text/css" href="../css/login.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,6 +76,6 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="../JS/login.js"></script>
 </body>
 </html>

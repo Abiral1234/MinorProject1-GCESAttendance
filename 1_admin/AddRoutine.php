@@ -33,7 +33,7 @@ include_once'../connection.php';
 <head>
     <title></title>
    
-    <link rel="stylesheet" type="text/css" href="../Css/AddRoutine3.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/AddRoutine3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="../CSS/nav.css">
@@ -203,7 +203,7 @@ include_once'../connection.php';
 </div>
 
 
-<script src="../Js/navbar.js"></script>
+<script src="../JS/navbar.js"></script>
         
     </body>
 </html>
