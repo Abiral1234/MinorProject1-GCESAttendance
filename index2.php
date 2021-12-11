@@ -20,7 +20,7 @@
 			<div class="container">
 			<img src="Images/Index.jpg" id="bg">
 			<div class="content">
-				<h1>Enter as</h1>
+				<h1>You want to enter as</h1>
 				<button class="btn" id="btn1"><a class="button" href="3_student/home.php">Student</a></button>
 				<button class="btn" id="btn2"><a class="button" href="2_teacher/home.php">Teacher</a></button>
 				<button class="btn" id="btn3"><a class="button" href="1_admin/home.php">  Admin  </a></button>
